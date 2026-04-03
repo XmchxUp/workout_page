@@ -36,10 +36,13 @@ jobs:
       # Method A: official API (Hevy Pro / developer access)
       # Requires secret: HEVY_API_KEY
       - name: Sync via Hevy API (Pro)
-        if: ${{ secrets.HEVY_API_KEY != '' }}
         env:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
         run: |
+          if [ -z "$HEVY_API_KEY" ]; then
+            echo "HEVY_API_KEY not set → skipping"
+            exit 0
+          fi
           pip install requests
           python scripts/hevy_api_sync.py "$HEVY_API_KEY" \
             --output src/static/workouts.json \
@@ -49,11 +52,15 @@ jobs:
       # Method B: free-tier CSV export via browser automation
       # Requires secrets: HEVY_EMAIL, HEVY_PASSWORD
       - name: Sync via Hevy CSV export (Free)
-        if: ${{ secrets.HEVY_API_KEY == '' && secrets.HEVY_EMAIL != '' }}
         env:
+          HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
           HEVY_EMAIL: ${{ secrets.HEVY_EMAIL }}
           HEVY_PASSWORD: ${{ secrets.HEVY_PASSWORD }}
         run: |
+          if [ -n "$HEVY_API_KEY" ] || [ -z "$HEVY_EMAIL" ]; then
+            echo "HEVY_API_KEY present or HEVY_EMAIL not set → skipping free-tier export"
+            exit 0
+          fi
           pip install requests playwright
           playwright install chromium --with-deps
           python scripts/hevy_web_export.py "$HEVY_EMAIL" "$HEVY_PASSWORD" \
