@@ -6,12 +6,21 @@ on:
     # Runs every day at 01:00 UTC — change to your preferred time
     - cron: "0 1 * * *"
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   sync:
     name: Sync Hevy data and deploy
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -91,10 +100,18 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: PATH_PREFIX=/$REPO_NAME pnpm build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: pages-artifact
+          path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        id: deployment
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          artifact_name: pages-artifact
