@@ -8,7 +8,7 @@ A personal strength training dashboard that turns your [Hevy](https://hevy.com) 
 
 ## Live Demo
 
-> Replace this with your own deployed URL after setup.
+> https://xmchxup.github.io/workout_page/
 
 ---
 
@@ -158,7 +158,7 @@ const data = {
 
 ## Automated sync with GitHub Actions
 
-The included workflow (`.github/workflows/sync.yml`) syncs your Hevy data and redeploys the site every day at 01:00 UTC.
+The included workflow (`.github/workflows/sync.yml`) syncs your Hevy data and redeploys the site every day at 01:00 UTC. It uses the official GitHub Pages deployment actions — no `gh-pages` branch needed, and the base URL path is derived automatically from your repository name.
 
 ### Setup
 
@@ -166,7 +166,11 @@ The included workflow (`.github/workflows/sync.yml`) syncs your Hevy data and re
 
 In your repo: **Settings → Pages → Source → GitHub Actions**.
 
-#### 2. Add secrets
+#### 2. Allow Actions to create deployments
+
+In your repo: **Settings → Actions → General → Workflow permissions → Read and write permissions** (required for the workflow to push data commits and deploy Pages).
+
+#### 3. Add secrets
 
 Go to **Settings → Secrets and variables → Actions → New repository secret**.
 
@@ -185,11 +189,11 @@ Go to **Settings → Secrets and variables → Actions → New repository secret
 
 > Only set one of the two groups. If `HEVY_API_KEY` is present, it takes priority and the free-tier step is skipped.
 
-#### 3. Adjust the timezone offset
+#### 4. Adjust the timezone offset
 
 Open `.github/workflows/sync.yml` and change `--tz-offset 8` in both sync steps to match your timezone.
 
-#### 4. Trigger the first run
+#### 5. Trigger the first run
 
 Go to **Actions → Sync & Deploy → Run workflow**.
 

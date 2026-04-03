@@ -8,7 +8,7 @@
 
 ## 在线演示
 
-> 部署完成后，将你的站点地址填在这里。
+> https://xmchxup.github.io/workout_page/
 
 ---
 
@@ -158,7 +158,7 @@ const data = {
 
 ## GitHub Actions 自动同步
 
-仓库内置的工作流（`.github/workflows/sync.yml`）每天 UTC 01:00 自动同步 Hevy 数据并重新部署站点。
+仓库内置的工作流（`.github/workflows/sync.yml`）每天 UTC 01:00 自动同步 Hevy 数据并重新部署站点。工作流使用官方 GitHub Pages 部署方式，无需 `gh-pages` 分支，站点路径前缀会自动从仓库名获取。
 
 ### 配置步骤
 
@@ -166,7 +166,11 @@ const data = {
 
 在仓库中：**Settings → Pages → Source → GitHub Actions**。
 
-#### 2. 添加 Secrets
+#### 2. 开启 Actions 写权限
+
+在仓库中：**Settings → Actions → General → Workflow permissions → Read and write permissions**（工作流提交数据更新和部署 Pages 均需要此权限）。
+
+#### 3. 添加 Secrets
 
 前往 **Settings → Secrets and variables → Actions → New repository secret**。
 
@@ -185,11 +189,11 @@ const data = {
 
 > 只需设置其中一组。若 `HEVY_API_KEY` 已存在，则免费版步骤会自动跳过。
 
-#### 3. 调整时区偏移
+#### 4. 调整时区偏移
 
 打开 `.github/workflows/sync.yml`，将两个同步步骤中的 `--tz-offset 8` 改为你的时区偏移值。
 
-#### 4. 触发首次运行
+#### 5. 触发首次运行
 
 前往 **Actions → Sync & Deploy → Run workflow**。
 
