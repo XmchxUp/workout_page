@@ -1,0 +1,10 @@
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  .lg\:p-16 {
+    padding: 1rem !important;
+  }
+}

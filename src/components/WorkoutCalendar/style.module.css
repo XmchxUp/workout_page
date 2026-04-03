@@ -1,0 +1,31 @@
+/* Workout calendar — all colors via CSS variables defined in index.css */
+
+.cell {
+  cursor: default;
+  transition: opacity 0.15s;
+}
+
+.cell:hover {
+  opacity: 0.85;
+}
+
+.cellClickable {
+  cursor: pointer;
+}
+
+/* Fill levels */
+.empty   { fill: var(--wc-empty); }
+.level1  { fill: var(--wc-l1); }
+.level2  { fill: var(--wc-l2); }
+.level3  { fill: var(--wc-l3); }
+.level4  { fill: var(--wc-l4); }
+
+/* Today ring */
+.todayRing { fill: none; stroke: var(--wc-today); stroke-width: 1.5; }
+
+/* Legend swatches */
+.swatchEmpty  { background: var(--wc-empty); }
+.swatchL1     { background: var(--wc-l1); }
+.swatchL2     { background: var(--wc-l2); }
+.swatchL3     { background: var(--wc-l3); }
+.swatchL4     { background: var(--wc-l4); }

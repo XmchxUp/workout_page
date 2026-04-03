@@ -1,0 +1,91 @@
+name: Sync & Deploy
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs every day at 01:00 UTC — change to your preferred time
+    - cron: "0 1 * * *"
+
+jobs:
+  sync:
+    name: Sync Hevy data and deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # -----------------------------------------------------------------------
+      # Hevy sync — choose ONE of the two methods below:
+      #
+      #   Method A  Free tier  →  HEVY_EMAIL + HEVY_PASSWORD secrets
+      #   Method B  Pro/API    →  HEVY_API_KEY secret
+      #
+      # Set whichever secret(s) apply in:
+      #   GitHub repo → Settings → Secrets and variables → Actions
+      # -----------------------------------------------------------------------
+
+      # Method A: official API (Hevy Pro / developer access)
+      # Requires secret: HEVY_API_KEY
+      - name: Sync via Hevy API (Pro)
+        if: ${{ secrets.HEVY_API_KEY != '' }}
+        env:
+          HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
+        run: |
+          pip install requests
+          python scripts/hevy_api_sync.py "$HEVY_API_KEY" \
+            --output src/static/workouts.json \
+            --incremental \
+            --tz-offset 8
+
+      # Method B: free-tier CSV export via browser automation
+      # Requires secrets: HEVY_EMAIL, HEVY_PASSWORD
+      - name: Sync via Hevy CSV export (Free)
+        if: ${{ secrets.HEVY_API_KEY == '' && secrets.HEVY_EMAIL != '' }}
+        env:
+          HEVY_EMAIL: ${{ secrets.HEVY_EMAIL }}
+          HEVY_PASSWORD: ${{ secrets.HEVY_PASSWORD }}
+        run: |
+          pip install requests playwright
+          playwright install chromium --with-deps
+          python scripts/hevy_web_export.py "$HEVY_EMAIL" "$HEVY_PASSWORD" \
+            --output src/static/workouts.json \
+            --tz-offset 8
+
+      - name: Commit updated workouts.json
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/static/workouts.json
+          git commit -m "sync: update workouts" || echo "nothing to commit"
+          git push || echo "nothing to push"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

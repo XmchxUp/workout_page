@@ -1,0 +1,330 @@
+/* IBM Plex Sans and IBM Plex Mono fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import 'tailwindcss';
+@import './mobile.css';
+
+/* ─── Workout page color system ─────────────────────────────────────────────
+   Indigo / violet palette — distinct identity from the running page's yellow.
+   Dark default (base :root), then light overrides.
+──────────────────────────────────────────────────────────────────────────── */
+:root {
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Heatmap calendar levels — dark default */
+  --wc-empty:  rgba(255, 255, 255, 0.05);
+  --wc-l1:     #312e81;   /* indigo-900  */
+  --wc-l2:     #4338ca;   /* indigo-700  */
+  --wc-l3:     #6366f1;   /* indigo-500  */
+  --wc-l4:     #a5b4fc;   /* indigo-300  */
+  --wc-today:  rgba(165, 180, 252, 0.55);
+  --wc-hover:  rgba(165, 180, 252, 0.15);
+
+  /* Workout table — dark default */
+  --wt-border:    rgba(255, 255, 255, 0.07);
+  --wt-hover:     rgba(129, 140, 248, 0.07);
+  --wt-chip-bg:   rgba(129, 140, 248, 0.12);
+  --wt-detail-bg: rgba(0,   0,   0,   0.30);
+  --wt-icon:      rgba(255, 255, 255, 0.25);
+  --wt-pr-color:  #fcd34d;                    /* amber-300  */
+  --wt-pr-bg:     rgba(252, 211, 77,  0.14);
+
+  /* Workout surface cards — dark default */
+  --wo-card-bg:     rgba(255, 255, 255, 0.04);
+  --wo-card-border: rgba(255, 255, 255, 0.07);
+  --wo-card-hover:  rgba(255, 255, 255, 0.06);
+  --wo-section-line: rgba(255, 255, 255, 0.08);
+
+  /* Semantic chart colors — dark default */
+  --wo-chart-a:        #818cf8;   /* indigo-400  */
+  --wo-chart-b:        #2dd4bf;   /* teal-400    */
+  --wo-chart-c:        #f472b6;   /* pink-400    */
+  --wo-series-1:       #818cf8;   /* indigo-400  */
+  --wo-series-2:       #f472b6;   /* pink-400    */
+  --wo-series-3:       #fb923c;   /* orange-400  */
+  --wo-series-4:       #34d399;   /* emerald-400 */
+  --wo-series-5:       #38bdf8;   /* sky-400     */
+  --wo-series-6:       #c084fc;   /* purple-400  */
+  --wo-series-7:       #fbbf24;   /* amber-400   */
+  --wo-series-8:       #2dd4bf;   /* teal-400    */
+  --wo-positive:       #34d399;   /* emerald-400 */
+  --wo-positive-bg:    rgba(52, 211, 153, 0.12);
+  --wo-negative:       #f87171;   /* red-400     */
+  --wo-negative-bg:    rgba(248, 113, 113, 0.10);
+  --wo-warning:        #fbbf24;   /* amber-400   */
+  --wo-warning-bg:     rgba(251, 191, 36, 0.12);
+  --wo-fitness:        #60a5fa;   /* blue-400    */
+  --wo-fatigue:        #f87171;   /* red-400     */
+  --wo-form:           #34d399;   /* emerald-400 */
+  --wo-grid:           rgba(255, 255, 255, 0.08);
+  --wo-axis-text:      rgba(255, 255, 255, 0.30);
+
+  /* Base colors — dark default */
+  --color-brand: #6366f1;         /* indigo-500  */
+  --color-bg: #0a0a0a;
+  --color-tx: #e0e7ff;            /* indigo-100  */
+  --color-hr: rgba(255, 255, 255, 0.10);
+  --color-run-row-hover-background: rgba(255, 255, 255, 0.06);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --wc-empty:  rgba(0, 0, 0, 0.06);
+    --wc-l1:     #e0e7ff;
+    --wc-l2:     #818cf8;
+    --wc-l3:     #4f46e5;
+    --wc-l4:     #3730a3;
+    --wc-today:  rgba(55, 48, 163, 0.45);
+    --wc-hover:  rgba(79, 70, 229, 0.12);
+
+    --wt-border:    rgba(0, 0, 0, 0.08);
+    --wt-hover:     rgba(99, 102, 241, 0.05);
+    --wt-chip-bg:   rgba(99, 102, 241, 0.09);
+    --wt-detail-bg: rgba(99, 102, 241, 0.04);
+    --wt-icon:      rgba(0, 0, 0, 0.28);
+    --wt-pr-color:  #92400e;
+    --wt-pr-bg:     rgba(146, 64, 14, 0.10);
+
+    --wo-card-bg:     rgba(255, 255, 255, 0.72);
+    --wo-card-border: rgba(0, 0, 0, 0.07);
+    --wo-card-hover:  rgba(0, 0, 0, 0.03);
+    --wo-section-line: rgba(0, 0, 0, 0.09);
+
+    --wo-chart-a:        #4338ca;
+    --wo-chart-b:        #0d9488;
+    --wo-chart-c:        #db2777;
+    --wo-series-1:       #4338ca;
+    --wo-series-2:       #db2777;
+    --wo-series-3:       #c2410c;
+    --wo-series-4:       #059669;
+    --wo-series-5:       #0369a1;
+    --wo-series-6:       #7c3aed;
+    --wo-series-7:       #b45309;
+    --wo-series-8:       #0d9488;
+    --wo-positive:       #059669;
+    --wo-positive-bg:    rgba(5, 150, 105, 0.10);
+    --wo-negative:       #dc2626;
+    --wo-negative-bg:    rgba(220, 38, 38, 0.08);
+    --wo-warning:        #b45309;
+    --wo-warning-bg:     rgba(180, 83, 9, 0.10);
+    --wo-fitness:        #1d4ed8;
+    --wo-fatigue:        #dc2626;
+    --wo-form:           #059669;
+    --wo-grid:           rgba(0, 0, 0, 0.07);
+    --wo-axis-text:      rgba(0, 0, 0, 0.30);
+
+    --color-brand: #4338ca;
+    --color-bg: #f5f5f5;
+    --color-tx: #1e1b4b;
+    --color-hr: rgba(0, 0, 0, 0.10);
+    --color-run-row-hover-background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Manual override (higher priority than media query) */
+[data-theme='dark'] {
+  --wc-empty:  rgba(255, 255, 255, 0.05);
+  --wc-l1:     #312e81;
+  --wc-l2:     #4338ca;
+  --wc-l3:     #6366f1;
+  --wc-l4:     #a5b4fc;
+  --wc-today:  rgba(165, 180, 252, 0.55);
+  --wc-hover:  rgba(165, 180, 252, 0.15);
+
+  --wt-border:    rgba(255, 255, 255, 0.07);
+  --wt-hover:     rgba(129, 140, 248, 0.07);
+  --wt-chip-bg:   rgba(129, 140, 248, 0.12);
+  --wt-detail-bg: rgba(0, 0, 0, 0.30);
+  --wt-icon:      rgba(255, 255, 255, 0.25);
+  --wt-pr-color:  #fcd34d;
+  --wt-pr-bg:     rgba(252, 211, 77, 0.14);
+
+  --wo-card-bg:     rgba(255, 255, 255, 0.04);
+  --wo-card-border: rgba(255, 255, 255, 0.07);
+  --wo-card-hover:  rgba(255, 255, 255, 0.06);
+  --wo-section-line: rgba(255, 255, 255, 0.08);
+
+  --wo-chart-a:        #818cf8;
+  --wo-chart-b:        #2dd4bf;
+  --wo-chart-c:        #f472b6;
+  --wo-series-1:       #818cf8;
+  --wo-series-2:       #f472b6;
+  --wo-series-3:       #fb923c;
+  --wo-series-4:       #34d399;
+  --wo-series-5:       #38bdf8;
+  --wo-series-6:       #c084fc;
+  --wo-series-7:       #fbbf24;
+  --wo-series-8:       #2dd4bf;
+  --wo-positive:       #34d399;
+  --wo-positive-bg:    rgba(52, 211, 153, 0.12);
+  --wo-negative:       #f87171;
+  --wo-negative-bg:    rgba(248, 113, 113, 0.10);
+  --wo-warning:        #fbbf24;
+  --wo-warning-bg:     rgba(251, 191, 36, 0.12);
+  --wo-fitness:        #60a5fa;
+  --wo-fatigue:        #f87171;
+  --wo-form:           #34d399;
+  --wo-grid:           rgba(255, 255, 255, 0.08);
+  --wo-axis-text:      rgba(255, 255, 255, 0.30);
+
+  --color-brand: #6366f1;
+  --color-bg: #0a0a0a;
+  --color-tx: #e0e7ff;
+  --color-hr: rgba(255, 255, 255, 0.10);
+  --color-run-row-hover-background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme='light'] {
+  --wc-empty:  rgba(0, 0, 0, 0.06);
+  --wc-l1:     #e0e7ff;
+  --wc-l2:     #818cf8;
+  --wc-l3:     #4f46e5;
+  --wc-l4:     #3730a3;
+  --wc-today:  rgba(55, 48, 163, 0.45);
+  --wc-hover:  rgba(79, 70, 229, 0.12);
+
+  --wt-border:    rgba(0, 0, 0, 0.08);
+  --wt-hover:     rgba(99, 102, 241, 0.05);
+  --wt-chip-bg:   rgba(99, 102, 241, 0.09);
+  --wt-detail-bg: rgba(99, 102, 241, 0.04);
+  --wt-icon:      rgba(0, 0, 0, 0.28);
+  --wt-pr-color:  #92400e;
+  --wt-pr-bg:     rgba(146, 64, 14, 0.10);
+
+  --wo-card-bg:     rgba(255, 255, 255, 0.72);
+  --wo-card-border: rgba(0, 0, 0, 0.07);
+  --wo-card-hover:  rgba(0, 0, 0, 0.03);
+  --wo-section-line: rgba(0, 0, 0, 0.09);
+
+  --wo-chart-a:        #4338ca;
+  --wo-chart-b:        #0d9488;
+  --wo-chart-c:        #db2777;
+  --wo-series-1:       #4338ca;
+  --wo-series-2:       #db2777;
+  --wo-series-3:       #c2410c;
+  --wo-series-4:       #059669;
+  --wo-series-5:       #0369a1;
+  --wo-series-6:       #7c3aed;
+  --wo-series-7:       #b45309;
+  --wo-series-8:       #0d9488;
+  --wo-positive:       #059669;
+  --wo-positive-bg:    rgba(5, 150, 105, 0.10);
+  --wo-negative:       #dc2626;
+  --wo-negative-bg:    rgba(220, 38, 38, 0.08);
+  --wo-warning:        #b45309;
+  --wo-warning-bg:     rgba(180, 83, 9, 0.10);
+  --wo-fitness:        #1d4ed8;
+  --wo-fatigue:        #dc2626;
+  --wo-form:           #059669;
+  --wo-grid:           rgba(0, 0, 0, 0.07);
+  --wo-axis-text:      rgba(0, 0, 0, 0.30);
+
+  --color-brand: #4338ca;
+  --color-bg: #f5f5f5;
+  --color-tx: #1e1b4b;
+  --color-hr: rgba(0, 0, 0, 0.10);
+  --color-run-row-hover-background: rgba(0, 0, 0, 0.04);
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-tx);
+    transition:
+      background-color 0.1s ease,
+      color 0.1s ease;
+    font-family: var(--font-sans);
+  }
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr {
+  border-top: none;
+  border-bottom: 1px solid;
+  border-color: var(--color-hr);
+  margin: 2rem 0;
+}
+
+/* ─── Neon glow animations ───────────────────────────────────────────────── */
+@keyframes neonFlicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.72; }
+}
+
+@keyframes neonPulse {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50%      { filter: brightness(1.25) saturate(1.15); }
+}
+
+@keyframes neonSweep {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 6px currentColor, 0 0 12px currentColor; }
+  50%      { text-shadow: 0 0 10px currentColor, 0 0 24px currentColor, 0 0 40px currentColor; }
+}
+
+@keyframes scanSweep {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  5%   { opacity: 0.4; }
+  95%  { opacity: 0.15; }
+  100% { transform: translateY(1200%); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(300%) skewX(-15deg); }
+}
+
+@keyframes borderChase {
+  0%   { border-color: #ff2d78; box-shadow: 0 0 8px #ff2d78, inset 0 0 8px rgba(255,45,120,0.05); }
+  25%  { border-color: #ffcc00; box-shadow: 0 0 8px #ffcc00, inset 0 0 8px rgba(255,204,0,0.05); }
+  50%  { border-color: #00f5ff; box-shadow: 0 0 8px #00f5ff, inset 0 0 8px rgba(0,245,255,0.05); }
+  75%  { border-color: #bf5fff; box-shadow: 0 0 8px #bf5fff, inset 0 0 8px rgba(191,95,255,0.05); }
+  100% { border-color: #ff2d78; box-shadow: 0 0 8px #ff2d78, inset 0 0 8px rgba(255,45,120,0.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes firePulse {
+  0%, 100% { filter: drop-shadow(0 0 4px #ff6b00) drop-shadow(0 0 8px #ff3300); }
+  50%      { filter: drop-shadow(0 0 8px #ffcc00) drop-shadow(0 0 16px #ff6b00); }
+}
+
+@keyframes pulseDrawIn {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes badgeUnlock {
+  0%   { transform: scale(0.6) rotate(-8deg); opacity: 0; }
+  60%  { transform: scale(1.12) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes flip3d {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}

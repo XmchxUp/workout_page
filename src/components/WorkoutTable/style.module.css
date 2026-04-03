@@ -1,0 +1,185 @@
+.tableContainer {
+  overflow-x: auto;
+  margin-top: 0;
+}
+
+/* ── Search bar ─────────────────────────────────────────────────────────── */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.searchInput {
+  flex: 1;
+  background: var(--wo-card-bg);
+  border: 1px solid var(--wt-border);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  color: inherit;
+  outline: none;
+  min-width: 0;
+  transition: border-color 0.15s;
+}
+
+.searchInput::placeholder {
+  opacity: 0.35;
+}
+
+.searchInput:focus {
+  border-color: var(--wc-l3);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.searchCount {
+  font-size: 0.72rem;
+  opacity: 0.4;
+  white-space: nowrap;
+}
+
+/* ── Table ──────────────────────────────────────────────────────────────── */
+.workoutTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.workoutTable thead th {
+  padding: 5px 12px;
+  text-align: left;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  opacity: 0.45;
+  border-bottom: 1px solid var(--wt-border);
+  white-space: nowrap;
+}
+
+.workoutRow td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--wt-border);
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: background 0.1s;
+}
+
+.workoutRow:hover td {
+  background: var(--wt-hover);
+}
+
+.highlighted td {
+  background: rgba(99, 102, 241, 0.09) !important;
+}
+
+.expandIcon {
+  width: 22px;
+  color: var(--wt-icon);
+  font-size: 0.65rem;
+  padding-right: 0 !important;
+  padding-left: 12px !important;
+}
+
+.dateCell {
+  min-width: 88px;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+}
+
+.timeLabel {
+  font-size: 0.68rem;
+  opacity: 0.38;
+  margin-top: 1px;
+}
+
+.titleCell {
+  font-weight: 500;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metaCell {
+  opacity: 0.6;
+  text-align: right;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Expanded detail row ────────────────────────────────────────────────── */
+.detailRow td {
+  padding: 0 12px 12px 32px;
+  background: var(--wt-detail-bg);
+}
+
+.exerciseList {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 10px;
+}
+
+.exerciseDetail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.exerciseName {
+  min-width: 190px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.exerciseSets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.setChip {
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: var(--wt-chip-bg);
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.warmupBadge {
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: rgba(234, 179, 8, 0.18);
+  color: rgb(234, 179, 8);
+  white-space: nowrap;
+}
+
+/* ── PR styles ──────────────────────────────────────────────────────────── */
+.prBadge {
+  margin-left: 6px;
+  font-size: 0.62rem;
+  padding: 1px 5px;
+  border-radius: 9999px;
+  background: var(--wt-pr-bg);
+  color: var(--wt-pr-color);
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.rowPrBadge {
+  margin-left: 5px;
+  color: var(--wt-pr-color);
+  font-size: 0.7rem;
+}
+
+.prChip {
+  background: var(--wt-pr-bg) !important;
+  color: var(--wt-pr-color) !important;
+  opacity: 1 !important;
+}
