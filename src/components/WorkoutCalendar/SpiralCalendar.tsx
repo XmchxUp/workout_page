@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import type { WorkoutSession } from '@/types/workout';
 import { IS_CHINESE } from '@/components/workout/WorkoutUI';
+import { toLocalDate } from '@/utils/workoutCalcs';
 
 const MONTH_NAMES_CN = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
 const MONTH_NAMES_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -12,6 +13,8 @@ interface Props {
 
 export default function SpiralCalendar({ workouts, year }: Props) {
   const data = useMemo(() => {
+    const today = toLocalDate(new Date());
+
     // Build date → volume map for the given year
     const volMap: Record<string, number> = {};
     workouts.forEach((w) => {
@@ -23,11 +26,10 @@ export default function SpiralCalendar({ workouts, year }: Props) {
 
     // Build day entries for all 12 months
     const months = Array.from({ length: 12 }, (_, mi) => {
-      const daysInMonth = new Date(parseInt(year), mi + 1, 0).getDate();
+      const daysInMonth = new Date(parseInt(year, 10), mi + 1, 0).getDate();
       const days = Array.from({ length: daysInMonth }, (_, di) => {
         const d = `${year}-${String(mi + 1).padStart(2, '0')}-${String(di + 1).padStart(2, '0')}`;
         const vol = volMap[d] ?? 0;
-        const today = new Date().toISOString().slice(0, 10);
         return { date: d, vol, ratio: vol / maxVol, isToday: d === today };
       });
       return days;

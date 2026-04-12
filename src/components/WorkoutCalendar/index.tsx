@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { WorkoutSession } from '@/types/workout';
+import type { WorkoutSession } from '@/types/workout';
 import styles from './style.module.css';
 
 interface WorkoutCalendarProps {
@@ -50,14 +50,14 @@ const WorkoutCalendar = ({ workouts, year, onDayClick }: WorkoutCalendarProps) =
   const maxCount = useMemo(() => Math.max(1, ...Object.values(dateMap)), [dateMap]);
 
   const grid = useMemo(() => {
-    const startDate = new Date(`${year}-01-01`);
+    const startDate = new Date(Number(year), 0, 1);
     const startDow = (startDate.getDay() + 6) % 7; // Monday=0
     const cells: Array<{
       date: string; count: number; weekIndex: number; dayIndex: number;
     }> = [];
     let weekIndex = 0;
     let dayIndex = startDow;
-    const endDate = new Date(`${year}-12-31`);
+    const endDate = new Date(Number(year), 11, 31);
     const cur = new Date(startDate);
 
     while (cur <= endDate) {
