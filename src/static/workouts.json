@@ -8231,5 +8231,223 @@
     "total_volume_kg": 9648.75,
     "total_sets": 26,
     "exercise_count": 6
+  },
+  {
+    "id": "87859df9f1fa",
+    "title": "2  胸➕ 肩前中束",
+    "start_time": "Apr 11, 2026, 6:33 AM",
+    "end_time": "Apr 11, 2026, 8:11 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 87
+          }
+        ]
+      },
+      {
+        "name": "Chest Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Bench Press (Smith Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 14
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Incline Bench Press (Smith Machine)",
+        "notes": "hui",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Chest Dip",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Seated Shoulder Press (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 10
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 9
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 9
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Lateral Raise (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 10.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 10.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 10.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 10.0,
+            "reps": 18
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 9330.0,
+    "total_sets": 28,
+    "exercise_count": 7
   }
 ]
