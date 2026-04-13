@@ -8233,6 +8233,468 @@
     "exercise_count": 6
   },
   {
+    "id": "c596a45837b6",
+    "title": "4 腿➕腹部",
+    "start_time": "Apr 12, 2026, 7:29 AM",
+    "end_time": "Apr 12, 2026, 8:51 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 217
+          }
+        ]
+      },
+      {
+        "name": "Squat (Smith Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Seated Leg Curl (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Leg Press Horizontal (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 105.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 105.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 105.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 105.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 30
+          }
+        ]
+      },
+      {
+        "name": "Leg Extension (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 13
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Hip Abduction (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 75.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 75.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 65.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 65.0,
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Hip Adduction (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 35.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 15
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 19480.0,
+    "total_sets": 34,
+    "exercise_count": 8
+  },
+  {
+    "id": "722037478916",
+    "title": "3 手臂 肱二头➕ 肱三头",
+    "start_time": "Apr 12, 2026, 6:19 AM",
+    "end_time": "Apr 12, 2026, 7:28 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 139
+          }
+        ]
+      },
+      {
+        "name": "EZ Bar Biceps Curl",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 10
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Triceps Extension (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Bicep Curl (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Triceps Rope Pushdown",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 11.25,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 11.25,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 11.25,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 11.25,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Preacher Curl (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 18.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 18.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 18.0,
+            "reps": 10
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 18.0,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Overhead Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 8.75,
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 8.75,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 8.75,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 8.75,
+            "reps": 20
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 4630.75,
+    "total_sets": 25,
+    "exercise_count": 7
+  },
+  {
     "id": "87859df9f1fa",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Apr 11, 2026, 6:33 AM",
