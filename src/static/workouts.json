@@ -1,5 +1,79 @@
 [
   {
+    "id": "2564fc559d24",
+    "title": "3 手臂 肱二头➕ 肱三头",
+    "start_time": "May 5, 2026, 6:44 AM",
+    "end_time": "May 5, 2026, 7:14 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "EZ Bar Biceps Curl",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 10
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 10
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 10
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Triceps Extension (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 15.0,
+            "reps": 12
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 1565.0,
+    "total_sets": 8,
+    "exercise_count": 2
+  },
+  {
     "id": "8b14468ca973",
     "title": "晚间锻炼 🏋️",
     "start_time": "May 3, 2026, 10:32 AM",
