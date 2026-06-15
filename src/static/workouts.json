@@ -4268,6 +4268,31 @@
     "exercise_count": 3
   },
   {
+    "id": "2c695fecee4f",
+    "title": "晨间锻炼 ☀️",
+    "start_time": "Jun 15, 2026, 3:57 AM",
+    "end_time": "Jun 15, 2026, 4:27 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Climbing",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 1801
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "33480e1c6b39",
     "title": "3 手臂 肱二头➕ 肱三头",
     "start_time": "Jun 12, 2026, 3:58 AM",
