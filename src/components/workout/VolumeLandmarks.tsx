@@ -6,15 +6,15 @@ import { IS_CHINESE } from './WorkoutUI';
 
 // RP-based volume landmarks (sets/week)
 const LANDMARKS: Record<string, { label: string; labelCN: string; mev: number; mavLo: number; mavHi: number; mrv: number; color: string }> = {
-  chest:      { label: 'Chest',      labelCN: '胸部', mev: 8,  mavLo: 12, mavHi: 20, mrv: 22, color: '#6366f1' },
-  back:       { label: 'Back',       labelCN: '背部', mev: 10, mavLo: 14, mavHi: 22, mrv: 25, color: '#8b5cf6' },
-  shoulders:  { label: 'Shoulders',  labelCN: '肩部', mev: 6,  mavLo: 16, mavHi: 22, mrv: 26, color: '#3b82f6' },
-  biceps:     { label: 'Biceps',     labelCN: '二头', mev: 6,  mavLo: 14, mavHi: 20, mrv: 26, color: '#14b8a6' },
-  triceps:    { label: 'Triceps',    labelCN: '三头', mev: 4,  mavLo: 10, mavHi: 14, mrv: 18, color: '#10b981' },
-  quads:      { label: 'Quads',      labelCN: '股四',  mev: 8,  mavLo: 12, mavHi: 18, mrv: 20, color: '#f59e0b' },
-  hamstrings: { label: 'Hamstrings', labelCN: '腘绳', mev: 6,  mavLo: 10, mavHi: 16, mrv: 20, color: '#f97316' },
-  glutes:     { label: 'Glutes',     labelCN: '臀部', mev: 0,  mavLo: 4,  mavHi: 12, mrv: 16, color: '#ec4899' },
-  abs:        { label: 'Core',       labelCN: '核心', mev: 0,  mavLo: 16, mavHi: 20, mrv: 25, color: '#06b6d4' },
+  chest:      { label: 'Chest',      labelCN: '胸部', mev: 8,  mavLo: 12, mavHi: 20, mrv: 22, color: 'var(--wo-series-4)' },
+  back:       { label: 'Back',       labelCN: '背部', mev: 10, mavLo: 14, mavHi: 22, mrv: 25, color: 'var(--wo-series-2)' },
+  shoulders:  { label: 'Shoulders',  labelCN: '肩部', mev: 6,  mavLo: 16, mavHi: 22, mrv: 26, color: 'var(--wo-series-3)' },
+  biceps:     { label: 'Biceps',     labelCN: '二头', mev: 6,  mavLo: 14, mavHi: 20, mrv: 26, color: 'var(--wo-series-6)' },
+  triceps:    { label: 'Triceps',    labelCN: '三头', mev: 4,  mavLo: 10, mavHi: 14, mrv: 18, color: 'var(--wo-series-5)' },
+  quads:      { label: 'Quads',      labelCN: '股四',  mev: 8,  mavLo: 12, mavHi: 18, mrv: 20, color: 'var(--wo-series-1)' },
+  hamstrings: { label: 'Hamstrings', labelCN: '腘绳', mev: 6,  mavLo: 10, mavHi: 16, mrv: 20, color: 'var(--wo-series-7)' },
+  glutes:     { label: 'Glutes',     labelCN: '臀部', mev: 0,  mavLo: 4,  mavHi: 12, mrv: 16, color: 'var(--wo-series-8)' },
+  abs:        { label: 'Core',       labelCN: '核心', mev: 0,  mavLo: 16, mavHi: 20, mrv: 25, color: 'var(--wo-series-5)' },
 };
 
 export default function VolumeLandmarks({ workouts }: { workouts: WorkoutSession[] }) {
@@ -50,10 +50,10 @@ export default function VolumeLandmarks({ workouts }: { workouts: WorkoutSession
       {/* Legend */}
       <div className="flex gap-3 mb-3 flex-wrap" style={{ fontSize: 9, opacity: 0.5 }}>
         {[
-          { color: 'rgba(128,128,128,0.3)', label: IS_CHINESE ? '不足 MEV' : 'Sub-MEV' },
-          { color: 'rgba(245,158,11,0.4)', label: IS_CHINESE ? '次优区间' : 'Sub-optimal' },
-          { color: 'rgba(16,185,129,0.5)', label: IS_CHINESE ? '最优 MAV' : 'MAV Optimal' },
-          { color: 'rgba(239,68,68,0.4)', label: IS_CHINESE ? '超出 MRV' : 'Over MRV' },
+          { color: 'var(--wo-axis-text)', label: IS_CHINESE ? '不足 MEV' : 'Sub-MEV' },
+          { color: 'color-mix(in srgb, var(--wo-warning) 42%, transparent)', label: IS_CHINESE ? '次优区间' : 'Sub-optimal' },
+          { color: 'color-mix(in srgb, var(--wo-positive) 48%, transparent)', label: IS_CHINESE ? '最优 MAV' : 'MAV Optimal' },
+          { color: 'color-mix(in srgb, var(--wo-negative) 42%, transparent)', label: IS_CHINESE ? '超出 MRV' : 'Over MRV' },
         ].map(({ color, label }) => (
           <div key={label} className="flex items-center gap-1">
             <div style={{ width: 10, height: 6, background: color, borderRadius: 2 }} />
@@ -69,10 +69,10 @@ export default function VolumeLandmarks({ workouts }: { workouts: WorkoutSession
           const pct = (v: number) => `${Math.min((v / MAX_DISPLAY) * 100, 100)}%`;
 
           // Determine zone color
-          let zoneColor = 'rgba(128,128,128,0.35)'; // sub-MEV
-          if (cur > mrv) zoneColor = 'rgba(239,68,68,0.7)';
-          else if (cur >= mavLo && cur <= mavHi) zoneColor = 'rgba(16,185,129,0.75)';
-          else if (cur > mev) zoneColor = 'rgba(245,158,11,0.65)';
+          let zoneColor = 'color-mix(in srgb, var(--wo-axis-text) 72%, transparent)'; // sub-MEV
+          if (cur > mrv) zoneColor = 'var(--wo-negative)';
+          else if (cur >= mavLo && cur <= mavHi) zoneColor = 'var(--wo-positive)';
+          else if (cur > mev) zoneColor = 'var(--wo-warning)';
 
           return (
             <div key={muscle}>
@@ -82,21 +82,21 @@ export default function VolumeLandmarks({ workouts }: { workouts: WorkoutSession
                 </span>
                 <div className="flex-1 relative mx-2" style={{ height: 14 }}>
                   {/* Track */}
-                  <div className="absolute inset-0 rounded-full" style={{ background: 'rgba(128,128,128,0.1)' }} />
+                  <div className="absolute inset-0 rounded-full" style={{ background: 'var(--wt-chip-bg)' }} />
                   {/* Zone bands */}
                   {/* Sub-MEV: 0 → MEV */}
                   <div className="absolute top-0 bottom-0 rounded-l-full" style={{
-                    left: 0, width: pct(mev), background: 'rgba(128,128,128,0.2)',
+                    left: 0, width: pct(mev), background: 'color-mix(in srgb, var(--wo-axis-text) 40%, transparent)',
                   }} />
                   {/* MAV zone */}
                   <div className="absolute top-0 bottom-0" style={{
                     left: pct(mavLo), width: `${((mavHi - mavLo) / MAX_DISPLAY) * 100}%`,
-                    background: 'rgba(16,185,129,0.18)',
+                    background: 'color-mix(in srgb, var(--wo-positive) 16%, transparent)',
                   }} />
                   {/* MEV line */}
-                  <div className="absolute top-0 bottom-0" style={{ left: pct(mev), width: 1, background: 'rgba(245,158,11,0.5)' }} />
+                  <div className="absolute top-0 bottom-0" style={{ left: pct(mev), width: 1, background: 'color-mix(in srgb, var(--wo-warning) 48%, transparent)' }} />
                   {/* MRV line */}
-                  <div className="absolute top-0 bottom-0" style={{ left: pct(mrv), width: 1, background: 'rgba(239,68,68,0.5)' }} />
+                  <div className="absolute top-0 bottom-0" style={{ left: pct(mrv), width: 1, background: 'color-mix(in srgb, var(--wo-negative) 48%, transparent)' }} />
                   {/* User bar */}
                   {cur > 0 && (
                     <div className="absolute top-1 bottom-1 rounded-full" style={{
@@ -110,7 +110,7 @@ export default function VolumeLandmarks({ workouts }: { workouts: WorkoutSession
                   {cur > 0 && (
                     <div className="absolute top-0 bottom-0" style={{
                       left: `calc(${pct(display)} - 1px)`,
-                      width: 2, background: 'white', opacity: 0.8, borderRadius: 1,
+                      width: 2, background: color, opacity: 0.85, borderRadius: 1,
                     }} />
                   )}
                 </div>

@@ -4,7 +4,7 @@ import { IS_CHINESE, PanelLabel } from './WorkoutUI';
 
 const TrainingHeartbeat = ({ workouts }: { workouts: WorkoutSession[] }) => {
   const DAYS = 90;
-  const { pts, maxVol, trainedCount } = useMemo(() => {
+  const { pts, trainedCount } = useMemo(() => {
     const vol: Record<string, number> = {};
     workouts.forEach((w) => { const d = w.start_time.slice(0, 10); vol[d] = (vol[d] || 0) + w.total_volume_kg; });
     const maxVol = Math.max(1, ...Object.values(vol));
@@ -13,7 +13,7 @@ const TrainingHeartbeat = ({ workouts }: { workouts: WorkoutSession[] }) => {
       const ds = [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
       return { ds, v: (vol[ds] || 0) / maxVol };
     });
-    return { pts, maxVol, trainedCount: pts.filter((p) => p.v > 0).length };
+    return { pts, trainedCount: pts.filter((p) => p.v > 0).length };
   }, [workouts]);
 
   const W = 500, H = 56, BASE = H - 8;
@@ -50,11 +50,11 @@ const TrainingHeartbeat = ({ workouts }: { workouts: WorkoutSession[] }) => {
           <linearGradient id="hbLine" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="var(--wc-l2)" />
             <stop offset="60%" stopColor="var(--wc-l4)" />
-            <stop offset="100%" stopColor="rgba(165,180,252,0.4)" />
+            <stop offset="100%" stopColor="var(--wo-series-8)" stopOpacity="0.55" />
           </linearGradient>
         </defs>
         {/* Baseline */}
-        <line x1={0} y1={BASE} x2={W} y2={BASE} stroke="rgba(128,128,128,0.12)" strokeWidth="0.8" />
+        <line x1={0} y1={BASE} x2={W} y2={BASE} stroke="var(--wo-grid)" strokeWidth="0.8" />
         {/* Area fill */}
         <path d={areaD} fill="url(#hbGrad)" />
         {/* Animated waveform */}
@@ -71,7 +71,7 @@ const TrainingHeartbeat = ({ workouts }: { workouts: WorkoutSession[] }) => {
         ) : null)}
         {/* Today marker */}
         <line x1={(DAYS - 1) * sx} y1={4} x2={(DAYS - 1) * sx} y2={BASE}
-          stroke="rgba(165,180,252,0.35)" strokeWidth="1" strokeDasharray="3 2" />
+          stroke="var(--wo-accent-line-soft)" strokeWidth="1" strokeDasharray="3 2" />
       </svg>
       <div className="flex justify-between mt-1" style={{ fontSize: 9, opacity: 0.28 }}>
         <span>{pts[0].ds.slice(5)}</span>

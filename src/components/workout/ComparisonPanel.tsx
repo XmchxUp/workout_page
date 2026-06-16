@@ -71,7 +71,7 @@ const Delta = ({ curr, prev }: { curr: number; prev: number; unit?: string }) =>
   const pct = Math.round(((curr - prev) / prev) * 100);
   const up = pct > 0;
   return (
-    <span style={{ fontSize: 11, fontWeight: 600, color: up ? '#22c55e' : '#ef4444', marginLeft: 4 }}>
+    <span style={{ fontSize: 11, fontWeight: 600, color: up ? 'var(--wo-positive)' : 'var(--wo-negative)', marginLeft: 4 }}>
       {up ? '↑' : '↓'}
       {Math.abs(pct)}%
     </span>
@@ -133,7 +133,7 @@ const ComparisonPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                 borderRadius: 99,
                 background: period === t.key ? 'var(--wc-l3)' : 'transparent',
                 color: period === t.key ? '#fff' : 'inherit',
-                border: `1px solid ${period === t.key ? 'transparent' : 'rgba(128,128,128,0.2)'}`,
+                border: `1px solid ${period === t.key ? 'transparent' : 'var(--wt-border)'}`,
                 cursor: 'pointer',
                 transition: 'all 0.15s',
               }}
@@ -146,7 +146,7 @@ const ComparisonPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
       {/* Period labels */}
       <div className="flex gap-3 mb-3 text-xs">
-        <span style={{ color: '#6366f1', fontWeight: 600 }}>▪ {label[0]}</span>
+        <span style={{ color: 'var(--wo-series-2)', fontWeight: 600 }}>▪ {label[0]}</span>
         <span style={{ opacity: 0.4, fontWeight: 600 }}>▪ {label[1]}</span>
       </div>
 
@@ -180,7 +180,7 @@ const ComparisonPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
         ].map((item) => (
           <div
             key={item.label}
-            style={{ background: 'rgba(128,128,128,0.05)', borderRadius: 10, padding: '8px 12px' }}
+            style={{ background: 'var(--wo-card-bg)', border: '1px solid var(--wo-card-border)', borderRadius: 10, padding: '8px 12px' }}
           >
             <div style={{ fontSize: 10, opacity: 0.4, marginBottom: 2 }}>{item.label}</div>
             <div style={{ fontSize: 16, fontWeight: 700 }}>
@@ -213,11 +213,11 @@ const ComparisonPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             width={44}
           />
           <Tooltip contentStyle={TOOLTIP_STYLE} />
-          <Bar dataKey="curr" name={label[0]} fill="#6366f1" radius={[0, 4, 4, 0]} barSize={8} />
+          <Bar dataKey="curr" name={label[0]} fill="var(--wo-series-2)" radius={[0, 4, 4, 0]} barSize={8} />
           <Bar
             dataKey="prev"
             name={label[1]}
-            fill="rgba(128,128,128,0.25)"
+            fill="var(--wo-series-8)"
             radius={[0, 4, 4, 0]}
             barSize={8}
           />

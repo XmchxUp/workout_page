@@ -6,14 +6,11 @@ import { IS_CHINESE, PanelLabel } from './WorkoutUI';
 
 const TOP_N = 12;
 
-// Interpolate rgba color from white→accent based on ratio
+// Interpolate a neutral-to-accent fill based on ratio.
 const heatColor = (ratio: number): string => {
-  if (ratio <= 0) return 'rgba(128,128,128,0.08)';
-  const a = 0.12 + ratio * 0.75;
-  const r = Math.round(99 + ratio * (245 - 99));
-  const g = Math.round(102 + ratio * (158 - 102));
-  const b = Math.round(241 + ratio * (11 - 241));
-  return `rgba(${r},${g},${b},${a.toFixed(2)})`;
+  if (ratio <= 0) return 'var(--wt-chip-bg)';
+  const intensity = Math.round(18 + ratio * 54);
+  return `color-mix(in srgb, var(--wo-series-2) ${intensity}%, transparent)`;
 };
 
 export default function ExerciseCoMatrix({ workouts }: { workouts: WorkoutSession[] }) {
@@ -83,16 +80,16 @@ export default function ExerciseCoMatrix({ workouts }: { workouts: WorkoutSessio
                     onMouseLeave={() => setHoveredCell(null)}
                     style={{
                       width: CELL, height: CELL, borderRadius: 4, marginRight: 2, flexShrink: 0,
-                      background: isSelf ? 'rgba(99,102,241,0.06)' : heatColor(ratio),
+                      background: isSelf ? 'var(--wo-accent-soft-bg)' : heatColor(ratio),
                       cursor: val > 0 && !isSelf ? 'default' : undefined,
-                      outline: isHovered ? '2px solid rgba(99,102,241,0.6)' : undefined,
+                      outline: isHovered ? '2px solid var(--wo-accent-line-strong)' : undefined,
                       outlineOffset: 1,
                       transition: 'outline 0.1s',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}
                   >
                     {val > 0 && !isSelf && (
-                      <span style={{ fontSize: 10, opacity: 0.75, fontWeight: 600, color: ratio > 0.6 ? '#fff' : undefined }}>
+                      <span style={{ fontSize: 10, opacity: 0.75, fontWeight: 600, color: ratio > 0.6 ? 'var(--color-tx)' : undefined }}>
                         {val}
                       </span>
                     )}

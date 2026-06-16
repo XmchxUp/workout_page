@@ -28,7 +28,7 @@ const buildHighlights = (workouts: WorkoutSession[]): Highlight[] => {
     icon: '🎯',
     title: IS_CHINESE ? '健身生涯第一步' : 'First Workout',
     desc: IS_CHINESE ? `完成了第一次训练 - ${first.title}` : `Started with ${first.title}`,
-    color: '#34d399',
+    color: 'var(--wo-series-6)',
     importance: 3,
   });
 
@@ -42,7 +42,7 @@ const buildHighlights = (workouts: WorkoutSession[]): Highlight[] => {
         icon: n >= 365 ? '🏆' : n >= 100 ? '💎' : '🎉',
         title: IS_CHINESE ? `第 ${n} 次训练` : `${n}th Workout`,
         desc: IS_CHINESE ? `完成了第 ${n} 次训练 - ${w.title}` : `Milestone: ${n} sessions`,
-        color: n >= 365 ? '#ffcc00' : n >= 100 ? '#a855f7' : '#6366f1',
+        color: n >= 365 ? 'var(--wt-pr-color)' : n >= 100 ? 'var(--wo-series-4)' : 'var(--wo-series-2)',
         importance: n >= 100 ? 3 : n >= 50 ? 2 : 1,
       });
     }
@@ -64,7 +64,7 @@ const buildHighlights = (workouts: WorkoutSession[]): Highlight[] => {
         desc: IS_CHINESE
           ? `累计总出力突破 ${m.toLocaleString()} kg`
           : `Reached ${m.toLocaleString()} kg total volume`,
-        color: m >= 500000 ? '#ffcc00' : m >= 100000 ? '#a855f7' : '#f59e0b',
+        color: m >= 500000 ? 'var(--wt-pr-color)' : m >= 100000 ? 'var(--wo-series-3)' : 'var(--wo-series-5)',
         importance: m >= 100000 ? 3 : 2,
       });
       nextMilestoneIdx++;
@@ -92,7 +92,7 @@ const buildHighlights = (workouts: WorkoutSession[]): Highlight[] => {
                 desc: IS_CHINESE
                   ? `${translateExercise(ex.name)} 推算最大力量达到 ${m}kg`
                   : `${ex.name} estimated 1RM hit ${m}kg`,
-                color: m >= 150 ? '#ef4444' : m >= 100 ? '#f97316' : '#f59e0b',
+                color: m >= 150 ? 'var(--wo-series-1)' : m >= 100 ? 'var(--wo-series-3)' : 'var(--wo-series-5)',
                 importance: m >= 150 ? 3 : m >= 100 ? 2 : 1,
               });
             }
@@ -117,7 +117,7 @@ const buildHighlights = (workouts: WorkoutSession[]): Highlight[] => {
       desc: IS_CHINESE
         ? `历史最长训练 ${Math.round(longestSession.duration_seconds / 60)} 分钟`
         : `Longest session: ${Math.round(longestSession.duration_seconds / 60)} min`,
-      color: '#06b6d4',
+      color: 'var(--wo-series-7)',
       importance: 2,
     });
   }
@@ -136,7 +136,7 @@ const buildHighlights = (workouts: WorkoutSession[]): Highlight[] => {
       desc: IS_CHINESE
         ? `单次训练出力 ${bestVol.total_volume_kg.toLocaleString()} kg`
         : `${bestVol.total_volume_kg.toLocaleString()} kg in one session`,
-      color: '#818cf8',
+      color: 'var(--wo-series-4)',
       importance: 3,
     });
   }
@@ -169,7 +169,7 @@ const buildHighlights = (workouts: WorkoutSession[]): Highlight[] => {
         desc: IS_CHINESE
           ? `达成连续训练${days}天的里程碑`
           : `Achieved ${days} consecutive training days`,
-        color: days >= 30 ? '#f97316' : '#fbbf24',
+        color: days >= 30 ? 'var(--wo-series-1)' : 'var(--wo-series-3)',
         importance: days >= 21 ? 3 : 2,
       });
     }
@@ -217,7 +217,7 @@ const HighlightReel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             top: 0,
             bottom: 0,
             width: 1,
-            background: 'rgba(128,128,128,0.12)',
+            background: 'var(--wo-section-line)',
           }}
         />
 
@@ -236,8 +236,8 @@ const HighlightReel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                   borderRadius: '50%',
                   flexShrink: 0,
                   zIndex: 1,
-                  background: `${h.color}20`,
-                  border: `2px solid ${h.color}50`,
+                  background: `color-mix(in srgb, ${h.color} 14%, transparent)`,
+                  border: `2px solid color-mix(in srgb, ${h.color} 32%, transparent)`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -252,7 +252,7 @@ const HighlightReel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                   flex: 1,
                   paddingBottom: 12,
                   borderBottom:
-                    idx < visible.length - 1 ? '1px solid rgba(128,128,128,0.07)' : 'none',
+                    idx < visible.length - 1 ? '1px solid var(--wo-section-line)' : 'none',
                 }}
               >
                 <div className="flex items-center gap-2 mb-0.5">
@@ -271,7 +271,7 @@ const HighlightReel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                         fontSize: 8,
                         padding: '1px 5px',
                         borderRadius: 99,
-                        background: h.color + '20',
+                        background: `color-mix(in srgb, ${h.color} 14%, transparent)`,
                         color: h.color,
                         fontWeight: 700,
                       }}
@@ -296,8 +296,8 @@ const HighlightReel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             width: '100%',
             padding: '7px 0',
             borderRadius: 10,
-            background: 'rgba(128,128,128,0.05)',
-            border: '1px solid rgba(128,128,128,0.1)',
+            background: 'var(--wo-card-bg)',
+            border: '1px solid var(--wo-card-border)',
             cursor: 'pointer',
             fontSize: 12,
             opacity: 0.55,

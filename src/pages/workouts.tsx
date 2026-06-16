@@ -63,8 +63,11 @@ import FatigueCurve from '@/components/workout/FatigueCurve';
 import ExpandableCard from '@/components/workout/ExpandableCard';
 
 // Shared Recharts config — avoids repeating identical props across all charts
-const CHART_GRID = { strokeDasharray: '3 3', stroke: 'rgba(128,128,128,0.1)' } as const;
+const CHART_GRID = { strokeDasharray: '3 3', stroke: 'var(--wo-grid)' } as const;
 const CHART_TICK = { fontSize: 8, fill: 'currentColor', opacity: 0.35 } as const;
+const ACCENT_SOFT_BG = 'var(--wo-accent-soft-bg)';
+const ACCENT_SOFT_BG_STRONG = 'var(--wo-accent-soft-bg-strong)';
+const ACCENT_LINE_STRONG = 'var(--wo-accent-line-strong)';
 
 // =============================================================================
 // CHART COMPONENTS
@@ -616,7 +619,7 @@ const RecoveryRhythm = ({ workouts }: { workouts: WorkoutSession[] }) => {
         ].map(({ val, label, warn }) => (
           <div key={label} className="rounded-lg py-2.5 px-1"
             style={{ background: 'var(--wt-chip-bg)', border: '1px solid var(--wo-card-border)' }}>
-            <div className={`text-sm font-bold leading-tight ${warn ? 'text-orange-400' : ''}`}>{val}</div>
+            <div className="text-sm font-bold leading-tight" style={{ color: warn ? 'var(--wo-warning)' : undefined }}>{val}</div>
             <div className="text-xs opacity-35 mt-0.5">{label}</div>
           </div>
         ))}
@@ -746,7 +749,7 @@ const BestLiftsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
           <div key={name}>
             <div
               className="flex items-center gap-2 text-sm cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-all"
-              style={selected === name ? { background: 'rgba(99,102,241,0.12)', borderRadius: 8 } : {}}
+              style={selected === name ? { background: ACCENT_SOFT_BG, borderRadius: 8 } : {}}
               onClick={() => setSelected((prev) => (prev === name ? null : name))}
             >
               <span className="flex-1 opacity-75 truncate text-xs">{translateExercise(name)}</span>
@@ -848,7 +851,7 @@ const ExerciseProgress = ({ name, workouts, onClose }: { name: string; workouts:
         <div className="flex items-center gap-2 min-w-0">
           <span className="font-semibold text-sm truncate" style={{ color: 'var(--wc-l4)' }}>{translateExercise(name)}</span>
           {predictionLabel && (
-            <span className="text-xs px-1.5 py-0.5 rounded shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--wc-l3)' }}>
+            <span className="text-xs px-1.5 py-0.5 rounded shrink-0" style={{ background: ACCENT_SOFT_BG, color: 'var(--wc-l3)' }}>
               {predictionLabel}
             </span>
           )}
@@ -871,14 +874,14 @@ const ExerciseProgress = ({ name, workouts, onClose }: { name: string; workouts:
                 }}
               />
               <Line yAxisId="e" type="monotone" dataKey="e1rm" stroke="var(--wc-l3)" strokeWidth={2} connectNulls={false}
-                dot={(props: any) => {
+                dot={(props: { payload?: { e1rm?: number; date?: string }; key?: string; cx?: number; cy?: number }) => {
                   if (props.payload.e1rm === undefined) return <g key={props.key} />;
                   const isPR = prDates.has(props.payload.date);
                   return <circle key={props.key} cx={props.cx} cy={props.cy} r={isPR ? 5 : 3}
                     fill={isPR ? 'var(--wt-pr-color)' : 'var(--wc-l3)'} stroke="none" />;
                 }}
               />
-              <Line yAxisId="e" type="monotone" dataKey="predicted" stroke="rgba(99,102,241,0.6)" strokeWidth={1.5}
+              <Line yAxisId="e" type="monotone" dataKey="predicted" stroke={ACCENT_LINE_STRONG} strokeWidth={1.5}
                 strokeDasharray="6 3" dot={false} connectNulls={false} />
               <Line yAxisId="v" type="monotone" dataKey="sessionVol" stroke="var(--wc-l2)" strokeWidth={1.5} strokeDasharray="4 2"
                 dot={{ r: 2, fill: 'var(--wc-l2)', stroke: 'none' }} connectNulls={false} />
@@ -887,7 +890,7 @@ const ExerciseProgress = ({ name, workouts, onClose }: { name: string; workouts:
           <div className="mt-2 flex items-center gap-4 text-xs opacity-45 flex-wrap">
             <span><span style={{ color: 'var(--wt-pr-color)' }}>●</span> e1RM PR</span>
             <span><span style={{ color: 'var(--wc-l2)' }}>– –</span> {IS_CHINESE ? '单次出力' : 'Session Vol'}</span>
-            {predictionLabel && <span><span style={{ color: 'rgba(99,102,241,0.7)' }}>· ·</span> {IS_CHINESE ? '趋势预测' : 'Trend'}</span>}
+            {predictionLabel && <span><span style={{ color: ACCENT_LINE_STRONG }}>· ·</span> {IS_CHINESE ? '趋势预测' : 'Trend'}</span>}
             <span>{data.length} sessions</span>
           </div>
         </>
@@ -929,7 +932,7 @@ const PRTimeline = ({ workouts }: { workouts: WorkoutSession[] }) => {
               </div>
               <div className="shrink-0">
                 {isFirst
-                  ? <span className="text-xs px-1.5 py-0.5 rounded" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--wc-l4)' }}>首次</span>
+                  ? <span className="text-xs px-1.5 py-0.5 rounded" style={{ background: ACCENT_SOFT_BG, color: 'var(--wc-l4)' }}>首次</span>
                   : pct !== null
                     ? <span style={{ color: 'var(--wt-pr-color)' }} className="font-semibold">+{pct}%</span>
                     : null}
@@ -978,11 +981,11 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
   const mc = (muscle: string): string => {
     const r = ratio(muscle);
     if (r === 0) return 'rgba(100,100,130,0.1)';
-    if (r < 0.15) return 'rgba(99,102,241,0.28)';
-    if (r < 0.35) return 'rgba(99,102,241,0.52)';
-    if (r < 0.6)  return 'rgba(129,140,248,0.75)';
-    if (r < 0.82) return 'rgba(165,180,252,0.9)';
-    return 'rgba(224,231,255,1)';
+    if (r < 0.15) return 'rgba(var(--wo-accent-rgb), 0.22)';
+    if (r < 0.35) return 'rgba(var(--wo-accent-rgb), 0.4)';
+    if (r < 0.6) return 'rgba(var(--wo-accent-rgb), 0.58)';
+    if (r < 0.82) return 'rgba(var(--wo-accent-rgb), 0.76)';
+    return 'rgba(var(--wo-accent-rgb), 0.92)';
   };
 
   // Glow filter id suffix per side to avoid collision
@@ -1087,7 +1090,7 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
   };
 
   const [showFront, setShowFront] = useState(true);
-  const sorted = Object.entries(volumes).filter(([_, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+  const sorted = Object.entries(volumes).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
 
   return (
     <div>
@@ -1136,7 +1139,7 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
       <div className="flex items-center gap-2 mt-3 mb-2.5">
         <span style={{ fontSize: 10, opacity: 0.3 }}>{IS_CHINESE ? '少' : 'Low'}</span>
         <div className="flex-1 h-2 rounded-full" style={{
-          background: 'linear-gradient(90deg, rgba(99,102,241,0.28), rgba(99,102,241,0.52), rgba(129,140,248,0.75), rgba(165,180,252,0.9), rgba(224,231,255,1))',
+          background: 'linear-gradient(90deg, rgba(var(--wo-accent-rgb), 0.24), rgba(var(--wo-accent-rgb), 0.42), rgba(var(--wo-accent-rgb), 0.6), rgba(var(--wo-accent-rgb), 0.78), rgba(var(--wo-accent-rgb), 0.94))',
         }} />
         <span style={{ fontSize: 10, opacity: 0.3 }}>{IS_CHINESE ? '多' : 'High'}</span>
       </div>
@@ -1264,7 +1267,7 @@ const HeroStat = ({ label, value, unit, accent, trend }: {
       transition: 'box-shadow 0.2s ease, border-color 0.2s ease',
     }}
     onMouseEnter={(e) => {
-      (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 16px rgba(99,102,241,0.12)';
+      (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--wo-card-shadow-hover)';
       (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--wc-l3)';
     }}
     onMouseLeave={(e) => {
@@ -1285,7 +1288,7 @@ const HeroStat = ({ label, value, unit, accent, trend }: {
       {unit && <span className="text-xs opacity-50 mb-0.5">{unit}</span>}
     </div>
     {trend !== undefined && trend !== 0 && (
-      <span className={`text-xs font-medium tabular-nums mt-0.5 ${trend > 0 ? 'text-green-400' : 'text-red-400'}`}>
+      <span className="text-xs font-medium tabular-nums mt-0.5" style={{ color: trend > 0 ? 'var(--wo-positive)' : 'var(--wo-negative)' }}>
         {trend > 0 ? '↑' : '↓'}{Math.abs(trend)}%
       </span>
     )}
@@ -1302,7 +1305,7 @@ const PRCelebration = ({ prs, onClose }: { prs: Array<{ exercise: string; e1rm: 
     left: `${Math.random() * 100}%`,
     delay: `${Math.random() * 1.5}s`,
     duration: `${1.2 + Math.random() * 1.2}s`,
-    color: ['#f59e0b', '#10b981', '#6366f1', '#ec4899', '#14b8a6', '#f97316'][i % 6],
+    color: ['var(--wt-pr-color)', 'var(--wo-positive)', 'var(--wo-series-2)', 'var(--wo-series-4)', 'var(--wo-series-6)', 'var(--wo-warning)'][i % 6],
     size: `${6 + Math.random() * 8}px`,
     shape: i % 3 === 0 ? 'circle' : i % 3 === 1 ? 'square' : 'triangle',
   })), []);
@@ -1310,7 +1313,7 @@ const PRCelebration = ({ prs, onClose }: { prs: Array<{ exercise: string; e1rm: 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center"
-      style={{ background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(4px)' }}
+      style={{ background: 'var(--wo-modal-backdrop)', backdropFilter: 'blur(4px)' }}
       onClick={onClose}
     >
       {/* Confetti */}
@@ -1342,30 +1345,30 @@ const PRCelebration = ({ prs, onClose }: { prs: Array<{ exercise: string; e1rm: 
       <div
         className="relative z-10 rounded-2xl p-8 max-w-sm w-full mx-4 text-center"
         style={{
-          background: 'linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%)',
-          border: '2px solid rgba(99,102,241,0.5)',
-          boxShadow: '0 0 60px rgba(99,102,241,0.4)',
+          background: 'linear-gradient(135deg, rgba(var(--wo-accent-rgb), 0.18), var(--wo-card-bg) 30%, rgba(var(--wo-shadow-rgb), 0.92) 100%)',
+          border: '1px solid var(--wo-accent-soft-border)',
+          boxShadow: 'var(--wo-modal-shadow)',
           animation: 'prPop 0.4s ease-out forwards',
         }}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="text-5xl mb-3">🏆</div>
-        <h2 className="text-2xl font-extrabold mb-1" style={{ color: '#f59e0b', textShadow: '0 0 20px rgba(245,158,11,0.5)' }}>
+        <h2 className="text-2xl font-extrabold mb-1" style={{ color: 'var(--wt-pr-color)', textShadow: '0 0 18px rgba(var(--wo-accent-rgb), 0.2)' }}>
           {IS_CHINESE ? '新纪录！' : 'New PR!'}
         </h2>
         <p className="text-sm opacity-50 mb-5">{IS_CHINESE ? '今天的训练创造了个人新纪录' : "Today's training set a new personal record"}</p>
         <div className="space-y-2 mb-6">
           {prs.map((pr) => (
             <div key={pr.exercise} className="flex items-center justify-between px-4 py-2 rounded-lg"
-              style={{ background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)' }}>
+              style={{ background: ACCENT_SOFT_BG, border: '1px solid var(--wo-accent-soft-border)' }}>
               <span className="text-sm opacity-80 truncate mr-2">{translateExercise(pr.exercise)}</span>
-              <span className="text-sm font-bold tabular-nums shrink-0" style={{ color: '#f59e0b' }}>{pr.e1rm} kg e1RM</span>
+              <span className="text-sm font-bold tabular-nums shrink-0" style={{ color: 'var(--wt-pr-color)' }}>{pr.e1rm} kg e1RM</span>
             </div>
           ))}
         </div>
         <button onClick={onClose}
           className="px-6 py-2 rounded-full text-sm font-semibold transition-all"
-          style={{ background: 'rgba(99,102,241,0.8)', color: 'white' }}>
+          style={{ background: 'rgba(var(--wo-accent-rgb), 0.86)', color: '#fffaf6' }}>
           {IS_CHINESE ? '太棒了！' : 'Awesome!'}
         </button>
       </div>
@@ -1451,7 +1454,7 @@ const WorkoutsPage = () => {
   const doubleSessionDates = useMemo(() => {
     const counts: Record<string, number> = {};
     filteredWorkouts.forEach((w) => { const d = w.start_time.slice(0, 10); counts[d] = (counts[d] || 0) + 1; });
-    return new Set(Object.entries(counts).filter(([_, c]) => c > 1).map(([d]) => d));
+    return new Set(Object.entries(counts).filter(([, c]) => c > 1).map(([d]) => d));
   }, [filteredWorkouts]);
 
   const handleYearClick = useCallback((y: string) => {
@@ -1466,10 +1469,17 @@ const WorkoutsPage = () => {
     try {
       const saved = localStorage.getItem('wo-section-collapsed');
       return saved ? (JSON.parse(saved) as Record<string, boolean>) : {};
-    } catch { return {}; }
+    } catch {
+      // Ignore unavailable or invalid localStorage state.
+      return {};
+    }
   });
   useEffect(() => {
-    try { localStorage.setItem('wo-section-collapsed', JSON.stringify(collapsed)); } catch {}
+    try {
+      localStorage.setItem('wo-section-collapsed', JSON.stringify(collapsed));
+    } catch {
+      // Ignore localStorage write failures.
+    }
   }, [collapsed]);
   const toggleSection = useCallback((key: string) => {
     setCollapsed((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -1551,8 +1561,8 @@ const WorkoutsPage = () => {
               <button onClick={() => setShowWrapped(true)}
                 className="text-xs px-3 py-1.5 rounded-full font-semibold transition-all"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(245,158,11,0.15))',
-                  border: '1px solid rgba(99,102,241,0.35)',
+                  background: 'linear-gradient(135deg, rgba(var(--wo-accent-rgb), 0.18), rgba(var(--wo-warning-rgb), 0.12))',
+                  border: '1px solid var(--wo-accent-soft-border)',
                   color: 'var(--wc-l3)',
                 }}>
                 {IS_CHINESE ? '✦ 年度总结' : '✦ Wrapped'}
@@ -1608,9 +1618,9 @@ const WorkoutsPage = () => {
                   <button key={v} onClick={() => setCalendarView(v)}
                     className="text-xs px-3 py-1 rounded-full transition-all"
                     style={{
-                      background: calendarView === v ? 'rgba(99,102,241,0.25)' : 'rgba(128,128,128,0.1)',
+                      background: calendarView === v ? ACCENT_SOFT_BG_STRONG : 'var(--wo-card-hover)',
                       color: calendarView === v ? 'var(--wc-l3)' : undefined,
-                      border: calendarView === v ? '1px solid rgba(99,102,241,0.4)' : '1px solid transparent',
+                      border: calendarView === v ? '1px solid var(--wo-accent-soft-border)' : '1px solid transparent',
                     }}>
                     {v === 'grid' ? (IS_CHINESE ? '方格' : 'Grid') : (IS_CHINESE ? '螺旋' : 'Spiral')}
                   </button>
@@ -1736,9 +1746,9 @@ const WorkoutsPage = () => {
                       onClick={() => { setGroupVariants((v) => !v); setSelectedExercise(null); }}
                       className="text-xs px-2 py-0.5 rounded-full transition-all"
                       style={{
-                        background: groupVariants ? 'rgba(99,102,241,0.25)' : 'rgba(128,128,128,0.1)',
+                        background: groupVariants ? ACCENT_SOFT_BG_STRONG : 'var(--wo-card-hover)',
                         color: groupVariants ? 'var(--wc-l3)' : undefined,
-                        border: groupVariants ? '1px solid rgba(99,102,241,0.4)' : '1px solid transparent',
+                        border: groupVariants ? '1px solid var(--wo-accent-soft-border)' : '1px solid transparent',
                       }}
                     >
                       {IS_CHINESE ? '合并变体' : 'Merge'} ⇄
@@ -1750,12 +1760,12 @@ const WorkoutsPage = () => {
                         <div key={stem}>
                           <div
                             className="flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-all"
-                            style={selectedExercise === stem ? { background: 'rgba(99,102,241,0.12)' } : {}}
+                            style={selectedExercise === stem ? { background: ACCENT_SOFT_BG } : {}}
                             onClick={() => setSelectedExercise((prev) => prev === stem ? null : stem)}
                           >
                             <span className="flex-1 opacity-75 truncate">{translateExercise(stem)}</span>
                             {variants.length > 1 && (
-                              <span className="text-xs px-1 rounded" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--wc-l3)', opacity: 0.8 }}>
+                              <span className="text-xs px-1 rounded" style={{ background: ACCENT_SOFT_BG, color: 'var(--wc-l3)', opacity: 0.8 }}>
                                 {variants.length}
                               </span>
                             )}
@@ -1771,7 +1781,7 @@ const WorkoutsPage = () => {
                         <div key={name}>
                           <div
                             className="flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-all"
-                            style={selectedExercise === name ? { background: 'rgba(99,102,241,0.12)' } : {}}
+                            style={selectedExercise === name ? { background: ACCENT_SOFT_BG } : {}}
                             onClick={() => handleSelectExercise(name)}
                           >
                             <span className="flex-1 opacity-75 truncate">{translateExercise(name)}</span>

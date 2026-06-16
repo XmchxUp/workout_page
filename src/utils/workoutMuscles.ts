@@ -22,10 +22,16 @@ export const MUSCLE_LABELS_CN: Record<string, string> = {
 };
 
 export const MUSCLE_CHART_COLORS: Record<string, string> = {
-  back:       '#6366f1', chest:      '#a855f7', quads:      '#ec4899',
-  shoulders:  '#f97316', biceps:     '#3b82f6', triceps:    '#10b981',
-  hamstrings: '#f59e0b', glutes:     '#ef4444', abs:        '#06b6d4',
-  calves:     '#84cc16',
+  back:       'var(--wo-series-2)',
+  chest:      'var(--wo-series-4)',
+  quads:      'var(--wo-series-1)',
+  shoulders:  'var(--wo-series-3)',
+  biceps:     'var(--wo-series-6)',
+  triceps:    'var(--wo-series-5)',
+  hamstrings: 'var(--wo-series-7)',
+  glutes:     'var(--wo-series-8)',
+  abs:        'var(--wo-series-5)',
+  calves:     'var(--wo-series-6)',
 };
 
 export const PUSH_MUSCLES  = ['chest', 'shoulders', 'triceps'];
@@ -46,12 +52,12 @@ export const getExerciseMuscles = (name: string): string[] => {
 // Hexagram axes — 6 muscle groups for the radar chart
 // ─────────────────────────────────────────────────────────────────────────────
 export const HEXA_AXES = [
-  { key: 'back',      label: '背部',  muscles: ['back'],                              color: '#6366f1' },
-  { key: 'shoulders', label: '肩部',  muscles: ['shoulders'],                         color: '#f97316' },
-  { key: 'chest',     label: '胸部',  muscles: ['chest'],                             color: '#a855f7' },
-  { key: 'core',      label: '核心',  muscles: ['abs'],                               color: '#06b6d4' },
-  { key: 'legs',      label: '腿部',  muscles: ['quads','hamstrings','glutes','calves'], color: '#ec4899' },
-  { key: 'arms',      label: '手臂',  muscles: ['biceps','triceps'],                  color: '#3b82f6' },
+  { key: 'back',      label: '背部',  muscles: ['back'],                              color: 'var(--wo-series-2)' },
+  { key: 'shoulders', label: '肩部',  muscles: ['shoulders'],                         color: 'var(--wo-series-3)' },
+  { key: 'chest',     label: '胸部',  muscles: ['chest'],                             color: 'var(--wo-series-4)' },
+  { key: 'core',      label: '核心',  muscles: ['abs'],                               color: 'var(--wo-series-5)' },
+  { key: 'legs',      label: '腿部',  muscles: ['quads','hamstrings','glutes','calves'], color: 'var(--wo-series-1)' },
+  { key: 'arms',      label: '手臂',  muscles: ['biceps','triceps'],                  color: 'var(--wo-series-6)' },
 ] as const;
 
 export type HexaKey = typeof HEXA_AXES[number]['key'];

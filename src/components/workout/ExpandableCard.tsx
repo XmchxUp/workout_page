@@ -39,7 +39,7 @@ export default function ExpandableCard({ children, title, className = '' }: Prop
           transition: 'box-shadow 0.2s ease, border-color 0.2s ease',
         }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 20px rgba(99,102,241,0.1)';
+          (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--wo-card-shadow-hover)';
           (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--wc-l2)';
         }}
         onMouseLeave={(e) => {
@@ -54,8 +54,8 @@ export default function ExpandableCard({ children, title, className = '' }: Prop
           style={{
             position: 'absolute', top: 8, right: 8, zIndex: 1,
             width: 24, height: 24, borderRadius: 6,
-            background: 'rgba(128,128,128,0.1)',
-            border: '1px solid rgba(128,128,128,0.15)',
+            background: 'var(--wo-card-hover)',
+            border: '1px solid var(--wo-card-border)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             cursor: 'pointer', opacity: 0, transition: 'opacity 0.15s',
             fontSize: 11, color: 'currentColor',
@@ -72,7 +72,7 @@ export default function ExpandableCard({ children, title, className = '' }: Prop
       {expanded && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(6px)' }}
+          style={{ background: 'var(--wo-modal-backdrop)', backdropFilter: 'blur(8px)' }}
           onClick={(e) => { if (e.target === e.currentTarget) setExpanded(false); }}
         >
           <div
@@ -81,7 +81,7 @@ export default function ExpandableCard({ children, title, className = '' }: Prop
             style={{
               background: 'var(--wo-card-bg)',
               border: '1px solid var(--wo-card-border)',
-              boxShadow: '0 0 60px rgba(99,102,241,0.2)',
+              boxShadow: 'var(--wo-modal-shadow)',
             }}
           >
             {/* Header */}

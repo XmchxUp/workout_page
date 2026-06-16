@@ -79,7 +79,7 @@ const MuscleRecovery = ({ workouts }: { workouts: WorkoutSession[] }) => {
   }, [workouts]);
 
   const statusColor = (s: string) =>
-    s === 'ready' ? '#22c55e' : s === 'partial' ? '#f59e0b' : '#ef4444';
+    s === 'ready' ? 'var(--wo-positive)' : s === 'partial' ? 'var(--wo-warning)' : 'var(--wo-negative)';
 
   const statusLabel = (s: string) =>
     s === 'ready'   ? (IS_CHINESE ? '✓ 可以训练' : '✓ Ready') :
@@ -115,7 +115,8 @@ const MuscleRecovery = ({ workouts }: { workouts: WorkoutSession[] }) => {
                 )}
                 <span style={{
                   fontSize: 10, fontWeight: 600, padding: '1px 7px', borderRadius: 99,
-                  background: statusColor(r.status) + '20', color: statusColor(r.status),
+                  background: `color-mix(in srgb, ${statusColor(r.status)} 14%, transparent)`,
+                  color: statusColor(r.status),
                 }}>
                   {r.status === 'ready' || r.status === 'never'
                     ? statusLabel(r.status)
@@ -123,15 +124,15 @@ const MuscleRecovery = ({ workouts }: { workouts: WorkoutSession[] }) => {
                 </span>
               </div>
             </div>
-            <div style={{ height: 5, borderRadius: 99, background: 'rgba(128,128,128,0.12)', overflow: 'hidden' }}>
+            <div style={{ height: 5, borderRadius: 99, background: 'var(--wt-chip-bg)', overflow: 'hidden' }}>
               <div style={{
                 height: '100%', borderRadius: 99,
                 width: `${r.pct}%`,
                 background: r.status === 'ready'
-                  ? 'linear-gradient(90deg, #22c55e, #4ade80)'
+                  ? 'linear-gradient(90deg, color-mix(in srgb, var(--wo-positive) 68%, white), var(--wo-positive))'
                   : r.status === 'partial'
-                  ? 'linear-gradient(90deg, #f59e0b, #fbbf24)'
-                  : 'linear-gradient(90deg, #ef4444, #f87171)',
+                  ? 'linear-gradient(90deg, color-mix(in srgb, var(--wo-warning) 70%, white), var(--wo-warning))'
+                  : 'linear-gradient(90deg, color-mix(in srgb, var(--wo-negative) 70%, white), var(--wo-negative))',
                 transition: 'width 1s ease',
               }} />
             </div>

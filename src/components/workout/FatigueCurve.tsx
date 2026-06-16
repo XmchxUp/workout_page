@@ -82,23 +82,23 @@ export default function FatigueCurve({ workouts }: { workouts: WorkoutSession[] 
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -28, bottom: 0 }}>
           <defs>
             <linearGradient id="fatGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%"  stopColor="#6366f1" stopOpacity={0.25} />
-              <stop offset="95%" stopColor="#6366f1" stopOpacity={0.02} />
+              <stop offset="5%"  stopColor="var(--wo-series-2)" stopOpacity={0.24} />
+              <stop offset="95%" stopColor="var(--wo-series-2)" stopOpacity={0.02} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(128,128,128,0.08)" />
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--wo-grid)" />
           {/* Golden window */}
           {goldenEnd > 0 && (
             <ReferenceArea
               x1={data[0].pos} x2={data[Math.min(goldenEnd - 1, data.length - 1)].pos}
-              fill="rgba(16,185,129,0.07)"
-              stroke="rgba(16,185,129,0.2)"
+              fill="var(--wo-positive-bg)"
+              stroke="color-mix(in srgb, var(--wo-positive) 22%, transparent)"
               strokeDasharray="4 2"
-              label={{ value: IS_CHINESE ? '黄金窗口' : 'Golden', fontSize: 9, fill: '#10b981', opacity: 0.6, position: 'insideTopLeft' }}
+              label={{ value: IS_CHINESE ? '黄金窗口' : 'Golden', fontSize: 9, fill: 'var(--wo-positive)', opacity: 0.6, position: 'insideTopLeft' }}
             />
           )}
-          <ReferenceLine y={100} stroke="rgba(128,128,128,0.2)" strokeDasharray="4 2" />
-          <ReferenceLine y={85} stroke="rgba(245,158,11,0.25)" strokeDasharray="3 3" />
+          <ReferenceLine y={100} stroke="var(--wo-section-line)" strokeDasharray="4 2" />
+          <ReferenceLine y={85} stroke="color-mix(in srgb, var(--wo-warning) 28%, transparent)" strokeDasharray="3 3" />
           <XAxis dataKey="pos" tick={{ fontSize: 9, opacity: 0.4 }} axisLine={false} tickLine={false} />
           <YAxis domain={[50, 110]} tick={{ fontSize: 9, opacity: 0.35 }} unit="%" axisLine={false} tickLine={false} />
           <Tooltip contentStyle={TOOLTIP_STYLE}
@@ -108,18 +108,18 @@ export default function FatigueCurve({ workouts }: { workouts: WorkoutSession[] 
             ]}
             labelFormatter={(label) => `${IS_CHINESE ? '动作位置' : 'Position'} ${label}`}
           />
-          <Area type="monotone" dataKey="avg" stroke="#6366f1" strokeWidth={2}
-            fill="url(#fatGrad)" dot={{ r: 3, fill: '#6366f1' }} />
-          <Area type="monotone" dataKey="median" stroke="rgba(99,102,241,0.4)" strokeWidth={1.5}
+          <Area type="monotone" dataKey="avg" stroke="var(--wo-series-2)" strokeWidth={2}
+            fill="url(#fatGrad)" dot={{ r: 3, fill: 'var(--wo-series-2)' }} />
+          <Area type="monotone" dataKey="median" stroke="var(--wo-accent-line-soft)" strokeWidth={1.5}
             strokeDasharray="4 2" fill="none" dot={false} />
         </AreaChart>
       </ResponsiveContainer>
 
       <div className="flex items-center gap-4 mt-2 flex-wrap" style={{ fontSize: 9, opacity: 0.4 }}>
-        <span><span style={{ color: '#6366f1' }}>——</span> {IS_CHINESE ? '平均' : 'Avg'}</span>
-        <span><span style={{ color: 'rgba(99,102,241,0.6)' }}>- -</span> {IS_CHINESE ? '中位' : 'Median'}</span>
-        <span style={{ color: '#10b981' }}>■ {IS_CHINESE ? '黄金窗口 (>85%)' : 'Golden window (>85%)'}</span>
-        <span style={{ color: '#f59e0b' }}>- - 85%</span>
+        <span><span style={{ color: 'var(--wo-series-2)' }}>——</span> {IS_CHINESE ? '平均' : 'Avg'}</span>
+        <span><span style={{ color: 'var(--wo-accent-line-soft)' }}>- -</span> {IS_CHINESE ? '中位' : 'Median'}</span>
+        <span style={{ color: 'var(--wo-positive)' }}>■ {IS_CHINESE ? '黄金窗口 (>85%)' : 'Golden window (>85%)'}</span>
+        <span style={{ color: 'var(--wo-warning)' }}>- - 85%</span>
       </div>
     </div>
   );

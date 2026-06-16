@@ -58,7 +58,11 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
   }, [currN]);
 
   const grade = balanceScore >= 85 ? 'S' : balanceScore >= 70 ? 'A' : balanceScore >= 55 ? 'B' : 'C';
-  const gradeColor = grade === 'S' ? '#ffcc00' : grade === 'A' ? '#34d399' : grade === 'B' ? '#60a5fa' : '#f87171';
+  const gradeColor =
+    grade === 'S' ? 'var(--wt-pr-color)'
+    : grade === 'A' ? 'var(--wo-series-2)'
+    : grade === 'B' ? 'var(--wo-series-5)'
+    : 'var(--wo-negative)';
 
   // SVG helpers
   const CX = 108, CY = 106, R = 78;
@@ -88,9 +92,9 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
           <div className="flex gap-1">
             {PERIOD_TABS.map(([key, lbl]) => (
               <button key={key} onClick={() => setPeriod(key)}
-                className="text-xs px-2.5 py-1 rounded-lg transition-all"
-                style={period === key
-                  ? { background: 'var(--wc-l3)', color: '#fff', fontWeight: 600 }
+              className="text-xs px-2.5 py-1 rounded-lg transition-all"
+              style={period === key
+                ? { background: 'var(--wc-l3)', color: '#fff', fontWeight: 600 }
                   : { background: 'var(--wt-chip-bg)', opacity: 0.55 }}>
                 {lbl}
               </button>
@@ -100,7 +104,7 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             <button onClick={() => setShowPrev((p) => !p)}
               className="text-xs px-2.5 py-1 rounded-lg transition-all"
               style={showPrev
-                ? { background: 'rgba(99,102,241,0.18)', color: 'var(--wc-l4)', border: '1px solid rgba(99,102,241,0.3)' }
+                ? { background: 'var(--wo-accent-soft-bg)', color: 'var(--wc-l4)', border: '1px solid var(--wo-accent-soft-border)' }
                 : { background: 'var(--wt-chip-bg)', opacity: 0.5 }}>
               {IS_CHINESE ? (showPrev ? '隐藏上期' : '对比上期') : (showPrev ? 'Hide prev' : 'vs prev')}
             </button>
@@ -115,8 +119,8 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
           <svg viewBox="0 0 216 212" width="216" height="212" style={{ overflow: 'visible' }}>
             <defs>
               <radialGradient id="hxFill" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="rgba(165,180,252,0.25)" />
-                <stop offset="100%" stopColor="rgba(99,102,241,0.07)" />
+                <stop offset="0%" stopColor="var(--wo-series-8)" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="var(--wo-series-2)" stopOpacity="0.08" />
               </radialGradient>
               <filter id="hxGlow" x="-25%" y="-25%" width="150%" height="150%">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
@@ -127,7 +131,7 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             {/* Grid rings (33 / 66 / 100%) */}
             {[0.33, 0.66, 1.0].map((lvl) => (
               <polygon key={lvl} points={poly(Array(6).fill(lvl))} fill="none"
-                stroke={lvl === 1.0 ? 'rgba(128,128,128,0.2)' : 'rgba(128,128,128,0.1)'}
+                stroke={lvl === 1.0 ? 'var(--wo-section-line)' : 'var(--wo-grid)'}
                 strokeWidth={lvl === 1.0 ? 1 : 0.7}
                 strokeDasharray={lvl < 1.0 ? '3 3' : undefined} />
             ))}
@@ -136,19 +140,19 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             {HEXA_AXES.map((_, i) => {
               const p = pt(i, R);
               return <line key={i} x1={CX} y1={CY} x2={p.x} y2={p.y}
-                stroke="rgba(128,128,128,0.13)" strokeWidth="0.8" />;
+                stroke="var(--wo-grid)" strokeWidth="0.8" />;
             })}
 
             {/* Previous period ghost */}
             {showPrev && prevN.some((v) => v > 0) && (
-              <polygon points={poly(prevN)} fill="rgba(99,102,241,0.05)"
-                stroke="rgba(99,102,241,0.35)" strokeWidth="1.2" strokeDasharray="3 2" />
+              <polygon points={poly(prevN)} fill="var(--wo-accent-soft-bg)"
+                stroke="var(--wo-accent-line-soft)" strokeWidth="1.2" strokeDasharray="3 2" />
             )}
 
             {/* Main fill */}
             {hasCurr && (
               <polygon points={poly(currN)} fill="url(#hxFill)"
-                stroke="rgba(165,180,252,0.9)" strokeWidth="2"
+                stroke="var(--wo-series-1)" strokeWidth="2"
                 filter="url(#hxGlow)"
                 style={{ animation: 'slideUp 0.5s ease both' }} />
             )}
@@ -159,8 +163,8 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
               const p = pt(i, v * R);
               return (
                 <g key={i}>
-                  <circle cx={p.x} cy={p.y} r={6} fill="rgba(165,180,252,0.12)" />
-                  <circle cx={p.x} cy={p.y} r={3.5} fill="rgba(165,180,252,0.95)" />
+                  <circle cx={p.x} cy={p.y} r={6} fill="var(--wo-accent-soft-bg)" />
+                  <circle cx={p.x} cy={p.y} r={3.5} fill="var(--wo-series-1)" />
                 </g>
               );
             })}
@@ -169,7 +173,7 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             {showPrev && prevN.map((v, i) => {
               if (v < 0.03) return null;
               const p = pt(i, v * R);
-              return <circle key={i} cx={p.x} cy={p.y} r={2.5} fill="rgba(99,102,241,0.6)" />;
+              return <circle key={i} cx={p.x} cy={p.y} r={2.5} fill="var(--wo-accent-line-soft)" />;
             })}
 
             {/* Axis labels */}
@@ -191,7 +195,7 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
               const anchor = pt(i, 1).x > CX + 5 ? 'start' : pt(i, 1).x < CX - 5 ? 'end' : 'middle';
               return (
                 <text key={i} x={inner.x} y={inner.y} textAnchor={anchor} dominantBaseline="middle"
-                  fontSize="8" fontWeight={700} fill="rgba(224,231,255,0.9)">
+                  fontSize="8" fontWeight={700} fill="var(--color-tx)">
                   {Math.round(v * 100)}%
                 </text>
               );
@@ -202,11 +206,11 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
           {showPrev && (
             <div className="flex items-center justify-center gap-4 mt-1" style={{ fontSize: 10, opacity: 0.4 }}>
               <span className="flex items-center gap-1">
-                <span style={{ display: 'inline-block', width: 14, height: 2, background: 'rgba(165,180,252,0.9)', borderRadius: 1 }} />
+                <span style={{ display: 'inline-block', width: 14, height: 2, background: 'var(--wo-series-1)', borderRadius: 1 }} />
                 {IS_CHINESE ? '当前' : 'Current'}
               </span>
               <span className="flex items-center gap-1">
-                <span style={{ display: 'inline-block', width: 14, height: 0, borderTop: '1.5px dashed rgba(99,102,241,0.55)' }} />
+                <span style={{ display: 'inline-block', width: 14, height: 0, borderTop: '1.5px dashed var(--wo-accent-line-soft)' }} />
                 {IS_CHINESE ? '上期' : 'Previous'}
               </span>
             </div>
@@ -237,7 +241,7 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
               <div className="h-2 rounded-full overflow-hidden" style={{ background: 'rgba(128,128,128,0.15)' }}>
                 <div className="h-full rounded-full" style={{
                   width: `${balanceScore}%`,
-                  background: `linear-gradient(90deg, ${gradeColor}77, ${gradeColor})`,
+                  background: `linear-gradient(90deg, color-mix(in srgb, ${gradeColor} 55%, transparent), ${gradeColor})`,
                   transition: 'width 0.7s ease',
                 }} />
               </div>
@@ -261,17 +265,17 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                 <div key={key} className="flex items-center gap-2 text-xs">
                   <span className="w-2 h-2 rounded-sm shrink-0" style={{ background: color, display: 'inline-block' }} />
                   <span className="w-10 shrink-0 opacity-65 font-medium">{label}</span>
-                  <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(128,128,128,0.12)' }}>
+                  <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--wt-chip-bg)' }}>
                     <div className="h-full rounded-full" style={{
                       width: `${Math.round(v * 100)}%`,
-                      background: `linear-gradient(90deg, ${color}66, ${color})`,
+                      background: `linear-gradient(90deg, color-mix(in srgb, ${color} 52%, transparent), ${color})`,
                       transition: 'width 0.5s ease',
                     }} />
                   </div>
                   <span className="w-7 text-right tabular-nums" style={{ opacity: 0.4 }}>{sharePct}%</span>
                   {trend !== null && (
                     <span className="w-11 text-right tabular-nums font-semibold"
-                      style={{ color: trend > 5 ? '#34d399' : trend < -5 ? '#f87171' : 'rgba(128,128,128,0.45)' }}>
+                      style={{ color: trend > 5 ? 'var(--wo-positive)' : trend < -5 ? 'var(--wo-negative)' : 'var(--wo-axis-text)' }}>
                       {trend > 0 ? '+' : ''}{trend}%
                     </span>
                   )}
