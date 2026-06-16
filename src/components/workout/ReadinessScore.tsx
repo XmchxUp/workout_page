@@ -101,7 +101,7 @@ function polarToXY(deg: number, r: number) {
   return { x: CX + r * Math.cos(rad), y: CY + r * Math.sin(rad) };
 }
 
-function arcPath(startDeg: number, endDeg: number, r: number, _strokeW: number) {
+function arcPath(startDeg: number, endDeg: number, r: number) {
   const s = polarToXY(startDeg, r);
   const e = polarToXY(endDeg, r);
   const large = endDeg - startDeg > 180 ? 1 : 0;

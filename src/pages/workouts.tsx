@@ -871,7 +871,7 @@ const ExerciseProgress = ({ name, workouts, onClose }: { name: string; workouts:
                 }}
               />
               <Line yAxisId="e" type="monotone" dataKey="e1rm" stroke="var(--wc-l3)" strokeWidth={2} connectNulls={false}
-                dot={(props: any) => {
+                dot={(props: { payload?: { e1rm?: number; date?: string }; key?: string; cx?: number; cy?: number }) => {
                   if (props.payload.e1rm === undefined) return <g key={props.key} />;
                   const isPR = prDates.has(props.payload.date);
                   return <circle key={props.key} cx={props.cx} cy={props.cy} r={isPR ? 5 : 3}
@@ -1087,7 +1087,7 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
   };
 
   const [showFront, setShowFront] = useState(true);
-  const sorted = Object.entries(volumes).filter(([_, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+  const sorted = Object.entries(volumes).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
 
   return (
     <div>
@@ -1451,7 +1451,7 @@ const WorkoutsPage = () => {
   const doubleSessionDates = useMemo(() => {
     const counts: Record<string, number> = {};
     filteredWorkouts.forEach((w) => { const d = w.start_time.slice(0, 10); counts[d] = (counts[d] || 0) + 1; });
-    return new Set(Object.entries(counts).filter(([_, c]) => c > 1).map(([d]) => d));
+    return new Set(Object.entries(counts).filter(([, c]) => c > 1).map(([d]) => d));
   }, [filteredWorkouts]);
 
   const handleYearClick = useCallback((y: string) => {
@@ -1466,10 +1466,17 @@ const WorkoutsPage = () => {
     try {
       const saved = localStorage.getItem('wo-section-collapsed');
       return saved ? (JSON.parse(saved) as Record<string, boolean>) : {};
-    } catch { return {}; }
+    } catch {
+      // Ignore unavailable or invalid localStorage state.
+      return {};
+    }
   });
   useEffect(() => {
-    try { localStorage.setItem('wo-section-collapsed', JSON.stringify(collapsed)); } catch {}
+    try {
+      localStorage.setItem('wo-section-collapsed', JSON.stringify(collapsed));
+    } catch {
+      // Ignore localStorage write failures.
+    }
   }, [collapsed]);
   const toggleSection = useCallback((key: string) => {
     setCollapsed((prev) => ({ ...prev, [key]: !prev[key] }));

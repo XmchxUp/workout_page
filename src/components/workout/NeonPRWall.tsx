@@ -13,8 +13,8 @@ const NeonPRWall = ({ workouts }: { workouts: WorkoutSession[] }) => {
   const leftCol = allBests.slice(0, half);
   const rightCol = allBests.slice(half);
 
-  const Row = ({ name, weight, reps, e1rm, date, i }: {
-    name: string; weight: number; reps: number; e1rm: number; date: string; i: number;
+  const Row = ({ name, weight, reps, e1rm, i }: {
+    name: string; weight: number; reps: number; e1rm: number; i: number;
   }) => {
     const neon = NEON_PALETTE[i % NEON_PALETTE.length];
     return (

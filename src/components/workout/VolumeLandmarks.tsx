@@ -63,7 +63,7 @@ export default function VolumeLandmarks({ workouts }: { workouts: WorkoutSession
       </div>
 
       <div className="space-y-3">
-        {Object.entries(LANDMARKS).map(([muscle, { label, labelCN, mev, mavLo, mavHi, mrv, color }]) => {
+        {Object.entries(LANDMARKS).map(([muscle, { label, labelCN, mev, mavLo, mavHi, mrv }]) => {
           const cur = weeklyVol[muscle] ?? 0;
           const display = Math.min(cur, MAX_DISPLAY);
           const pct = (v: number) => `${Math.min((v / MAX_DISPLAY) * 100, 100)}%`;

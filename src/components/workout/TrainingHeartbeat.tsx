@@ -4,7 +4,7 @@ import { IS_CHINESE, PanelLabel } from './WorkoutUI';
 
 const TrainingHeartbeat = ({ workouts }: { workouts: WorkoutSession[] }) => {
   const DAYS = 90;
-  const { pts, maxVol, trainedCount } = useMemo(() => {
+  const { pts, trainedCount } = useMemo(() => {
     const vol: Record<string, number> = {};
     workouts.forEach((w) => { const d = w.start_time.slice(0, 10); vol[d] = (vol[d] || 0) + w.total_volume_kg; });
     const maxVol = Math.max(1, ...Object.values(vol));
@@ -13,7 +13,7 @@ const TrainingHeartbeat = ({ workouts }: { workouts: WorkoutSession[] }) => {
       const ds = [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
       return { ds, v: (vol[ds] || 0) / maxVol };
     });
-    return { pts, maxVol, trainedCount: pts.filter((p) => p.v > 0).length };
+    return { pts, trainedCount: pts.filter((p) => p.v > 0).length };
   }, [workouts]);
 
   const W = 500, H = 56, BASE = H - 8;
