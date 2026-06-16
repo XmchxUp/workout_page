@@ -155,13 +155,13 @@ export default function ReadinessScore({ workouts }: { workouts: WorkoutSession[
         <svg width={GAUGE_SIZE} height={GAUGE_SIZE * 0.78} viewBox={`0 0 ${GAUGE_SIZE} ${GAUGE_SIZE * 0.78}`}>
           <defs>
             <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"   stopColor="#ef4444" />
-              <stop offset="40%"  stopColor="#f59e0b" />
-              <stop offset="100%" stopColor="#10b981" />
+              <stop offset="0%"   stopColor="var(--wo-negative)" />
+              <stop offset="40%"  stopColor="var(--wo-warning)" />
+              <stop offset="100%" stopColor="var(--wo-positive)" />
             </linearGradient>
           </defs>
           {/* Track */}
-          <path d={trackPath} fill="none" stroke="rgba(128,128,128,0.12)" strokeWidth={12} strokeLinecap="round" />
+          <path d={trackPath} fill="none" stroke="var(--wt-chip-bg)" strokeWidth={12} strokeLinecap="round" />
           {/* Fill */}
           {fillPath && (
             <path d={fillPath} fill="none" stroke="url(#gaugeGrad)" strokeWidth={12} strokeLinecap="round"
@@ -192,7 +192,7 @@ export default function ReadinessScore({ workouts }: { workouts: WorkoutSession[
                   {raw || `${val}`}
                 </span>
               </div>
-              <div className="rounded-full overflow-hidden" style={{ height: 4, background: 'rgba(128,128,128,0.12)' }}>
+              <div className="rounded-full overflow-hidden" style={{ height: 4, background: 'var(--wt-chip-bg)' }}>
                 <div style={{
                   width: `${val}%`, height: '100%', borderRadius: 9999,
                   background: val >= 70 ? 'var(--wo-positive)' : val >= 45 ? 'var(--wo-warning)' : 'var(--wo-negative)',
@@ -205,7 +205,7 @@ export default function ReadinessScore({ workouts }: { workouts: WorkoutSession[
 
         {score < 40 && (
           <div className="mt-3 w-full rounded-lg px-3 py-2 text-xs text-center"
-            style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.25)', color: '#ef4444' }}>
+            style={{ background: 'var(--wo-negative-bg)', border: '1px solid color-mix(in srgb, var(--wo-negative) 24%, transparent)', color: 'var(--wo-negative)' }}>
             {IS_CHINESE ? '建议今天休息或轻度训练，让身体充分恢复' : 'Consider rest or light training today'}
           </div>
         )}

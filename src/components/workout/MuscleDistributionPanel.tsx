@@ -129,7 +129,7 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
       {/* Stacked bar chart */}
       <ResponsiveContainer width="100%" height={190}>
         <BarChart data={chartData} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(128,128,128,0.08)" />
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--wo-grid)" />
           <XAxis dataKey="label" tick={{ fontSize: 9, fill: 'currentColor', opacity: 0.4 }} />
           <YAxis tick={{ fontSize: 9, fill: 'currentColor', opacity: 0.35 }} unit="t" />
           <Tooltip contentStyle={TOOLTIP_STYLE}
@@ -152,10 +152,10 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
           </div>
           <div className="space-y-2.5">
             {([
-              { lbl: IS_CHINESE ? '推(Push)' : 'Push', val: balance.push, color: '#a855f7' },
-              { lbl: IS_CHINESE ? '拉(Pull)' : 'Pull', val: balance.pull, color: '#6366f1' },
-              { lbl: IS_CHINESE ? '腿部'     : 'Legs', val: balance.legs, color: '#ec4899' },
-              { lbl: IS_CHINESE ? '核心'     : 'Core', val: balance.core, color: '#06b6d4' },
+              { lbl: IS_CHINESE ? '推(Push)' : 'Push', val: balance.push, color: 'var(--wo-series-4)' },
+              { lbl: IS_CHINESE ? '拉(Pull)' : 'Pull', val: balance.pull, color: 'var(--wo-series-2)' },
+              { lbl: IS_CHINESE ? '腿部'     : 'Legs', val: balance.legs, color: 'var(--wo-series-1)' },
+              { lbl: IS_CHINESE ? '核心'     : 'Core', val: balance.core, color: 'var(--wo-series-6)' },
             ] as const).map(({ lbl, val, color }) => (
               <div key={lbl} className="flex items-center gap-2 text-xs">
                 <span className="w-14 shrink-0 opacity-55 text-right">{lbl}</span>
@@ -169,8 +169,8 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
           {balance.ppRatio !== null && (
             <div className="mt-3 text-xs rounded-lg px-2.5 py-1.5"
               style={{
-                background: balance.ppRatio > 1.3 || balance.ppRatio < 0.75 ? 'rgba(239,68,68,0.07)' : 'rgba(34,197,94,0.07)',
-                border: `1px solid ${balance.ppRatio > 1.3 || balance.ppRatio < 0.75 ? 'rgba(239,68,68,0.2)' : 'rgba(34,197,94,0.15)'}`,
+                background: balance.ppRatio > 1.3 || balance.ppRatio < 0.75 ? 'var(--wo-negative-bg)' : 'var(--wo-positive-bg)',
+                border: `1px solid ${balance.ppRatio > 1.3 || balance.ppRatio < 0.75 ? 'color-mix(in srgb, var(--wo-negative) 22%, transparent)' : 'color-mix(in srgb, var(--wo-positive) 20%, transparent)'}`,
               }}>
               <span className="opacity-50">{IS_CHINESE ? '推拉比 ' : 'P/P ratio '}</span>
               <span className="font-semibold">{balance.ppRatio.toFixed(2)}</span>
@@ -198,7 +198,7 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
                   <span className="w-2 h-2 rounded-sm shrink-0" style={{ background: MUSCLE_CHART_COLORS[m], display: 'inline-block' }} />
                   <span className="flex-1 opacity-60">{IS_CHINESE ? (MUSCLE_LABELS_CN[m] ?? m) : m}</span>
                   <span className="font-semibold tabular-nums w-12 text-right"
-                    style={{ color: t > 0 ? '#34d399' : '#f87171' }}>
+                    style={{ color: t > 0 ? 'var(--wo-positive)' : 'var(--wo-negative)' }}>
                     {t > 0 ? '↑' : '↓'}{Math.abs(t)}%
                   </span>
                 </div>
@@ -221,7 +221,7 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
               if (!top) return null;
               const topPct = Math.round((top[1] / totalVol) * 100);
               return (
-                <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)' }}>
+                <div className="rounded-lg px-3 py-2" style={{ background: 'var(--wo-accent-soft-bg)', border: '1px solid var(--wo-accent-soft-border)' }}>
                   <span className="opacity-45">{IS_CHINESE ? '训练最多 · ' : 'Most trained · '}</span>
                   <span className="font-semibold" style={{ color: 'var(--wc-l4)' }}>
                     {IS_CHINESE ? (MUSCLE_LABELS_CN[top[0]] ?? top[0]) : top[0]}
@@ -232,8 +232,8 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
             })()}
             {/* Neglected */}
             {neglected.length > 0 && (
-              <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(234,179,8,0.07)', border: '1px solid rgba(234,179,8,0.2)' }}>
-                <div style={{ color: 'rgba(234,179,8,0.85)' }} className="font-semibold mb-0.5">
+              <div className="rounded-lg px-3 py-2" style={{ background: 'var(--wo-warning-bg)', border: '1px solid color-mix(in srgb, var(--wo-warning) 24%, transparent)' }}>
+                <div style={{ color: 'var(--wo-warning)' }} className="font-semibold mb-0.5">
                   ⚠ {IS_CHINESE ? '缺乏数据' : 'No data'}
                 </div>
                 <div className="opacity-50">{neglected.slice(0, 5).join(' · ')}</div>
@@ -241,16 +241,16 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
             )}
             {/* Push/pull imbalance advisory */}
             {balance.ppRatio !== null && balance.ppRatio > 1.3 && (
-              <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(239,68,68,0.07)', border: '1px solid rgba(239,68,68,0.15)' }}>
-                <span style={{ color: 'rgba(239,68,68,0.85)' }}>
+              <div className="rounded-lg px-3 py-2" style={{ background: 'var(--wo-negative-bg)', border: '1px solid color-mix(in srgb, var(--wo-negative) 18%, transparent)' }}>
+                <span style={{ color: 'var(--wo-negative)' }}>
                   {IS_CHINESE ? '建议增加背部/二头训练' : 'Add more back/biceps'}
                 </span>
               </div>
             )}
             {/* Leg ratio advisory */}
             {balance.legs / balance.total < 0.15 && balance.total > 0 && (
-              <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(239,68,68,0.07)', border: '1px solid rgba(239,68,68,0.15)' }}>
-                <span style={{ color: 'rgba(239,68,68,0.85)' }}>
+              <div className="rounded-lg px-3 py-2" style={{ background: 'var(--wo-negative-bg)', border: '1px solid color-mix(in srgb, var(--wo-negative) 18%, transparent)' }}>
+                <span style={{ color: 'var(--wo-negative)' }}>
                   {IS_CHINESE ? '建议增加腿部训练比例' : 'Add more leg work'}
                 </span>
               </div>

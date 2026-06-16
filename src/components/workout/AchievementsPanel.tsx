@@ -243,9 +243,75 @@ export const calcAchievMeta = (workouts: WorkoutSession[]): AchievMeta => {
   };
 };
 
-export const RARITY_COLOR = { common: '#6b7280', rare: '#3b82f6', epic: '#a855f7', legendary: '#ffcc00' } as const;
+export const RARITY_COLOR = {
+  common: 'var(--wo-axis-text)',
+  rare: 'var(--wo-series-2)',
+  epic: 'var(--wo-series-4)',
+  legendary: 'var(--wt-pr-color)',
+} as const;
 export const RARITY_LABEL = { common: '普通', rare: '稀有', epic: '史诗', legendary: '传说' } as const;
 type Rarity = keyof typeof RARITY_COLOR;
+
+const ACHIEVEMENT_COLOR_MAP: Record<string, string> = {
+  '#ffffff': 'var(--color-tx)',
+  '#ffcc00': 'var(--wt-pr-color)',
+  '#fbbf24': 'var(--wo-warning)',
+  '#f59e0b': 'var(--wo-warning)',
+  '#f97316': 'var(--wo-warning)',
+  '#fb923c': 'var(--wo-warning)',
+  '#ea580c': 'var(--wo-warning)',
+  '#d97706': 'var(--wo-warning)',
+  '#b45309': 'var(--wo-warning)',
+  '#ef4444': 'var(--wo-negative)',
+  '#f87171': 'var(--wo-negative)',
+  '#dc2626': 'var(--wo-negative)',
+  '#b91c1c': 'var(--wo-negative)',
+  '#34d399': 'var(--wo-positive)',
+  '#22c55e': 'var(--wo-positive)',
+  '#16a34a': 'var(--wo-positive)',
+  '#15803d': 'var(--wo-positive)',
+  '#86efac': 'var(--wo-positive)',
+  '#6ee7b7': 'var(--wo-positive)',
+  '#4ade80': 'var(--wo-positive)',
+  '#84cc16': 'var(--wo-positive)',
+  '#65a30d': 'var(--wo-positive)',
+  '#a3e635': 'var(--wo-positive)',
+  '#67e8f9': 'var(--wo-series-6)',
+  '#06b6d4': 'var(--wo-series-6)',
+  '#0891b2': 'var(--wo-series-6)',
+  '#0e7490': 'var(--wo-series-6)',
+  '#60a5fa': 'var(--wo-series-6)',
+  '#93c5fd': 'var(--wo-series-6)',
+  '#bae6fd': 'var(--wo-series-6)',
+  '#7dd3fc': 'var(--wo-series-6)',
+  '#38bdf8': 'var(--wo-series-6)',
+  '#0ea5e9': 'var(--wo-series-6)',
+  '#0284c7': 'var(--wo-series-6)',
+  '#0369a1': 'var(--wo-series-6)',
+  '#3b82f6': 'var(--wo-series-2)',
+  '#2563eb': 'var(--wo-series-2)',
+  '#6366f1': 'var(--wo-series-2)',
+  '#818cf8': 'var(--wo-series-2)',
+  '#4f46e5': 'var(--wo-series-2)',
+  '#a78bfa': 'var(--wo-series-4)',
+  '#a855f7': 'var(--wo-series-4)',
+  '#c084fc': 'var(--wo-series-4)',
+  '#e879f9': 'var(--wo-series-4)',
+  '#d946ef': 'var(--wo-series-4)',
+  '#9333ea': 'var(--wo-series-4)',
+  '#7c3aed': 'var(--wo-series-4)',
+  '#6d28d9': 'var(--wo-series-4)',
+  '#4c1d95': 'var(--wo-series-4)',
+  '#f472b6': 'var(--wo-series-8)',
+  '#fb7185': 'var(--wo-series-8)',
+  '#ec4899': 'var(--wo-series-8)',
+  '#f0abfc': 'var(--wo-series-8)',
+  '#94a3b8': 'var(--wo-axis-text)',
+  '#6b7280': 'var(--wo-axis-text)',
+};
+
+const resolveAchievementColor = (color: string) =>
+  ACHIEVEMENT_COLOR_MAP[color.toLowerCase()] ?? 'var(--color-brand)';
 
 export const ACHIEV_DEFS: Array<{
   id: string; icon: string; title: string; desc: string;
@@ -533,7 +599,7 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
       <div className="h-1 rounded-full overflow-hidden mb-4" style={{ background: 'var(--wt-chip-bg)' }}>
         <div className="h-full rounded-full" style={{
           width: `${(unlockedCount / items.length) * 100}%`,
-          background: 'linear-gradient(90deg, #6366f1, #a855f7, #ffcc00)',
+          background: 'linear-gradient(90deg, var(--wo-series-3), var(--wo-series-2), var(--wt-pr-color))',
           transition: 'width 1.2s ease',
         }} />
       </div>
@@ -541,15 +607,16 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
       {/* Badge grid */}
       <div className="grid gap-2.5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))' }}>
         {visibleItems.map(({ id, icon, title, desc, color, rarity, unlocked, progress }, idx) => {
+          const resolvedColor = resolveAchievementColor(color);
           const prog = progress?.(workouts, meta);
           const progPct = prog ? Math.round((prog[0] / prog[1]) * 100) : null;
           return (
             <div key={id} title={`${title}\n${desc}${prog && !unlocked ? `\n${prog[0]} / ${prog[1]}` : ''}`}
               className="rounded-xl p-2.5 flex flex-col items-center gap-1.5 relative select-none"
               style={{
-                background: unlocked ? `linear-gradient(135deg, ${color}1a, ${color}08)` : 'rgba(100,100,120,0.05)',
-                border: `1px solid ${unlocked ? color + '45' : 'rgba(128,128,128,0.1)'}`,
-                boxShadow: unlocked ? `0 0 14px ${color}20` : undefined,
+                background: unlocked ? `color-mix(in srgb, ${resolvedColor} 12%, transparent)` : 'rgba(100,100,120,0.05)',
+                border: `1px solid ${unlocked ? `color-mix(in srgb, ${resolvedColor} 30%, transparent)` : 'rgba(128,128,128,0.1)'}`,
+                boxShadow: unlocked ? `0 0 14px color-mix(in srgb, ${resolvedColor} 18%, transparent)` : undefined,
                 filter: unlocked ? undefined : 'grayscale(0.9)',
                 opacity: unlocked ? 1 : 0.38,
                 animation: unlocked ? `badgeUnlock 0.5s cubic-bezier(0.34,1.56,0.64,1) ${idx * 0.04}s both` : undefined,
@@ -558,14 +625,14 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
               }}
               onClick={() => setSelected(items.find((it) => it.id === id) ?? null)}
               onMouseEnter={(e) => {
-                if (unlocked) (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 20px ${color}40`;
+                if (unlocked) (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 20px color-mix(in srgb, ${resolvedColor} 24%, transparent)`;
               }}
               onMouseLeave={(e) => {
-                if (unlocked) (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 14px ${color}20`;
+                if (unlocked) (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 14px color-mix(in srgb, ${resolvedColor} 18%, transparent)`;
               }}
             >
               <span style={{ fontSize: 24, lineHeight: 1 }}>{icon}</span>
-              <span className="text-center leading-tight font-semibold" style={{ fontSize: 9.5, color: unlocked ? color : undefined }}>
+              <span className="text-center leading-tight font-semibold" style={{ fontSize: 9.5, color: unlocked ? resolvedColor : undefined }}>
                 {title}
               </span>
               {/* Rarity badge */}
@@ -580,7 +647,7 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
               {/* Progress bar for milestone achievements */}
               {progPct !== null && !unlocked && (
                 <div className="w-full h-0.5 rounded-full overflow-hidden" style={{ background: 'rgba(128,128,128,0.15)' }}>
-                  <div className="h-full rounded-full" style={{ width: `${progPct}%`, background: color }} />
+                  <div className="h-full rounded-full" style={{ width: `${progPct}%`, background: resolvedColor }} />
                 </div>
               )}
               {/* Lock icon */}
@@ -597,16 +664,19 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
           style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           onClick={() => setSelected(null)}
         >
+          {(() => {
+            const selectedColor = resolveAchievementColor(selected.color);
+            return (
           <div
             style={{
               background: 'var(--wo-card-bg)',
-              border: `1px solid ${selected.color}44`,
+              border: `1px solid color-mix(in srgb, ${selectedColor} 30%, transparent)`,
               borderRadius: 20,
               padding: 28,
               maxWidth: 340,
               width: '90vw',
               position: 'relative',
-              boxShadow: `0 0 40px ${selected.color}30`,
+              boxShadow: `0 0 40px color-mix(in srgb, ${selectedColor} 20%, transparent)`,
               animation: 'badgeUnlock 0.35s cubic-bezier(0.34,1.56,0.64,1) both',
             }}
             onClick={(e) => e.stopPropagation()}
@@ -658,6 +728,8 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
               );
             })()}
           </div>
+            );
+          })()}
         </div>
       )}
     </div>

@@ -67,17 +67,17 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}
+      style={{ background: 'var(--wo-modal-backdrop)', backdropFilter: 'blur(8px)' }}
       onClick={onClose}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
           width: '100%', maxWidth: 400,
-          background: 'linear-gradient(160deg, #0f0c29 0%, #302b63 50%, #24243e 100%)',
+          background: 'linear-gradient(160deg, #1b1512 0%, #2a211d 52%, #171311 100%)',
           borderRadius: 24,
-          border: '1px solid rgba(255,255,255,0.1)',
-          boxShadow: '0 0 80px rgba(99,102,241,0.3), 0 0 160px rgba(99,102,241,0.1)',
+          border: '1px solid var(--wo-card-border)',
+          boxShadow: 'var(--wo-modal-shadow)',
           overflow: 'hidden',
           position: 'relative',
         }}
@@ -86,25 +86,25 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
         <div style={{
           position: 'absolute', top: -60, right: -60,
           width: 200, height: 200, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--wo-accent-rgb), 0.14) 0%, transparent 70%)',
           pointerEvents: 'none',
         }} />
         <div style={{
           position: 'absolute', bottom: -40, left: -40,
           width: 160, height: 160, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--wo-warning-rgb), 0.12) 0%, transparent 70%)',
           pointerEvents: 'none',
         }} />
 
         <div className="p-8 relative z-10">
           {/* Header */}
           <div className="text-center mb-8">
-            <div style={{ fontSize: 12, letterSpacing: '0.3em', opacity: 0.4, color: '#a5b4fc', marginBottom: 4 }}>
+            <div style={{ fontSize: 12, letterSpacing: '0.3em', opacity: 0.4, color: 'var(--wc-l4)', marginBottom: 4 }}>
               {IS_CHINESE ? '年度训练总结' : 'ANNUAL RECAP'}
             </div>
             <div style={{
               fontSize: 52, fontWeight: 900, lineHeight: 1,
-              background: 'linear-gradient(135deg, #f59e0b, #a78bfa)',
+              background: 'linear-gradient(135deg, var(--wt-pr-color), var(--wo-series-2))',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             }}>{year}</div>
           </div>
@@ -118,11 +118,11 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
               { label: IS_CHINESE ? '总组数' : 'Sets', value: stats.totalSets, unit: '' },
             ].map(({ label, value, unit }) => (
               <div key={label} style={{
-                background: 'rgba(255,255,255,0.05)', borderRadius: 12,
-                padding: '12px 16px', border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--wo-card-bg)', borderRadius: 12,
+                padding: '12px 16px', border: '1px solid var(--wo-card-border)',
               }}>
                 <div style={{ fontSize: 9, opacity: 0.4, letterSpacing: '0.1em', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 24, fontWeight: 800, color: '#e2e8f0' }}>
+                <div style={{ fontSize: 24, fontWeight: 800, color: 'var(--color-tx)' }}>
                   {value}<span style={{ fontSize: 13, opacity: 0.5 }}>{unit}</span>
                 </div>
               </div>
@@ -134,15 +134,15 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
             {/* Best month */}
             {stats.bestMonth && (
               <div style={{
-                background: 'rgba(245,158,11,0.1)', borderRadius: 12, padding: '10px 16px',
-                border: '1px solid rgba(245,158,11,0.25)', display: 'flex', alignItems: 'center', gap: 12,
+                background: 'var(--wo-warning-bg)', borderRadius: 12, padding: '10px 16px',
+                border: '1px solid color-mix(in srgb, var(--wo-warning) 28%, transparent)', display: 'flex', alignItems: 'center', gap: 12,
               }}>
                 <span style={{ fontSize: 20 }}>🔥</span>
                 <div>
                   <div style={{ fontSize: 9, opacity: 0.5, marginBottom: 2 }}>
                     {IS_CHINESE ? '最强月份' : 'Best Month'}
                   </div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: '#fbbf24' }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--wo-warning)' }}>
                     {monthName(stats.bestMonth[0])} · {(stats.bestMonth[1] / 1000).toFixed(1)}t
                   </div>
                 </div>
@@ -152,15 +152,15 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
             {/* Best PR */}
             {stats.bestPR && (
               <div style={{
-                background: 'rgba(99,102,241,0.12)', borderRadius: 12, padding: '10px 16px',
-                border: '1px solid rgba(99,102,241,0.3)', display: 'flex', alignItems: 'center', gap: 12,
+                background: 'var(--wo-accent-soft-bg)', borderRadius: 12, padding: '10px 16px',
+                border: '1px solid var(--wo-accent-soft-border)', display: 'flex', alignItems: 'center', gap: 12,
               }}>
                 <span style={{ fontSize: 20 }}>🏆</span>
                 <div className="min-w-0 flex-1">
                   <div style={{ fontSize: 9, opacity: 0.5, marginBottom: 2 }}>
                     {IS_CHINESE ? '最强单组' : 'Best Lift'}
                   </div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#a5b4fc' }} className="truncate">
+                  <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--wc-l4)' }} className="truncate">
                     {translateExercise(stats.bestPR.name)} {stats.bestPR.weight}×{stats.bestPR.reps} → {stats.bestPR.e1rm}kg e1RM
                   </div>
                 </div>
@@ -169,15 +169,15 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
 
             {/* Longest streak */}
             <div style={{
-              background: 'rgba(16,185,129,0.1)', borderRadius: 12, padding: '10px 16px',
-              border: '1px solid rgba(16,185,129,0.25)', display: 'flex', alignItems: 'center', gap: 12,
+              background: 'var(--wo-positive-bg)', borderRadius: 12, padding: '10px 16px',
+              border: '1px solid color-mix(in srgb, var(--wo-positive) 28%, transparent)', display: 'flex', alignItems: 'center', gap: 12,
             }}>
               <span style={{ fontSize: 20 }}>⚡</span>
               <div>
                 <div style={{ fontSize: 9, opacity: 0.5, marginBottom: 2 }}>
                   {IS_CHINESE ? '最长连续' : 'Longest Streak'}
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#34d399' }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--wo-positive)' }}>
                   {stats.streak} {IS_CHINESE ? '天' : 'days'}
                 </div>
               </div>
@@ -186,8 +186,8 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
             {/* Top 3 exercises */}
             {stats.top3.length > 0 && (
               <div style={{
-                background: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: '10px 16px',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--wo-card-bg)', borderRadius: 12, padding: '10px 16px',
+                border: '1px solid var(--wo-card-border)',
               }}>
                 <div style={{ fontSize: 9, opacity: 0.4, marginBottom: 6 }}>
                   {IS_CHINESE ? '最常练的动作' : 'Favorite Exercises'}
@@ -196,7 +196,7 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
                   {stats.top3.map((name, i) => (
                     <div key={name} className="flex items-center gap-2">
                       <span style={{ fontSize: 11, opacity: 0.35, width: 14 }}>{i + 1}.</span>
-                      <span style={{ fontSize: 12, color: '#cbd5e1' }}>{translateExercise(name)}</span>
+                      <span style={{ fontSize: 12, color: 'var(--color-tx)' }}>{translateExercise(name)}</span>
                     </div>
                   ))}
                 </div>
@@ -210,8 +210,8 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
               {IS_CHINESE ? '截图分享 · 继续超越自己' : 'Screenshot to share · Keep pushing'}
             </div>
             <button onClick={onClose} style={{
-              padding: '8px 24px', borderRadius: 20, border: '1px solid rgba(255,255,255,0.15)',
-              background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)',
+              padding: '8px 24px', borderRadius: 20, border: '1px solid var(--wo-card-border)',
+              background: 'var(--wo-card-hover)', color: 'rgba(242,231,222,0.6)',
               fontSize: 12, cursor: 'pointer', transition: 'all 0.2s',
             }}>
               {IS_CHINESE ? '关闭' : 'Close'}

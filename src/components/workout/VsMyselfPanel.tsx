@@ -97,9 +97,9 @@ export default function VsMyselfPanel({ workouts }: { workouts: WorkoutSession[]
             <button key={p} onClick={() => setPeriod(p)}
               className="text-xs px-2 py-0.5 rounded-full transition-all"
               style={{
-                background: period === p ? 'rgba(99,102,241,0.25)' : 'rgba(128,128,128,0.1)',
-                color: period === p ? 'var(--wc-l3)' : undefined,
-                border: period === p ? '1px solid rgba(99,102,241,0.4)' : '1px solid transparent',
+                background: period === p ? 'var(--wo-accent-soft-bg-strong)' : 'var(--wt-chip-bg)',
+                color: period === p ? 'var(--wc-l4)' : undefined,
+                border: period === p ? '1px solid var(--wo-accent-soft-border)' : '1px solid transparent',
               }}>
               {p}d
             </button>

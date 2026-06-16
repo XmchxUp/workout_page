@@ -118,13 +118,13 @@ export default function SpiralCalendar({ workouts, year }: Props) {
           const angle = (-90 + i * 30) * (Math.PI / 180);
           const x2 = CX + (R_INNER + 12 * RING_GAP + 4) * Math.cos(angle);
           const y2 = CY + (R_INNER + 12 * RING_GAP + 4) * Math.sin(angle);
-          return <line key={i} x1={CX} y1={CY} x2={x2} y2={y2} stroke="rgba(128,128,128,0.06)" strokeWidth={0.5} />;
+          return <line key={i} x1={CX} y1={CY} x2={x2} y2={y2} stroke="var(--wo-grid)" strokeWidth={0.5} />;
         })}
 
         {/* Day segments */}
         {paths.map(({ d, color, date, isToday }) => (
           <path key={date} d={d} fill={color}
-            stroke={isToday ? 'rgba(245,158,11,0.9)' : 'none'}
+            stroke={isToday ? 'var(--wt-pr-color)' : 'none'}
             strokeWidth={isToday ? 1.5 : 0}
           >
             <title>{date}</title>

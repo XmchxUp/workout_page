@@ -187,10 +187,13 @@ export default function SessionAdvisor({ workouts }: { workouts: WorkoutSession[
 
       {/* Recommended split */}
       <div className="flex items-center gap-3 rounded-xl px-4 py-3 mb-4"
-        style={{ background: isDeload ? 'rgba(239,68,68,0.1)' : 'rgba(99,102,241,0.12)', border: `1px solid ${isDeload ? 'rgba(239,68,68,0.3)' : 'rgba(99,102,241,0.3)'}` }}>
+        style={{
+          background: isDeload ? 'var(--wo-negative-bg)' : 'var(--wo-accent-soft-bg)',
+          border: `1px solid ${isDeload ? 'color-mix(in srgb, var(--wo-negative) 28%, transparent)' : 'var(--wo-accent-soft-border)'}`,
+        }}>
         <span style={{ fontSize: 24 }}>{splitInfo.icon}</span>
         <div>
-          <div style={{ fontSize: 13, fontWeight: 700, color: isDeload ? '#ef4444' : 'var(--wc-l3)' }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: isDeload ? 'var(--wo-negative)' : 'var(--wc-l4)' }}>
             {IS_CHINESE ? splitInfo.cn : splitInfo.en}
           </div>
           <div style={{ fontSize: 10, opacity: 0.5, marginTop: 2 }}>
@@ -206,7 +209,7 @@ export default function SessionAdvisor({ workouts }: { workouts: WorkoutSession[
         <div className="space-y-2">
           {recs.map(({ name, targetWeight, targetSets, targetReps, reason }) => (
             <div key={name} className="rounded-lg px-3 py-2.5"
-              style={{ background: 'rgba(128,128,128,0.06)', border: '1px solid rgba(128,128,128,0.1)' }}>
+              style={{ background: 'var(--wo-card-bg)', border: '1px solid var(--wo-card-border)' }}>
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <div style={{ fontSize: 12, fontWeight: 600, opacity: 0.85 }} className="truncate">
