@@ -3,11 +3,11 @@ import React from 'react';
 export const IS_CHINESE = true;
 
 export const TOOLTIP_STYLE: React.CSSProperties = {
-  background: 'var(--color-background)',
+  background: 'var(--wo-card-bg)',
   border: '1px solid var(--wt-border)',
   borderRadius: 8,
   fontSize: 11,
-  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+  boxShadow: 'var(--wo-popover-shadow)',
   padding: '6px 10px',
 };
 
@@ -47,7 +47,7 @@ export const Card = ({ children, className = '' }: { children: React.ReactNode; 
       transition: 'box-shadow 0.2s ease, border-color 0.2s ease',
     }}
     onMouseEnter={(e) => {
-      (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 20px rgba(99,102,241,0.1)';
+      (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--wo-card-shadow-hover)';
       (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--wc-l2)';
     }}
     onMouseLeave={(e) => {
