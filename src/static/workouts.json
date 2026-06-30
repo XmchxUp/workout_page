@@ -4146,6 +4146,31 @@
     "exercise_count": 1
   },
   {
+    "id": "d2f9cdd266ef",
+    "title": "晨间锻炼 ☀️",
+    "start_time": "Jun 30, 2026, 3:54 AM",
+    "end_time": "Jun 30, 2026, 4:23 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Climbing",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 1706
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "2f9acab4e15b",
     "title": "晨间锻炼 ☀️",
     "start_time": "Jun 3, 2026, 3:50 AM",
