@@ -5957,6 +5957,118 @@
     "exercise_count": 6
   },
   {
+    "id": "2f39ef20c60d",
+    "title": "1 背➕肩后束",
+    "start_time": "Jul 15, 2026, 4:06 AM",
+    "end_time": "Jul 15, 2026, 4:39 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 352
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 13
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Seated Row (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 18
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 18
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 13
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Pull Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 3
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 1
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 1
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 10720.0,
+    "total_sets": 13,
+    "exercise_count": 4
+  },
+  {
     "id": "b83010e4a16d",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Jul 14, 2026, 4:05 AM",
