@@ -5957,6 +5957,31 @@
     "exercise_count": 6
   },
   {
+    "id": "dcd59a97b4a2",
+    "title": "午间锻炼💪",
+    "start_time": "Jul 23, 2026, 9:51 AM",
+    "end_time": "Jul 23, 2026, 10:24 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Climbing",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 1980
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "21dbe6760caf",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Jul 22, 2026, 12:35 AM",
