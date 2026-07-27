@@ -5957,6 +5957,196 @@
     "exercise_count": 6
   },
   {
+    "id": "f764fbe99784",
+    "title": "1 背➕肩后束",
+    "start_time": "Jul 26, 2026, 11:57 PM",
+    "end_time": "Jul 27, 2026, 1:26 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 300
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Seated Row (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Pull Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 2
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 1
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 2
+          }
+        ]
+      },
+      {
+        "name": "Rear Delt Reverse Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 16
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 18
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown - Close Grip (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 16
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 25
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 25
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 22440.0,
+    "total_sets": 24,
+    "exercise_count": 6
+  },
+  {
     "id": "dcd59a97b4a2",
     "title": "午间锻炼💪",
     "start_time": "Jul 23, 2026, 9:51 AM",
