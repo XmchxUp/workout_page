@@ -5957,6 +5957,31 @@
     "exercise_count": 6
   },
   {
+    "id": "fc0b190cb289",
+    "title": "晨间锻炼 ☀️",
+    "start_time": "Jul 29, 2026, 2:28 AM",
+    "end_time": "Jul 29, 2026, 2:58 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Climbing",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 1800
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "f493b55d7b82",
     "title": "3 手臂 肱二头➕ 肱三头",
     "start_time": "Jul 28, 2026, 12:18 AM",
@@ -6154,6 +6179,109 @@
     "total_volume_kg": 14980.0,
     "total_sets": 24,
     "exercise_count": 7
+  },
+  {
+    "id": "97b43040eaff",
+    "title": "2  胸➕ 肩前中束",
+    "start_time": "Jul 28, 2026, 11:47 PM",
+    "end_time": "Jul 29, 2026, 12:30 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 164
+          }
+        ]
+      },
+      {
+        "name": "Chest Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 17
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Bench Press (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Incline Bench Press (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 10
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 4310.0,
+    "total_sets": 11,
+    "exercise_count": 4
   },
   {
     "id": "f764fbe99784",
