@@ -30,7 +30,7 @@
 
 .searchInput:focus {
   border-color: var(--wc-l3);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  box-shadow: var(--wo-focus-ring);
 }
 
 .searchCount {
@@ -50,7 +50,6 @@
   padding: 5px 12px;
   text-align: left;
   font-size: 0.68rem;
-  text-transform: uppercase;
   letter-spacing: 0.07em;
   font-weight: 600;
   opacity: 0.45;
@@ -71,7 +70,7 @@
 }
 
 .highlighted td {
-  background: rgba(99, 102, 241, 0.09) !important;
+  background: var(--wo-accent-soft-bg) !important;
 }
 
 .expandIcon {
@@ -155,8 +154,8 @@
   font-size: 0.72rem;
   padding: 2px 7px;
   border-radius: 9999px;
-  background: rgba(234, 179, 8, 0.18);
-  color: rgb(234, 179, 8);
+  background: var(--wo-warning-bg);
+  color: var(--wo-warning);
   white-space: nowrap;
 }
 

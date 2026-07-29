@@ -110,15 +110,15 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
     <div>
       {/* Header + period tabs */}
       <div className="flex items-center justify-between mb-4">
-        <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40">
+        <div className="text-xs font-semibold opacity-50">
           {IS_CHINESE ? '肌群分布趋势' : 'Muscle Distribution'}
         </div>
         <div className="flex gap-1">
           {PERIOD_TABS.map(([key, lbl]) => (
             <button key={key} onClick={() => setPeriod(key)}
-              className="text-xs px-2.5 py-1 rounded-lg transition-all"
+              className="text-xs px-2.5 py-1 rounded-lg transition-colors duration-150"
               style={period === key
-                ? { background: 'var(--wc-l3)', color: '#fff', fontWeight: 600 }
+                ? { background: 'var(--wc-l3)', color: 'var(--wo-accent-contrast)', fontWeight: 600 }
                 : { background: 'var(--wt-chip-bg)', opacity: 0.55 }}>
               {lbl}
             </button>
@@ -147,7 +147,7 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
 
         {/* Column 1: Push / Pull / Legs / Core balance */}
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider opacity-35 mb-3">
+          <div className="text-xs font-semibold opacity-50 mb-3">
             {IS_CHINESE ? '训练平衡' : 'Balance'}
           </div>
           <div className="space-y-2.5">
@@ -185,7 +185,7 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
 
         {/* Column 2: Trend arrows (recent vs earlier) */}
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider opacity-35 mb-3">
+          <div className="text-xs font-semibold opacity-50 mb-3">
             {IS_CHINESE ? '趋势对比 (近/早)' : 'Trend (Recent vs Prior)'}
           </div>
           <div className="space-y-1.5">
@@ -211,7 +211,7 @@ const MuscleDistributionPanel = ({ workouts }: { workouts: WorkoutSession[] }) =
 
         {/* Column 3: Insights & suggestions */}
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider opacity-35 mb-3">
+          <div className="text-xs font-semibold opacity-50 mb-3">
             {IS_CHINESE ? '训练建议' : 'Insights'}
           </div>
           <div className="space-y-2 text-xs">

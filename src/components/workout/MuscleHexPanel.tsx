@@ -85,16 +85,16 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
     <div>
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-        <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40">
+        <div className="text-xs font-semibold opacity-50">
           {IS_CHINESE ? '六边形肌群分布' : 'Muscle Hexagram'}
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           <div className="flex gap-1">
             {PERIOD_TABS.map(([key, lbl]) => (
               <button key={key} onClick={() => setPeriod(key)}
-              className="text-xs px-2.5 py-1 rounded-lg transition-all"
+              className="text-xs px-2.5 py-1 rounded-lg transition-colors duration-150"
               style={period === key
-                ? { background: 'var(--wc-l3)', color: '#fff', fontWeight: 600 }
+                ? { background: 'var(--wc-l3)', color: 'var(--wo-accent-contrast)', fontWeight: 600 }
                   : { background: 'var(--wt-chip-bg)', opacity: 0.55 }}>
                 {lbl}
               </button>
@@ -102,7 +102,7 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
           </div>
           {period !== 'all' && (
             <button onClick={() => setShowPrev((p) => !p)}
-              className="text-xs px-2.5 py-1 rounded-lg transition-all"
+              className="text-xs px-2.5 py-1 rounded-lg transition-colors duration-150"
               style={showPrev
                 ? { background: 'var(--wo-accent-soft-bg)', color: 'var(--wc-l4)', border: '1px solid var(--wo-accent-soft-border)' }
                 : { background: 'var(--wt-chip-bg)', opacity: 0.5 }}>
@@ -225,8 +225,7 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             style={{ background: 'var(--wt-chip-bg)', border: '1px solid var(--wo-card-border)' }}>
             <div className="text-center shrink-0" style={{ minWidth: 44 }}>
               <div style={{ fontSize: 34, fontWeight: 900, lineHeight: 1, color: gradeColor,
-                textShadow: `0 0 12px ${gradeColor}99`,
-                animation: 'glowPulse 2.5s ease-in-out infinite' }}>
+                animation: 'none' }}>
                 {grade}
               </div>
               <div style={{ fontSize: 9, opacity: 0.35, marginTop: 2, letterSpacing: '0.05em' }}>
@@ -238,10 +237,10 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                 <span style={{ fontSize: 24, fontWeight: 800, lineHeight: 1, color: gradeColor }}>{balanceScore}</span>
                 <span style={{ fontSize: 11, opacity: 0.35, marginBottom: 2 }}>/100</span>
               </div>
-              <div className="h-2 rounded-full overflow-hidden" style={{ background: 'rgba(128,128,128,0.15)' }}>
+              <div className="h-2 rounded-full overflow-hidden" style={{ background: 'var(--wt-chip-bg)' }}>
                 <div className="h-full rounded-full" style={{
                   width: `${balanceScore}%`,
-                  background: `linear-gradient(90deg, color-mix(in srgb, ${gradeColor} 55%, transparent), ${gradeColor})`,
+                  background: gradeColor,
                   transition: 'width 0.7s ease',
                 }} />
               </div>
@@ -268,7 +267,7 @@ const MuscleHexPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                   <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--wt-chip-bg)' }}>
                     <div className="h-full rounded-full" style={{
                       width: `${Math.round(v * 100)}%`,
-                      background: `linear-gradient(90deg, color-mix(in srgb, ${color} 52%, transparent), ${color})`,
+                      background: color,
                       transition: 'width 0.5s ease',
                     }} />
                   </div>

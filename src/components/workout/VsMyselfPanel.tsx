@@ -95,7 +95,7 @@ export default function VsMyselfPanel({ workouts }: { workouts: WorkoutSession[]
         <div className="flex gap-1">
           {PERIODS.map((p) => (
             <button key={p} onClick={() => setPeriod(p)}
-              className="text-xs px-2 py-0.5 rounded-full transition-all"
+              className="text-xs px-2 py-0.5 rounded-full transition-colors duration-150"
               style={{
                 background: period === p ? 'var(--wo-accent-soft-bg-strong)' : 'var(--wt-chip-bg)',
                 color: period === p ? 'var(--wc-l4)' : undefined,

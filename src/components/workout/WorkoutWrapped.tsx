@@ -74,28 +74,14 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
         onClick={(e) => e.stopPropagation()}
         style={{
           width: '100%', maxWidth: 400,
-          background: 'linear-gradient(160deg, #1b1512 0%, #2a211d 52%, #171311 100%)',
-          borderRadius: 24,
+          background: 'var(--wo-card-bg)',
+          borderRadius: 12,
           border: '1px solid var(--wo-card-border)',
           boxShadow: 'var(--wo-modal-shadow)',
           overflow: 'hidden',
           position: 'relative',
         }}
       >
-        {/* Background decoration */}
-        <div style={{
-          position: 'absolute', top: -60, right: -60,
-          width: 200, height: 200, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(var(--wo-accent-rgb), 0.14) 0%, transparent 70%)',
-          pointerEvents: 'none',
-        }} />
-        <div style={{
-          position: 'absolute', bottom: -40, left: -40,
-          width: 160, height: 160, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(var(--wo-warning-rgb), 0.12) 0%, transparent 70%)',
-          pointerEvents: 'none',
-        }} />
-
         <div className="p-8 relative z-10">
           {/* Header */}
           <div className="text-center mb-8">
@@ -104,8 +90,7 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
             </div>
             <div style={{
               fontSize: 52, fontWeight: 900, lineHeight: 1,
-              background: 'linear-gradient(135deg, var(--wt-pr-color), var(--wo-series-2))',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+              color: 'var(--wt-pr-color)',
             }}>{year}</div>
           </div>
 
@@ -210,9 +195,9 @@ export default function WorkoutWrapped({ workouts, year, onClose }: Props) {
               {IS_CHINESE ? '截图分享 · 继续超越自己' : 'Screenshot to share · Keep pushing'}
             </div>
             <button onClick={onClose} style={{
-              padding: '8px 24px', borderRadius: 20, border: '1px solid var(--wo-card-border)',
-              background: 'var(--wo-card-hover)', color: 'rgba(242,231,222,0.6)',
-              fontSize: 12, cursor: 'pointer', transition: 'all 0.2s',
+              padding: '8px 24px', borderRadius: 12, border: '1px solid var(--wo-card-border)',
+              background: 'var(--wo-card-hover)', color: 'var(--wo-axis-text)',
+              fontSize: 12, cursor: 'pointer', transition: 'background-color 0.15s, border-color 0.15s, color 0.15s',
             }}>
               {IS_CHINESE ? '关闭' : 'Close'}
             </button>

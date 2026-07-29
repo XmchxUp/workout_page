@@ -26,7 +26,7 @@ export const SectionHeader = ({
     style={onToggle ? { cursor: 'pointer', userSelect: 'none' } : undefined}
     onClick={onToggle}
   >
-    <span className="text-xs font-bold uppercase tracking-[0.12em]" style={{ color: 'var(--wc-l3)' }}>{label}</span>
+    <span className="text-xs font-bold opacity-60" style={{ color: 'var(--wc-l3)' }}>{label}</span>
     <div className="flex-1 h-px" style={{ background: 'var(--wo-section-line)' }} />
     {onToggle !== undefined && (
       <span style={{ fontSize: 11, opacity: 0.4, color: 'var(--wc-l3)', transition: 'transform 0.2s', display: 'inline-block', transform: collapsed ? 'rotate(-90deg)' : 'rotate(0deg)' }}>
@@ -61,5 +61,5 @@ export const Card = ({ children, className = '' }: { children: React.ReactNode; 
 
 // Compact label for chart/panel titles
 export const PanelLabel = ({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) => (
-  <div className="mb-2.5 text-xs font-semibold uppercase tracking-[0.1em] opacity-40" style={style}>{children}</div>
+  <div className="mb-2.5 text-xs font-semibold opacity-50" style={style}>{children}</div>
 );

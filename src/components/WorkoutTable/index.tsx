@@ -105,7 +105,7 @@ const ExerciseDetail = ({
 // WorkoutRow
 // ---------------------------------------------------------------------------
 const SCORE_COLOR = (s: number) =>
-  s >= 70 ? 'rgba(34,197,94,0.9)' : s >= 45 ? 'rgba(234,179,8,0.85)' : 'rgba(128,128,128,0.5)';
+  s >= 70 ? 'var(--wo-positive)' : s >= 45 ? 'var(--wo-warning)' : 'var(--wo-axis-text)';
 
 const WorkoutRow = ({
   workout,
@@ -286,8 +286,8 @@ const WorkoutTable = ({ workouts, highlightDate, scoreMap, doubleSessionDates }:
           <button
             onClick={() => setVisibleCount((c) => c + INITIAL_VISIBLE)}
             style={{
-              background: 'var(--wo-card-bg, rgba(255,255,255,0.04))',
-              border: '1px solid rgba(128,128,128,0.2)',
+              background: 'var(--wo-card-bg)',
+              border: '1px solid var(--wo-card-border)',
               borderRadius: 10,
               padding: '8px 20px',
               fontSize: 13,

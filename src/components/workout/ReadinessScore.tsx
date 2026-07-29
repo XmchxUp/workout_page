@@ -134,8 +134,8 @@ export default function ReadinessScore({ workouts }: { workouts: WorkoutSession[
   const fillDeg = START_DEG + (score / 100) * 270;
 
   // Gauge gradient stops (135°→405°): red at 135, yellow at 270, green at 405
-  const trackPath  = arcPath(START_DEG, END_DEG, R, 12);
-  const fillPath   = score > 0 ? arcPath(START_DEG, fillDeg, R, 12) : '';
+  const trackPath  = arcPath(START_DEG, END_DEG, R);
+  const fillPath   = score > 0 ? arcPath(START_DEG, fillDeg, R) : '';
   const needlePos  = polarToXY(fillDeg, R);
 
   const subItems = [
@@ -146,7 +146,7 @@ export default function ReadinessScore({ workouts }: { workouts: WorkoutSession[
 
   return (
     <div>
-      <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40 mb-4">
+      <div className="text-xs font-semibold opacity-50 mb-4">
         {IS_CHINESE ? '今日准备度' : 'Readiness Score'}
       </div>
 
@@ -165,12 +165,12 @@ export default function ReadinessScore({ workouts }: { workouts: WorkoutSession[
           {/* Fill */}
           {fillPath && (
             <path d={fillPath} fill="none" stroke="url(#gaugeGrad)" strokeWidth={12} strokeLinecap="round"
-              style={{ filter: `drop-shadow(0 0 6px ${status.color}88)` }} />
+              style={{}} />
           )}
           {/* Needle dot */}
           {score > 0 && (
             <circle cx={needlePos.x} cy={needlePos.y} r={7} fill={status.color}
-              style={{ filter: `drop-shadow(0 0 8px ${status.color})` }} />
+              style={{}} />
           )}
           {/* Center score */}
           <text x={CX} y={CY - 8} textAnchor="middle" fill={status.color}

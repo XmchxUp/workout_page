@@ -44,7 +44,6 @@ const NeonPRWall = ({ workouts }: { workouts: WorkoutSession[] }) => {
         </span>
         <span style={{
           color: accent, fontWeight: 900, fontSize: 18, whiteSpace: 'nowrap', flexShrink: 0,
-          textShadow: `0 0 12px color-mix(in srgb, ${accent} 34%, transparent)`,
           fontVariantNumeric: 'tabular-nums',
         }}>
           {e1rm}
@@ -56,33 +55,15 @@ const NeonPRWall = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
   return (
     <div className="px-4 sm:px-6" style={{
-      background: 'linear-gradient(180deg, color-mix(in srgb, var(--wo-series-7) 18%, var(--color-bg)), color-mix(in srgb, var(--wo-series-6) 10%, var(--color-bg)))',
+      background: 'var(--wo-card-bg)',
       border: '1px solid var(--wo-accent-soft-border)',
       borderRadius: 14,
       paddingTop: 22,
       paddingBottom: 18,
       position: 'relative',
       overflow: 'hidden',
-      boxShadow: 'var(--wo-accent-glow)',
+      boxShadow: 'none',
     }}>
-      {/* Soft scanline texture */}
-      <div style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1,
-        backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 3px, color-mix(in srgb, var(--wo-series-8) 4%, transparent) 3px, color-mix(in srgb, var(--wo-series-8) 4%, transparent) 4px)',
-      }} />
-
-      {/* Accent sweep */}
-      <div style={{
-        position: 'absolute', left: 0, right: 0, height: 2, zIndex: 3, pointerEvents: 'none',
-        background: 'linear-gradient(90deg, transparent, color-mix(in srgb, var(--wt-pr-color) 26%, transparent), color-mix(in srgb, var(--color-tx) 16%, transparent), color-mix(in srgb, var(--wt-pr-color) 26%, transparent), transparent)',
-        animation: 'scanSweep 7s ease-in-out infinite',
-      }} />
-
-      {/* Ambient color blobs */}
-      <div style={{ position: 'absolute', top: -60, left: '15%', width: 280, height: 280, borderRadius: '50%', background: 'color-mix(in srgb, var(--wo-series-2) 12%, transparent)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: -60, right: '15%', width: 280, height: 280, borderRadius: '50%', background: 'color-mix(in srgb, var(--wo-series-8) 10%, transparent)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', top: '40%', left: '45%', width: 160, height: 160, borderRadius: '50%', background: 'color-mix(in srgb, var(--wt-pr-color) 8%, transparent)', filter: 'blur(40px)', pointerEvents: 'none' }} />
-
       {/* ── Header ── */}
       <div style={{ textAlign: 'center', marginBottom: 16, position: 'relative', zIndex: 2 }}>
         <div style={{
@@ -95,9 +76,7 @@ const NeonPRWall = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
         <div style={{
           fontSize: 'clamp(18px, 5vw, 28px)', fontWeight: 900, letterSpacing: '0.06em', fontStyle: 'italic',
-          background: 'linear-gradient(135deg, var(--wt-pr-color), var(--wo-series-3))',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
+          color: 'var(--wt-pr-color)',
           lineHeight: 1.1,
         }}>
           個人最高出力紀錄
@@ -114,11 +93,8 @@ const NeonPRWall = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
       <div style={{
         height: 1.5,
-        background: 'linear-gradient(90deg, transparent 0%, var(--wo-series-6) 12%, var(--wo-series-3) 38%, var(--wt-pr-color) 50%, var(--wo-series-1) 74%, transparent 100%)',
-        backgroundSize: '200% 100%',
-        boxShadow: '0 0 8px color-mix(in srgb, var(--wt-pr-color) 22%, transparent)',
+        background: 'var(--wo-accent-line-soft)',
         marginBottom: 14, position: 'relative', zIndex: 2,
-        animation: 'neonSweep 4s linear infinite',
       }} />
 
       {/* ── Two-column PR grid (single column on mobile) ── */}
@@ -137,10 +113,8 @@ const NeonPRWall = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
       <div style={{
         height: 1.5,
-        background: 'linear-gradient(90deg, transparent 0%, var(--wo-series-4) 10%, var(--wo-series-8) 30%, var(--wt-pr-color) 50%, var(--wo-series-2) 70%, var(--wo-series-6) 90%, transparent 100%)',
-        backgroundSize: '200% 100%',
+        background: 'var(--wo-section-line)',
         marginTop: 14, marginBottom: 10, position: 'relative', zIndex: 2,
-        animation: 'neonSweep 4s linear infinite reverse',
       }} />
 
       {/* Footer */}

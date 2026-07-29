@@ -579,7 +579,7 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40">
+        <div className="text-xs font-semibold opacity-50">
           {IS_CHINESE ? `成就 · ${unlockedCount} / ${items.length}` : `Achievements · ${unlockedCount} / ${items.length}`}
         </div>
         <div className="flex items-center gap-3">
@@ -599,7 +599,7 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
       <div className="h-1 rounded-full overflow-hidden mb-4" style={{ background: 'var(--wt-chip-bg)' }}>
         <div className="h-full rounded-full" style={{
           width: `${(unlockedCount / items.length) * 100}%`,
-          background: 'linear-gradient(90deg, var(--wo-series-3), var(--wo-series-2), var(--wt-pr-color))',
+          background: 'var(--wt-pr-color)',
           transition: 'width 1.2s ease',
         }} />
       </div>
@@ -612,23 +612,23 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
           const progPct = prog ? Math.round((prog[0] / prog[1]) * 100) : null;
           return (
             <div key={id} title={`${title}\n${desc}${prog && !unlocked ? `\n${prog[0]} / ${prog[1]}` : ''}`}
-              className="rounded-xl p-2.5 flex flex-col items-center gap-1.5 relative select-none"
+              className="rounded-lg p-2.5 flex flex-col items-center gap-1.5 relative select-none"
               style={{
-                background: unlocked ? `color-mix(in srgb, ${resolvedColor} 12%, transparent)` : 'rgba(100,100,120,0.05)',
-                border: `1px solid ${unlocked ? `color-mix(in srgb, ${resolvedColor} 30%, transparent)` : 'rgba(128,128,128,0.1)'}`,
-                boxShadow: unlocked ? `0 0 14px color-mix(in srgb, ${resolvedColor} 18%, transparent)` : undefined,
+                background: 'var(--wo-card-bg)',
+                border: `1px solid ${unlocked ? `color-mix(in srgb, ${resolvedColor} 30%, transparent)` : 'var(--wo-card-border)'}`,
+                boxShadow: 'none',
                 filter: unlocked ? undefined : 'grayscale(0.9)',
                 opacity: unlocked ? 1 : 0.38,
-                animation: unlocked ? `badgeUnlock 0.5s cubic-bezier(0.34,1.56,0.64,1) ${idx * 0.04}s both` : undefined,
+                animation: unlocked ? `badgeUnlock 0.35s ease ${idx * 0.04}s both` : undefined,
                 transition: 'box-shadow 0.2s, border-color 0.2s',
                 cursor: 'pointer',
               }}
               onClick={() => setSelected(items.find((it) => it.id === id) ?? null)}
               onMouseEnter={(e) => {
-                if (unlocked) (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 20px color-mix(in srgb, ${resolvedColor} 24%, transparent)`;
+                if (unlocked) (e.currentTarget as HTMLDivElement).style.borderColor = `color-mix(in srgb, ${resolvedColor} 45%, var(--wo-card-border))`;
               }}
               onMouseLeave={(e) => {
-                if (unlocked) (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 14px color-mix(in srgb, ${resolvedColor} 18%, transparent)`;
+                if (unlocked) (e.currentTarget as HTMLDivElement).style.borderColor = `color-mix(in srgb, ${resolvedColor} 30%, transparent)`;
               }}
             >
               <span style={{ fontSize: 24, lineHeight: 1 }}>{icon}</span>
@@ -646,7 +646,7 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
               )}
               {/* Progress bar for milestone achievements */}
               {progPct !== null && !unlocked && (
-                <div className="w-full h-0.5 rounded-full overflow-hidden" style={{ background: 'rgba(128,128,128,0.15)' }}>
+                <div className="w-full h-0.5 rounded-full overflow-hidden" style={{ background: 'var(--wt-chip-bg)' }}>
                   <div className="h-full rounded-full" style={{ width: `${progPct}%`, background: resolvedColor }} />
                 </div>
               )}
@@ -661,7 +661,7 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
       {selected && (
         <div
-          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          style={{ position: 'fixed', inset: 0, background: 'var(--wo-modal-backdrop)', zIndex: 999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           onClick={() => setSelected(null)}
         >
           {(() => {
@@ -671,13 +671,13 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             style={{
               background: 'var(--wo-card-bg)',
               border: `1px solid color-mix(in srgb, ${selectedColor} 30%, transparent)`,
-              borderRadius: 20,
+              borderRadius: 12,
               padding: 28,
               maxWidth: 340,
               width: '90vw',
               position: 'relative',
-              boxShadow: `0 0 40px color-mix(in srgb, ${selectedColor} 20%, transparent)`,
-              animation: 'badgeUnlock 0.35s cubic-bezier(0.34,1.56,0.64,1) both',
+              boxShadow: 'var(--wo-popover-shadow)',
+              animation: 'badgeUnlock 0.25s ease both',
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -690,7 +690,7 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             {/* Icon + title */}
             <div style={{ textAlign: 'center', marginBottom: 16 }}>
               <div style={{ fontSize: 52, lineHeight: 1, marginBottom: 8 }}>{selected.icon}</div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: selected.color }}>{selected.title}</div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: selectedColor }}>{selected.title}</div>
               <div style={{ fontSize: 11, opacity: 0.4, marginTop: 4 }}>{RARITY_LABEL[selected.rarity]} · {selected.rarity.toUpperCase()}</div>
             </div>
 
@@ -700,11 +700,11 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
             {/* Status */}
             <div style={{
               borderRadius: 12, padding: '10px 16px', textAlign: 'center',
-              background: selected.unlocked ? `${selected.color}15` : 'rgba(128,128,128,0.08)',
-              border: `1px solid ${selected.unlocked ? selected.color + '30' : 'rgba(128,128,128,0.15)'}`,
+              background: selected.unlocked ? `color-mix(in srgb, ${selectedColor} 12%, transparent)` : 'var(--wt-chip-bg)',
+              border: `1px solid ${selected.unlocked ? `color-mix(in srgb, ${selectedColor} 30%, transparent)` : 'var(--wo-card-border)'}`,
             }}>
               {selected.unlocked ? (
-                <span style={{ color: selected.color, fontWeight: 600, fontSize: 13 }}>✓ 已解锁</span>
+                <span style={{ color: selectedColor, fontWeight: 600, fontSize: 13 }}>✓ 已解锁</span>
               ) : (
                 <span style={{ opacity: 0.45, fontSize: 13 }}>🔒 未解锁</span>
               )}
@@ -721,8 +721,8 @@ const AchievementsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                     <span>进度</span>
                     <span>{prog[0].toLocaleString()} / {prog[1].toLocaleString()}</span>
                   </div>
-                  <div style={{ height: 6, borderRadius: 99, background: 'rgba(128,128,128,0.15)', overflow: 'hidden' }}>
-                    <div style={{ height: '100%', borderRadius: 99, width: `${pct}%`, background: selected.color, transition: 'width 0.8s ease' }} />
+                  <div style={{ height: 6, borderRadius: 99, background: 'var(--wt-chip-bg)', overflow: 'hidden' }}>
+                    <div style={{ height: '100%', borderRadius: 99, width: `${pct}%`, background: selectedColor, transition: 'width 0.8s ease' }} />
                   </div>
                 </div>
               );

@@ -77,7 +77,7 @@ const TrainingLoad = ({ workouts }: { workouts: WorkoutSession[] }) => {
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40">
+        <div className="text-xs font-semibold opacity-50">
           {IS_CHINESE ? '训练负荷 ATL/CTL/TSB' : 'Training Load'}
         </div>
         <div className="flex gap-3 text-xs opacity-60">
@@ -88,7 +88,7 @@ const TrainingLoad = ({ workouts }: { workouts: WorkoutSession[] }) => {
       </div>
       <ResponsiveContainer width="100%" height={180}>
         <ComposedChart data={data} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(128,128,128,0.08)" />
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--wo-grid)" />
 
           <XAxis
             dataKey="date"
@@ -110,11 +110,11 @@ const TrainingLoad = ({ workouts }: { workouts: WorkoutSession[] }) => {
               return [`${v}${name === 'vol' ? ' kg' : ''}`, labels[name] ?? name];
             }}
           />
-          <ReferenceLine y={0} stroke="rgba(128,128,128,0.3)" />
+          <ReferenceLine y={0} stroke="var(--wo-section-line)" />
           <Area
             dataKey="ctl"
             stroke="var(--wo-fitness)"
-            fill="rgba(96,165,250,0.08)"
+            fill="var(--wo-accent-soft-bg)"
             strokeWidth={2}
             dot={false}
           />

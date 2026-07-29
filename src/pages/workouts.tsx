@@ -402,11 +402,11 @@ const WeeklyGoalWidget = ({ workouts, goal }: { workouts: WorkoutSession[]; goal
     <div className="flex items-center gap-3 rounded-xl px-4 py-3"
       style={{ background: 'var(--wo-card-bg)', border: '1px solid var(--wo-card-border)' }}>
       <svg width={48} height={48} viewBox="0 0 48 48" style={{ flexShrink: 0 }}>
-        <circle cx="24" cy="24" r={r} fill="none" stroke="rgba(128,128,128,0.15)" strokeWidth="3.5" />
+        <circle cx="24" cy="24" r={r} fill="none" stroke="var(--wt-chip-bg)" strokeWidth="3.5" />
         <circle cx="24" cy="24" r={r} fill="none" stroke={done ? 'var(--wc-l4)' : 'var(--wc-l3)'}
           strokeWidth="3.5" strokeDasharray={circ} strokeDashoffset={offset}
           strokeLinecap="round" transform="rotate(-90 24 24)"
-          style={done ? { filter: 'drop-shadow(0 0 4px var(--wc-l4)) drop-shadow(0 0 8px var(--wc-l3))', animation: 'neonPulse 2s ease-in-out infinite' } : {}} />
+          style={done ? {} : {}} />
         <text x="24" y="24" textAnchor="middle" dominantBaseline="central" fontSize="12" fontWeight="bold" fill="currentColor">
           {count}/{goal}
         </text>
@@ -651,40 +651,32 @@ const NextSessionGuide = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
   // Status thresholds
   const status = (days: number | null) =>
-    days === null ? { text: IS_CHINESE ? '未记录' : 'No data',                         color: '#ff4400',              badge: '★★★' } :
-    days >= 5     ? { text: IS_CHINESE ? `${days}d 已恢复` : `${days}d rested`,         color: '#ff6b00',              badge: '★★★' } :
-    days >= 3     ? { text: IS_CHINESE ? `${days}d 可训练` : `${days}d ready`,          color: '#ffcc00',              badge: '★★'  } :
-    days >= 1     ? { text: IS_CHINESE ? `${days}d 稍候`  : `${days}d soon`,           color: 'rgba(255,255,255,0.3)', badge: '·'   } :
-                    { text: IS_CHINESE ? '今日已练'        : 'Done today',              color: 'rgba(255,255,255,0.2)', badge: '·'   };
+    days === null ? { text: IS_CHINESE ? '未记录' : 'No data',                         color: 'var(--wo-warning)', badge: '★★★' } :
+    days >= 5     ? { text: IS_CHINESE ? `${days}d 已恢复` : `${days}d rested`,         color: 'var(--wo-positive)', badge: '★★★' } :
+    days >= 3     ? { text: IS_CHINESE ? `${days}d 可训练` : `${days}d ready`,          color: 'var(--wo-accent)', badge: '★★'  } :
+    days >= 1     ? { text: IS_CHINESE ? `${days}d 稍候`  : `${days}d soon`,           color: 'var(--wo-axis-text)', badge: '·'   } :
+                    { text: IS_CHINESE ? '今日已练'        : 'Done today',              color: 'var(--wo-axis-text)', badge: '·'   };
 
   return (
     <div style={{
-      background: 'linear-gradient(160deg, #110800 0%, #0a0400 60%, #0d0600 100%)',
-      border: '1px solid rgba(200,130,10,0.3)',
+      background: 'var(--wo-card-bg)',
+      border: '1px solid var(--wo-card-border)',
       borderRadius: 12,
       overflow: 'hidden',
-      boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
     }}>
-      {/* Shop-sign header band */}
+      {/* Header band */}
       <div style={{
-        background: 'linear-gradient(90deg, #8a5500, #c8860a, #f5a623, #c8860a, #8a5500)',
+        background: 'var(--wo-accent-soft-bg-strong)',
+        borderBottom: '1px solid var(--wo-accent-soft-border)',
         padding: '7px 14px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        position: 'relative',
-        overflow: 'hidden',
       }}>
-        {/* Shimmer sweep on header */}
-        <div style={{
-          position: 'absolute', top: 0, bottom: 0, width: '40%', pointerEvents: 'none',
-          background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent)',
-          animation: 'shimmer 3.5s ease-in-out infinite',
-        }} />
-        <span style={{ fontSize: 15, fontWeight: 900, color: '#3d1a00', letterSpacing: '0.05em' }}>
+        <span style={{ fontSize: 15, fontWeight: 900, color: 'var(--color-tx)', letterSpacing: '0.05em' }}>
           {IS_CHINESE ? '今日推介' : "TODAY'S PICK"}
         </span>
-        <span style={{ fontSize: 10, fontWeight: 700, color: '#3d1a00', letterSpacing: '0.25em', opacity: 0.8 }}>
+        <span style={{ fontSize: 10, fontWeight: 700, color: 'var(--wo-accent)', letterSpacing: '0.25em', opacity: 0.8 }}>
           {IS_CHINESE ? "TODAY'S PICK" : 'NEXT SESSION'}
         </span>
       </div>
@@ -698,17 +690,17 @@ const NextSessionGuide = ({ workouts }: { workouts: WorkoutSession[] }) => {
             <div key={muscle} style={{
               display: 'flex', alignItems: 'center', gap: 8,
               padding: '7px 0',
-              borderBottom: i < suggestions.length - 1 ? '1px solid rgba(200,130,10,0.1)' : 'none',
+              borderBottom: i < suggestions.length - 1 ? '1px solid var(--wo-section-line)' : 'none',
               animation: `slideUp 0.3s ease ${i * 0.05}s both`,
               opacity: isRested ? 1 : 0.45,
             }}>
               <span style={{ fontSize: 13, color: s.color, width: 24, flexShrink: 0, textAlign: 'center', letterSpacing: '-0.05em' }}>
                 {s.badge}
               </span>
-              <span style={{ flex: 1, fontSize: 14, fontWeight: 700, color: 'rgba(255,220,150,0.92)' }}>
+              <span style={{ flex: 1, fontSize: 14, fontWeight: 700, color: 'var(--color-tx)' }}>
                 {label}
               </span>
-              <span style={{ fontSize: 9, color: 'rgba(255,220,150,0.3)', letterSpacing: '0.04em' }}>
+              <span style={{ fontSize: 9, color: 'var(--wo-axis-text)', letterSpacing: '0.04em' }}>
                 {muscle.toUpperCase()}
               </span>
               <span style={{ fontSize: 13, fontWeight: 700, color: s.color, textAlign: 'right', minWidth: 72 }}>
@@ -721,10 +713,10 @@ const NextSessionGuide = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
       {/* Footer */}
       <div style={{
-        borderTop: '1px solid rgba(200,130,10,0.12)',
+        borderTop: '1px solid var(--wo-section-line)',
         padding: '6px 14px',
         fontSize: 9.5,
-        color: 'rgba(200,130,10,0.4)',
+        color: 'var(--wo-axis-text)',
         letterSpacing: '0.25em',
         textAlign: 'center',
       }}>
@@ -748,7 +740,7 @@ const BestLiftsPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
         {lifts.map(({ name, weight, reps, e1rm, date }) => (
           <div key={name}>
             <div
-              className="flex items-center gap-2 text-sm cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-all"
+              className="flex items-center gap-2 text-sm cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-colors duration-150"
               style={selected === name ? { background: ACCENT_SOFT_BG, borderRadius: 8 } : {}}
               onClick={() => setSelected((prev) => (prev === name ? null : name))}
             >
@@ -868,15 +860,16 @@ const ExerciseProgress = ({ name, workouts, onClose }: { name: string; workouts:
               <YAxis yAxisId="v" orientation="right" tick={{ fontSize: 8, fill: 'currentColor', opacity: 0.25 }} />
               <Tooltip contentStyle={TOOLTIP_STYLE}
                 formatter={(v: number, key: string, props: { payload?: { weight?: number; reps?: number } }) => {
-                  if (key === 'e1rm') return [`e1RM ${v} kg (${props.payload?.weight}×${props.payload?.reps})`, IS_CHINESE ? '估算最大' : 'Est. 1RM'];
+                  const payload = props.payload ?? {};
+                  if (key === 'e1rm') return [`e1RM ${v} kg (${payload.weight}×${payload.reps})`, IS_CHINESE ? '估算最大' : 'Est. 1RM'];
                   if (key === 'predicted') return [`${v} kg`, IS_CHINESE ? '预测 e1RM' : 'Predicted e1RM'];
                   return [`${v.toLocaleString()} kg`, IS_CHINESE ? '单次出力' : 'Session Vol'];
                 }}
               />
               <Line yAxisId="e" type="monotone" dataKey="e1rm" stroke="var(--wc-l3)" strokeWidth={2} connectNulls={false}
                 dot={(props: { payload?: { e1rm?: number; date?: string }; key?: string; cx?: number; cy?: number }) => {
-                  if (props.payload.e1rm === undefined) return <g key={props.key} />;
-                  const isPR = prDates.has(props.payload.date);
+                  if (props.payload?.e1rm === undefined) return <g key={props.key} />;
+                  const isPR = props.payload?.date !== undefined && prDates.has(props.payload.date);
                   return <circle key={props.key} cx={props.cx} cy={props.cy} r={isPR ? 5 : 3}
                     fill={isPR ? 'var(--wt-pr-color)' : 'var(--wc-l3)'} stroke="none" />;
                 }}
@@ -980,7 +973,7 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
   // Smooth 5-stop heat color: inactive → dim → mid → bright → peak
   const mc = (muscle: string): string => {
     const r = ratio(muscle);
-    if (r === 0) return 'rgba(100,100,130,0.1)';
+    if (r === 0) return 'var(--wc-empty)';
     if (r < 0.15) return 'rgba(var(--wo-accent-rgb), 0.22)';
     if (r < 0.35) return 'rgba(var(--wo-accent-rgb), 0.4)';
     if (r < 0.6) return 'rgba(var(--wo-accent-rgb), 0.58)';
@@ -1012,15 +1005,15 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
         </defs>
 
         {/* Body silhouette outline */}
-        <ellipse cx="45" cy="11" rx="8" ry="9" fill="none" stroke="rgba(150,150,180,0.18)" strokeWidth="1" />
-        <rect x="39" y="19" width="12" height="5" rx="2" fill="rgba(150,150,180,0.08)" />
+        <ellipse cx="45" cy="11" rx="8" ry="9" fill="none" stroke="var(--wo-section-line)" strokeWidth="1" />
+        <rect x="39" y="19" width="12" height="5" rx="2" fill="var(--wo-grid)" />
         <path d="M29,24 C22,26 17,34 16,42 L14,66 C16,69 20,70 24,69 L24,97 C24,100 27,101 30,101 L60,101 C63,101 66,100 66,97 L66,69 C70,70 74,69 76,66 L74,42 C73,34 68,26 61,24 Z"
-          fill="none" stroke="rgba(150,150,180,0.14)" strokeWidth="0.8" />
+          fill="none" stroke="var(--wo-grid)" strokeWidth="0.8" />
         {/* Leg outlines */}
         <path d="M30,101 L28,145 Q28,148 31,149 L38,149 Q41,148 41,145 L39,101 Z"
-          fill="none" stroke="rgba(150,150,180,0.1)" strokeWidth="0.8" />
+          fill="none" stroke="var(--wo-grid)" strokeWidth="0.8" />
         <path d="M51,101 L49,145 Q49,148 52,149 L59,149 Q62,148 62,145 L60,101 Z"
-          fill="none" stroke="rgba(150,150,180,0.1)" strokeWidth="0.8" />
+          fill="none" stroke="var(--wo-grid)" strokeWidth="0.8" />
 
         {/* Shoulders */}
         <Muscle muscle="shoulders">
@@ -1043,8 +1036,8 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
             <rect x="70" y="36" width="9" height="24" rx="4.5" fill={mc('biceps')} />
           </Muscle>
           {/* Forearms (inactive) */}
-          <rect x="12" y="62" width="8" height="16" rx="4" fill="rgba(100,100,130,0.08)" />
-          <rect x="70" y="62" width="8" height="16" rx="4" fill="rgba(100,100,130,0.08)" />
+          <rect x="12" y="62" width="8" height="16" rx="4" fill="var(--wc-empty)" />
+          <rect x="70" y="62" width="8" height="16" rx="4" fill="var(--wc-empty)" />
           {/* Quads */}
           <Muscle muscle="quads">
             <rect x="29" y="71" width="12" height="38" rx="6" fill={mc('quads')} />
@@ -1067,8 +1060,8 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
             <rect x="70" y="36" width="9" height="24" rx="4.5" fill={mc('triceps')} />
           </Muscle>
           {/* Forearms (inactive) */}
-          <rect x="12" y="62" width="8" height="16" rx="4" fill="rgba(100,100,130,0.08)" />
-          <rect x="70" y="62" width="8" height="16" rx="4" fill="rgba(100,100,130,0.08)" />
+          <rect x="12" y="62" width="8" height="16" rx="4" fill="var(--wc-empty)" />
+          <rect x="70" y="62" width="8" height="16" rx="4" fill="var(--wc-empty)" />
           {/* Glutes */}
           <Muscle muscle="glutes">
             <ellipse cx="36" cy="72" rx="8" ry="7.5" fill={mc('glutes')} />
@@ -1138,9 +1131,7 @@ const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
       {/* Gradient legend bar */}
       <div className="flex items-center gap-2 mt-3 mb-2.5">
         <span style={{ fontSize: 10, opacity: 0.3 }}>{IS_CHINESE ? '少' : 'Low'}</span>
-        <div className="flex-1 h-2 rounded-full" style={{
-          background: 'linear-gradient(90deg, rgba(var(--wo-accent-rgb), 0.24), rgba(var(--wo-accent-rgb), 0.42), rgba(var(--wo-accent-rgb), 0.6), rgba(var(--wo-accent-rgb), 0.78), rgba(var(--wo-accent-rgb), 0.94))',
-        }} />
+        <div className="flex-1 h-2 rounded-full" style={{ background: 'var(--wo-accent-line-strong)' }} />
         <span style={{ fontSize: 10, opacity: 0.3 }}>{IS_CHINESE ? '多' : 'High'}</span>
       </div>
 
@@ -1275,13 +1266,12 @@ const HeroStat = ({ label, value, unit, accent, trend }: {
       (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--wo-card-border)';
     }}
   >
-    <span className="text-xs opacity-35 uppercase tracking-wider leading-tight mb-1">{label}</span>
+    <span className="text-xs opacity-45 leading-tight mb-1">{label}</span>
     <div className="flex items-end gap-1">
       <span className={`text-xl font-bold tabular-nums leading-none`}
         style={accent ? {
           color: 'var(--wc-l4)',
-          animation: 'glowPulse 2.5s ease-in-out infinite',
-          textShadow: '0 0 8px var(--wc-l4)',
+          animation: 'none',
         } : {}}>
         {value}
       </span>
@@ -1343,9 +1333,9 @@ const PRCelebration = ({ prs, onClose }: { prs: Array<{ exercise: string; e1rm: 
         }
       `}</style>
       <div
-        className="relative z-10 rounded-2xl p-8 max-w-sm w-full mx-4 text-center"
+        className="relative z-10 rounded-xl p-8 max-w-sm w-full mx-4 text-center"
         style={{
-          background: 'linear-gradient(135deg, rgba(var(--wo-accent-rgb), 0.18), var(--wo-card-bg) 30%, rgba(var(--wo-shadow-rgb), 0.92) 100%)',
+          background: 'var(--wo-card-bg)',
           border: '1px solid var(--wo-accent-soft-border)',
           boxShadow: 'var(--wo-modal-shadow)',
           animation: 'prPop 0.4s ease-out forwards',
@@ -1353,7 +1343,7 @@ const PRCelebration = ({ prs, onClose }: { prs: Array<{ exercise: string; e1rm: 
         onClick={(e) => e.stopPropagation()}
       >
         <div className="text-5xl mb-3">🏆</div>
-        <h2 className="text-2xl font-extrabold mb-1" style={{ color: 'var(--wt-pr-color)', textShadow: '0 0 18px rgba(var(--wo-accent-rgb), 0.2)' }}>
+        <h2 className="text-2xl font-extrabold mb-1" style={{ color: 'var(--wt-pr-color)' }}>
           {IS_CHINESE ? '新纪录！' : 'New PR!'}
         </h2>
         <p className="text-sm opacity-50 mb-5">{IS_CHINESE ? '今天的训练创造了个人新纪录' : "Today's training set a new personal record"}</p>
@@ -1367,8 +1357,8 @@ const PRCelebration = ({ prs, onClose }: { prs: Array<{ exercise: string; e1rm: 
           ))}
         </div>
         <button onClick={onClose}
-          className="px-6 py-2 rounded-full text-sm font-semibold transition-all"
-          style={{ background: 'rgba(var(--wo-accent-rgb), 0.86)', color: '#fffaf6' }}>
+          className="px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-150"
+          style={{ background: 'var(--wo-accent)', color: 'var(--wo-accent-contrast)' }}>
           {IS_CHINESE ? '太棒了！' : 'Awesome!'}
         </button>
       </div>
@@ -1559,9 +1549,9 @@ const WorkoutsPage = () => {
             <div className="flex items-center gap-3 mb-4">
               <h1 className="text-4xl font-extrabold tracking-tight italic">Workouts</h1>
               <button onClick={() => setShowWrapped(true)}
-                className="text-xs px-3 py-1.5 rounded-full font-semibold transition-all"
+                className="text-xs px-3 py-1.5 rounded-full font-semibold transition-colors duration-150"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(var(--wo-accent-rgb), 0.18), rgba(var(--wo-warning-rgb), 0.12))',
+                  background: 'var(--wo-accent-soft-bg)',
                   border: '1px solid var(--wo-accent-soft-border)',
                   color: 'var(--wc-l3)',
                 }}>
@@ -1587,15 +1577,15 @@ const WorkoutsPage = () => {
         {/* ── CONTROLS: Year selector + 30-day strip ───────────────────── */}
         <div className="flex flex-wrap items-start gap-6 mb-6">
           <div>
-            <div className="mb-2 text-xs font-semibold uppercase tracking-wider opacity-35">
+            <div className="mb-2 text-xs font-semibold opacity-50">
               {IS_CHINESE ? '年份' : 'Year'}
             </div>
             <div className="flex flex-wrap gap-1.5">
               {['Total', ...years].map((y) => (
                 <button key={y} onClick={() => handleYearClick(y)}
-                  className="rounded-lg px-3 py-1.5 text-xs font-semibold transition-all"
+                  className="rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors duration-150"
                   style={year === y
-                    ? { background: 'var(--wc-l3)', color: '#fff' }
+                    ? { background: 'var(--wc-l3)', color: 'var(--wo-accent-contrast)' }
                     : { background: 'var(--wo-card-bg)', border: '1px solid var(--wo-card-border)', opacity: 0.65 }}>
                   {y}
                 </button>
@@ -1616,7 +1606,7 @@ const WorkoutsPage = () => {
               <div className="flex gap-1">
                 {(['grid', 'spiral'] as const).map((v) => (
                   <button key={v} onClick={() => setCalendarView(v)}
-                    className="text-xs px-3 py-1 rounded-full transition-all"
+                    className="text-xs px-3 py-1 rounded-full transition-colors duration-150"
                     style={{
                       background: calendarView === v ? ACCENT_SOFT_BG_STRONG : 'var(--wo-card-hover)',
                       color: calendarView === v ? 'var(--wc-l3)' : undefined,
@@ -1668,20 +1658,19 @@ const WorkoutsPage = () => {
           style={{ cursor: 'pointer', userSelect: 'none' }}
           onClick={() => toggleSection('hof')}
         >
-          <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,45,120,0.4), transparent)' }} />
+          <div className="h-px flex-1" style={{ background: 'var(--wo-section-line)' }} />
           <div style={{ textAlign: 'center', lineHeight: 1 }}>
             <div style={{
-              fontSize: 13, letterSpacing: '0.4em', color: '#ff2d78', fontWeight: 800,
+              fontSize: 13, letterSpacing: '0.4em', color: 'var(--wo-accent)', fontWeight: 800,
               opacity: 0.82, marginBottom: 4,
             }}>✦ HALL OF FAME ✦</div>
             <div style={{
               fontSize: 20, fontWeight: 900, letterSpacing: '0.15em',
-              color: '#ffcc00',
-              textShadow: '0 0 10px #ffcc00, 0 0 20px rgba(255,204,0,0.45)',
+              color: 'var(--wt-pr-color)',
             }}>名人堂</div>
           </div>
-          <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,245,255,0.3), transparent)' }} />
-          <span style={{ fontSize: 11, opacity: 0.4, color: '#ffcc00', display: 'inline-block', transition: 'transform 0.2s', transform: collapsed['hof'] ? 'rotate(-90deg)' : 'rotate(0deg)' }}>▾</span>
+          <div className="h-px flex-1" style={{ background: 'var(--wo-section-line)' }} />
+          <span style={{ fontSize: 11, opacity: 0.4, color: 'var(--wt-pr-color)', display: 'inline-block', transition: 'transform 0.2s', transform: collapsed['hof'] ? 'rotate(-90deg)' : 'rotate(0deg)' }}>▾</span>
         </div>
 
         {!collapsed['hof'] && <NeonPRWall workouts={filteredWorkouts} />}
@@ -1744,7 +1733,7 @@ const WorkoutsPage = () => {
                     <PanelLabel>{IS_CHINESE ? '常练动作 (点击看进步)' : 'Top Exercises'}</PanelLabel>
                     <button
                       onClick={() => { setGroupVariants((v) => !v); setSelectedExercise(null); }}
-                      className="text-xs px-2 py-0.5 rounded-full transition-all"
+                      className="text-xs px-2 py-0.5 rounded-full transition-colors duration-150"
                       style={{
                         background: groupVariants ? ACCENT_SOFT_BG_STRONG : 'var(--wo-card-hover)',
                         color: groupVariants ? 'var(--wc-l3)' : undefined,
@@ -1759,7 +1748,7 @@ const WorkoutsPage = () => {
                       ? stats.groupedExercises.map(({ stem, sets, variants }) => (
                         <div key={stem}>
                           <div
-                            className="flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-all"
+                            className="flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-colors duration-150"
                             style={selectedExercise === stem ? { background: ACCENT_SOFT_BG } : {}}
                             onClick={() => setSelectedExercise((prev) => prev === stem ? null : stem)}
                           >
@@ -1780,7 +1769,7 @@ const WorkoutsPage = () => {
                       : stats.topExercises.map(([name, sets]) => (
                         <div key={name}>
                           <div
-                            className="flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-all"
+                            className="flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2 py-1.5 -mx-2 transition-colors duration-150"
                             style={selectedExercise === name ? { background: ACCENT_SOFT_BG } : {}}
                             onClick={() => handleSelectExercise(name)}
                           >

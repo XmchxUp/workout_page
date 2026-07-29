@@ -83,7 +83,7 @@ const E1RMCompare = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
   return (
     <div>
-      <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40 mb-3">
+      <div className="text-xs font-semibold opacity-50 mb-3">
         {IS_CHINESE ? 'e1RM 多动作对比' : 'e1RM Comparison'}
       </div>
       {/* Exercise selector chips */}
@@ -97,12 +97,12 @@ const E1RMCompare = ({ workouts }: { workouts: WorkoutSession[] }) => {
               onClick={() => toggle(name)}
               style={{
                 fontSize: 11, padding: '3px 10px', borderRadius: 99,
-                border: `1px solid ${sel ? color : 'rgba(128,128,128,0.2)'}`,
+                border: `1px solid ${sel ? color : 'var(--wo-card-border)'}`,
                 background: sel ? color + '20' : 'transparent',
                 color: sel ? color : 'inherit',
                 cursor: selected.length >= 4 && !sel ? 'not-allowed' : 'pointer',
                 opacity: selected.length >= 4 && !sel ? 0.4 : 1,
-                transition: 'all 0.15s',
+                transition: 'background-color 0.15s, border-color 0.15s, color 0.15s',
                 fontWeight: sel ? 600 : 400,
               }}
             >
@@ -118,7 +118,7 @@ const E1RMCompare = ({ workouts }: { workouts: WorkoutSession[] }) => {
       ) : (
         <ResponsiveContainer width="100%" height={200}>
           <LineChart data={chartData} margin={{ top: 4, right: 8, bottom: 0, left: -16 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(128,128,128,0.1)" />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--wo-grid)" />
             <XAxis dataKey="date" tick={{ fontSize: 10, opacity: 0.4 }} tickLine={false} axisLine={false}
               interval="preserveStartEnd" />
             <YAxis tick={{ fontSize: 10, opacity: 0.4 }} tickLine={false} axisLine={false}

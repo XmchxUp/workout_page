@@ -202,7 +202,7 @@ const HighlightReel = ({ workouts }: { workouts: WorkoutSession[] }) => {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40">
+        <div className="text-xs font-semibold opacity-50">
           {IS_CHINESE ? '训练高光时刻' : 'Highlight Reel'}
         </div>
         <span style={{ fontSize: 11, opacity: 0.35 }}>{highlights.length} 个里程碑</span>

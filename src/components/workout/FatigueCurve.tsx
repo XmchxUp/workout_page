@@ -69,7 +69,7 @@ export default function FatigueCurve({ workouts }: { workouts: WorkoutSession[] 
 
   return (
     <div>
-      <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40 mb-1">
+      <div className="text-xs font-semibold opacity-50 mb-1">
         {IS_CHINESE ? '组内疲劳曲线' : 'Intra-Session Fatigue'}
       </div>
       <div style={{ fontSize: 9, opacity: 0.28, marginBottom: 10 }}>

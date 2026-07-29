@@ -40,7 +40,7 @@ export default function VolumeLandmarks({ workouts }: { workouts: WorkoutSession
 
   return (
     <div>
-      <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40 mb-1">
+      <div className="text-xs font-semibold opacity-50 mb-1">
         {IS_CHINESE ? '训练量临界点 (周均组数)' : 'Volume Landmarks (sets/week)'}
       </div>
       <div style={{ fontSize: 9, opacity: 0.3, marginBottom: 12 }}>

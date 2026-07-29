@@ -89,7 +89,7 @@ const MuscleRecovery = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
   return (
     <div>
-      <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40 mb-3">
+      <div className="text-xs font-semibold opacity-50 mb-3">
         {IS_CHINESE ? '肌肉恢复状态' : 'Muscle Recovery'}
       </div>
       <div className="space-y-3">
@@ -129,10 +129,10 @@ const MuscleRecovery = ({ workouts }: { workouts: WorkoutSession[] }) => {
                 height: '100%', borderRadius: 99,
                 width: `${r.pct}%`,
                 background: r.status === 'ready'
-                  ? 'linear-gradient(90deg, color-mix(in srgb, var(--wo-positive) 68%, white), var(--wo-positive))'
+                  ? 'var(--wo-positive)'
                   : r.status === 'partial'
-                  ? 'linear-gradient(90deg, color-mix(in srgb, var(--wo-warning) 70%, white), var(--wo-warning))'
-                  : 'linear-gradient(90deg, color-mix(in srgb, var(--wo-negative) 70%, white), var(--wo-negative))',
+                  ? 'var(--wo-warning)'
+                  : 'var(--wo-negative)',
                 transition: 'width 1s ease',
               }} />
             </div>

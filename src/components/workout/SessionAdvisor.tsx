@@ -181,7 +181,7 @@ export default function SessionAdvisor({ workouts }: { workouts: WorkoutSession[
 
   return (
     <div>
-      <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40 mb-3">
+      <div className="text-xs font-semibold opacity-50 mb-3">
         {IS_CHINESE ? '今日训练建议' : 'Session Advisor'}
       </div>
 

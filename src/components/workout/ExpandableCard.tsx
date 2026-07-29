@@ -77,7 +77,7 @@ export default function ExpandableCard({ children, title, className = '' }: Prop
         >
           <div
             ref={modalRef}
-            className="w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl p-6 relative"
+            className="w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-xl p-6 relative"
             style={{
               background: 'var(--wo-card-bg)',
               border: '1px solid var(--wo-card-border)',
@@ -87,7 +87,7 @@ export default function ExpandableCard({ children, title, className = '' }: Prop
             {/* Header */}
             <div className="flex items-center justify-between mb-5">
               {title && (
-                <h3 className="text-sm font-bold uppercase tracking-widest opacity-50">{title}</h3>
+                <h3 className="text-sm font-bold opacity-60">{title}</h3>
               )}
               <button
                 onClick={() => setExpanded(false)}

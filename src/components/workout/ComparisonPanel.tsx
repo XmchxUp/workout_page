@@ -119,7 +119,7 @@ const ComparisonPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <div className="text-xs font-semibold uppercase tracking-[0.1em] opacity-40">
+        <div className="text-xs font-semibold opacity-50">
           {IS_CHINESE ? '训练对比' : 'Comparison'}
         </div>
         <div className="flex gap-1">
@@ -132,10 +132,10 @@ const ComparisonPanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
                 padding: '2px 10px',
                 borderRadius: 99,
                 background: period === t.key ? 'var(--wc-l3)' : 'transparent',
-                color: period === t.key ? '#fff' : 'inherit',
+                color: period === t.key ? 'var(--wo-accent-contrast)' : 'inherit',
                 border: `1px solid ${period === t.key ? 'transparent' : 'var(--wt-border)'}`,
                 cursor: 'pointer',
-                transition: 'all 0.15s',
+                transition: 'background-color 0.15s, border-color 0.15s, color 0.15s',
               }}
             >
               {t.label}
