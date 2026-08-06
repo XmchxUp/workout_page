@@ -12320,6 +12320,102 @@
     "exercise_count": 6
   },
   {
+    "id": "9033803387df",
+    "title": "1 背➕肩后束",
+    "start_time": "Aug 6, 2026, 12:41 AM",
+    "end_time": "Aug 6, 2026, 1:10 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 401
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 14
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Seated Row (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Pull Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 2
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 8780.0,
+    "total_sets": 10,
+    "exercise_count": 4
+  },
+  {
     "id": "cebd27bca5f3",
     "title": "晨间锻炼 ☀️",
     "start_time": "Aug 4, 2026, 1:29 AM",
