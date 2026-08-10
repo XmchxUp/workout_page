@@ -12652,6 +12652,31 @@
     "exercise_count": 7
   },
   {
+    "id": "83f53ecc0ed7",
+    "title": "晨间锻炼 ☀️",
+    "start_time": "Aug 10, 2026, 1:16 AM",
+    "end_time": "Aug 10, 2026, 1:31 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Climbing",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 885
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "2d5c705292f6",
     "title": "1 背➕肩后束",
     "start_time": "Apr 9, 2026, 11:48 AM",
