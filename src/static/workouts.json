@@ -12652,6 +12652,186 @@
     "exercise_count": 7
   },
   {
+    "id": "4098db08297c",
+    "title": "1 背➕肩后束",
+    "start_time": "Aug 11, 2026, 1:07 AM",
+    "end_time": "Aug 11, 2026, 2:06 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 432
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 18
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 18
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 18
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 18
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 18
+          }
+        ]
+      },
+      {
+        "name": "Seated Row (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 110.0,
+            "reps": 18
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 110.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 110.0,
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 110.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 130.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Pull Up",
+        "notes": "ji",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 2
+          }
+        ]
+      },
+      {
+        "name": "Rear Delt Reverse Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 10
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 11
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown - Close Grip (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 20330.0,
+    "total_sets": 22,
+    "exercise_count": 6
+  },
+  {
     "id": "83f53ecc0ed7",
     "title": "晨间锻炼 ☀️",
     "start_time": "Aug 10, 2026, 1:16 AM",
