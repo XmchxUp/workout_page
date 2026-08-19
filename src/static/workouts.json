@@ -12652,6 +12652,98 @@
     "exercise_count": 7
   },
   {
+    "id": "99d52401d347",
+    "title": "晚间锻炼 🏋️",
+    "start_time": "Aug 18, 2026, 10:30 AM",
+    "end_time": "Aug 18, 2026, 11:40 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "俯卧撑",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Rear Delt Reverse Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 11
+          }
+        ]
+      },
+      {
+        "name": "Climbing",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 1800
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 1860.0,
+    "total_sets": 11,
+    "exercise_count": 3
+  },
+  {
     "id": "36971da06345",
     "title": "1 背➕肩后束",
     "start_time": "Aug 17, 2026, 9:59 AM",
