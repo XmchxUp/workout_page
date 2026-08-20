@@ -12652,6 +12652,205 @@
     "exercise_count": 7
   },
   {
+    "id": "942b1471503a",
+    "title": "3 手臂 肱二头➕ 肱三头",
+    "start_time": "Aug 19, 2026, 10:45 AM",
+    "end_time": "Aug 19, 2026, 11:58 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 172
+          }
+        ]
+      },
+      {
+        "name": "Triceps Extension (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 14
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 14
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Bicep Curl (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 30
+          }
+        ]
+      },
+      {
+        "name": "Triceps Rope Pushdown",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 18
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "EZ Bar Biceps Curl",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 25
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 23.0,
+            "reps": 25
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 23.0,
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 23.0,
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 23.0,
+            "reps": 20
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "weight_kg": 23.0,
+            "reps": 20
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "weight_kg": 23.0,
+            "reps": 18
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "weight_kg": 23.0,
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Overhead Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 13
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 20
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 14169.0,
+    "total_sets": 25,
+    "exercise_count": 6
+  },
+  {
     "id": "99d52401d347",
     "title": "晚间锻炼 🏋️",
     "start_time": "Aug 18, 2026, 10:30 AM",
