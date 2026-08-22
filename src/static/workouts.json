@@ -12652,6 +12652,125 @@
     "exercise_count": 7
   },
   {
+    "id": "81f8f41a835a",
+    "title": "4 腿➕腹部",
+    "start_time": "Aug 21, 2026, 11:00 AM",
+    "end_time": "Aug 21, 2026, 11:23 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Squat (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 10
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "俯卧撑",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 10
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 3240.0,
+    "total_sets": 10,
+    "exercise_count": 2
+  },
+  {
+    "id": "3582502c61f4",
+    "title": "2  胸➕ 肩前中束",
+    "start_time": "Aug 21, 2026, 10:44 AM",
+    "end_time": "Aug 21, 2026, 10:52 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Chest Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 1080.0,
+    "total_sets": 3,
+    "exercise_count": 1
+  },
+  {
     "id": "ba18128e03ad",
     "title": "晚间锻炼 🏋️",
     "start_time": "Aug 20, 2026, 10:37 AM",
