@@ -12652,6 +12652,201 @@
     "exercise_count": 7
   },
   {
+    "id": "96d221fbb7ca",
+    "title": "1 背➕肩后束",
+    "start_time": "Aug 27, 2026, 12:39 AM",
+    "end_time": "Aug 27, 2026, 1:47 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 360
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 18
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 17
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 21
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Seated Row (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Rear Delt Reverse Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown - Close Grip (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 18
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 15
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 17700.0,
+    "total_sets": 21,
+    "exercise_count": 5
+  },
+  {
+    "id": "4304a533e9c5",
+    "title": "午间锻炼💪",
+    "start_time": "Aug 27, 2026, 10:26 AM",
+    "end_time": "Aug 27, 2026, 10:56 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Elliptical Trainer",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 6.0,
+            "duration_seconds": 1800
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "381769cd342c",
     "title": "晨间锻炼 ☀️",
     "start_time": "Aug 26, 2026, 12:56 AM",
@@ -12796,6 +12991,150 @@
     "total_volume_kg": 0.0,
     "total_sets": 24,
     "exercise_count": 2
+  },
+  {
+    "id": "254a803a270b",
+    "title": "晚间锻炼 🏋️",
+    "start_time": "Aug 26, 2026, 10:12 AM",
+    "end_time": "Aug 26, 2026, 11:25 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Pull Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 2
+          }
+        ]
+      },
+      {
+        "name": "Pull Up (Assisted)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 16
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 16
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "平板支撑",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 44
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "duration_seconds": 40
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "duration_seconds": 45
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "duration_seconds": 30
+          }
+        ]
+      },
+      {
+        "name": "Climbing",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 1800
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 3240.0,
+    "total_sets": 19,
+    "exercise_count": 5
   },
   {
     "id": "53a88e603439",
