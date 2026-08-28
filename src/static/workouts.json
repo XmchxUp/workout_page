@@ -12652,6 +12652,204 @@
     "exercise_count": 7
   },
   {
+    "id": "2e5571138c21",
+    "title": "晨间锻炼 ☀️",
+    "start_time": "Aug 28, 2026, 1:14 AM",
+    "end_time": "Aug 28, 2026, 1:47 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Treadmill",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 3.0,
+            "duration_seconds": 1803
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
+    "id": "f76e96fb940f",
+    "title": "晚间锻炼 🏋️",
+    "start_time": "Aug 28, 2026, 10:36 AM",
+    "end_time": "Aug 28, 2026, 11:32 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 10,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 11,
+            "type": "normal",
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "平板支撑",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 40
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "duration_seconds": 38
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "duration_seconds": 44
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "duration_seconds": 39
+          }
+        ]
+      },
+      {
+        "name": "俯卧撑",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 12
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 10
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 10
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 12
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 10,
+            "type": "normal",
+            "reps": 15
+          },
+          {
+            "index": 11,
+            "type": "normal",
+            "reps": 15
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 28,
+    "exercise_count": 3
+  },
+  {
     "id": "96d221fbb7ca",
     "title": "1 背➕肩后束",
     "start_time": "Aug 27, 2026, 12:39 AM",
