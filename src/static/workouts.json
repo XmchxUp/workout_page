@@ -12441,6 +12441,32 @@
     "exercise_count": 1
   },
   {
+    "id": "1ccc89071d8f",
+    "title": "午间锻炼💪",
+    "start_time": "Aug 30, 2026, 11:50 AM",
+    "end_time": "Aug 30, 2026, 12:40 PM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Treadmill",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 5.0,
+            "duration_seconds": 3000
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "7bdafe5eb985",
     "title": "3 手臂 肱二头➕ 肱三头",
     "start_time": "Aug 3, 2026, 12:30 AM",
