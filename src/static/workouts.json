@@ -767,6 +767,227 @@
     "exercise_count": 2
   },
   {
+    "id": "95657967ddcd",
+    "title": "3 手臂 肱二头➕ 肱三头",
+    "start_time": "Sep 14, 2026, 1:01 AM",
+    "end_time": "Sep 14, 2026, 2:09 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 180
+          }
+        ]
+      },
+      {
+        "name": "Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Overhead Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 10
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Bicep Curl (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 10
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 10
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 10
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Bicep Curl (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 17
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 17
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 20
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 7760.0,
+    "total_sets": 18,
+    "exercise_count": 5
+  },
+  {
+    "id": "f7ac7af9afe8",
+    "title": "午间锻炼💪",
+    "start_time": "Sep 13, 2026, 6:59 AM",
+    "end_time": "Sep 13, 2026, 8:29 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "爬楼",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 355
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "duration_seconds": 359
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "duration_seconds": 373
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "duration_seconds": 379
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "duration_seconds": 363
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "duration_seconds": 378
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "duration_seconds": 397
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "duration_seconds": 385
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "duration_seconds": 387
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "duration_seconds": 470
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 10,
+    "exercise_count": 1
+  },
+  {
     "id": "efd45f6b0ed6",
     "title": "午间锻炼💪",
     "start_time": "Sep 12, 2026, 7:15 AM",
