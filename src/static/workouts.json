@@ -767,6 +767,32 @@
     "exercise_count": 2
   },
   {
+    "id": "8615e34b17d8",
+    "title": "晨间锻炼 ☀️",
+    "start_time": "Sep 15, 2026, 2:11 AM",
+    "end_time": "Sep 15, 2026, 2:51 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Treadmill",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 3.2,
+            "duration_seconds": 2400
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "95657967ddcd",
     "title": "3 手臂 肱二头➕ 肱三头",
     "start_time": "Sep 14, 2026, 1:01 AM",
