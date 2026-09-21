@@ -666,6 +666,32 @@
     "exercise_count": 1
   },
   {
+    "id": "093340b8e7f5",
+    "title": "午间锻炼💪",
+    "start_time": "Sep 21, 2026, 4:19 AM",
+    "end_time": "Sep 21, 2026, 5:20 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Cycling",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 6.0,
+            "duration_seconds": 3600
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "f66631916829",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Sep 20, 2026, 12:41 AM",
@@ -834,6 +860,32 @@
     "total_volume_kg": 14260.0,
     "total_sets": 22,
     "exercise_count": 4
+  },
+  {
+    "id": "1ea4ac96300b",
+    "title": "午间锻炼💪",
+    "start_time": "Sep 20, 2026, 10:15 AM",
+    "end_time": "Sep 20, 2026, 10:51 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Cycling",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 4.0,
+            "duration_seconds": 2100
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
   },
   {
     "id": "75586b91d1ce",
