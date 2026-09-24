@@ -666,6 +666,138 @@
     "exercise_count": 1
   },
   {
+    "id": "d6fe287514b8",
+    "title": "午间锻炼💪",
+    "start_time": "Sep 24, 2026, 5:07 AM",
+    "end_time": "Sep 24, 2026, 5:47 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Cycling",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 4.0,
+            "duration_seconds": 2400
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
+    "id": "97900ad31ab0",
+    "title": "晨间锻炼 ☀️",
+    "start_time": "Sep 24, 2026, 4:13 AM",
+    "end_time": "Sep 24, 2026, 4:51 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 10,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 11,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 12,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Pull Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 3
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 3
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 3
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 16,
+    "exercise_count": 2
+  },
+  {
     "id": "bb9a1c788fe4",
     "title": "3 手臂 肱二头➕ 肱三头",
     "start_time": "Sep 23, 2026, 12:54 AM",
