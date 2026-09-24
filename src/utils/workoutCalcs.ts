@@ -1,4 +1,5 @@
 import type { WorkoutSession } from '@/types/workout';
+import { getExerciseMuscles } from './workoutMuscles';
 
 // Shared filter constants — avoids repeated inline arrays throughout the codebase
 export const WARMUP_NAMES = new Set(['warm up', 'warmup']);
@@ -245,4 +246,105 @@ export const buildPRTimeline = (workouts: WorkoutSession[]) => {
     });
   });
   return events.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30);
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Shared training-stress model — single source of truth.
+// Previously copy-pasted in TrainingLoad, ReadinessScore and SessionAdvisor.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Recovery hours from working-set count (sets are comparable across
+// exercises; raw volume varies 10x between movements and lifters)
+export const recoveryHoursFromSets = (sets: number): number => {
+  if (sets >= 12) return 72;
+  if (sets >= 8) return 60;
+  if (sets >= 4) return 48;
+  return 36;
+};
+
+const buildDailyVolumeMap = (workouts: WorkoutSession[]): Record<string, number> => {
+  const volMap: Record<string, number> = {};
+  workouts.forEach((w) => {
+    const d = w.start_time.slice(0, 10);
+    volMap[d] = (volMap[d] ?? 0) + w.total_volume_kg;
+  });
+  return volMap;
+};
+
+// Current Training Stress Balance (CTL − ATL, EWMA over last 90 days)
+export const calcTSB = (workouts: WorkoutSession[]): number => {
+  const volMap = buildDailyVolumeMap(workouts);
+  const k7 = 1 - Math.exp(-1 / 7);
+  const k42 = 1 - Math.exp(-1 / 42);
+  let atl = 0, ctl = 0;
+  const now = new Date();
+  for (let i = 89; i >= 0; i--) {
+    const d = new Date(now); d.setDate(d.getDate() - i);
+    const vol = volMap[toLocalDate(d)] ?? 0;
+    atl = atl * (1 - k7) + vol * k7;
+    ctl = ctl * (1 - k42) + vol * k42;
+  }
+  return Math.round(ctl - atl);
+};
+
+// Full ATL/CTL/TSB daily series for charts (120d warmup, last 90d shown)
+export const calcTrainingLoadSeries = (workouts: WorkoutSession[]) => {
+  const volMap = buildDailyVolumeMap(workouts);
+  const days: string[] = [];
+  const now = new Date();
+  for (let i = 119; i >= 0; i--) {
+    const d = new Date(now);
+    d.setDate(d.getDate() - i);
+    days.push(toLocalDate(d));
+  }
+  const k7 = 1 - Math.exp(-1 / 7);
+  const k42 = 1 - Math.exp(-1 / 42);
+  let atl = 0, ctl = 0;
+  return days
+    .map((date) => {
+      const vol = volMap[date] || 0;
+      atl = atl * (1 - k7) + vol * k7;
+      ctl = ctl * (1 - k42) + vol * k42;
+      return { date, atl: Math.round(atl), ctl: Math.round(ctl), tsb: Math.round(ctl - atl), vol: Math.round(vol) };
+    })
+    .slice(-90);
+};
+
+// Per-muscle recovery %: effective sets with 24h-half-life decay vs. required hours
+export const getMuscleRecoveryPct = (workouts: WorkoutSession[], muscle: string): number => {
+  const now = Date.now();
+  const sorted = [...workouts]
+    .filter((w) => w.exercises.some((ex) => getExerciseMuscles(ex.name).includes(muscle)))
+    .sort((a, b) => b.start_time.localeCompare(a.start_time));
+  if (sorted.length === 0) return 100;
+  const hoursAgo = (now - new Date(sorted[0].start_time).getTime()) / 3600000;
+  let effectiveSets = 0;
+  for (const w of sorted) {
+    const sessionHoursAgo = (now - new Date(w.start_time).getTime()) / 3600000;
+    if (sessionHoursAgo > 96) break;
+    let sessionSets = 0;
+    w.exercises.forEach((ex) => {
+      if (getExerciseMuscles(ex.name).includes(muscle))
+        sessionSets += ex.sets.filter((s) => WORKING_SET_TYPES.has(s.type)).length;
+    });
+    effectiveSets += sessionSets * Math.pow(0.5, sessionHoursAgo / 24);
+  }
+  return Math.min(100, Math.round((hoursAgo / recoveryHoursFromSets(Math.round(effectiveSets))) * 100));
+};
+
+// Total volume per muscle (working sets only; bodyweight moves fall back to 50kg/set)
+export const calcMuscleVolumes = (workouts: WorkoutSession[]): Record<string, number> => {
+  const vol: Record<string, number> = {};
+  workouts.forEach((w) => {
+    w.exercises.forEach((ex) => {
+      if (WARMUP_NAMES.has(ex.name.toLowerCase())) return;
+      const muscles = getExerciseMuscles(ex.name);
+      if (muscles.length === 0) return;
+      const sets = ex.sets.filter((s) => WORKING_SET_TYPES.has(s.type));
+      const v = sets.reduce((sum, s) => sum + (s.weight_kg ?? 0) * (s.reps ?? 0), 0);
+      const contrib = v > 0 ? v : sets.length * 50;
+      muscles.forEach((m) => { vol[m] = (vol[m] || 0) + contrib; });
+    });
+  });
+  return vol;
 };

@@ -17,6 +17,7 @@ import {
 } from '@/utils/workoutMuscles';
 import {
   calcE1RM,
+  calcMuscleVolumes,
   calcStreak,
   calcBestLifts,
   buildExerciseHistory,
@@ -52,7 +53,6 @@ import HighlightReel from '@/components/workout/HighlightReel';
 
 import VsMyselfPanel from '@/components/workout/VsMyselfPanel';
 import ExerciseCoMatrix from '@/components/workout/ExerciseCoMatrix';
-import SpiralCalendar from '@/components/WorkoutCalendar/SpiralCalendar';
 
 import WorkoutWrapped from '@/components/workout/WorkoutWrapped';
 import ReadinessScore from '@/components/workout/ReadinessScore';
@@ -60,7 +60,6 @@ import VolumeLandmarks from '@/components/workout/VolumeLandmarks';
 
 import SessionAdvisor from '@/components/workout/SessionAdvisor';
 import FatigueCurve from '@/components/workout/FatigueCurve';
-import ExpandableCard from '@/components/workout/ExpandableCard';
 
 // Shared Recharts config — avoids repeating identical props across all charts
 const CHART_GRID = { strokeDasharray: '3 3', stroke: 'var(--wo-grid)' } as const;
@@ -338,18 +337,7 @@ const WorkoutTypeChart = ({ workouts }: { workouts: WorkoutSession[] }) => {
 // Muscle volume distribution (horizontal bar)
 const MuscleVolumeChart = ({ workouts }: { workouts: WorkoutSession[] }) => {
   const data = useMemo(() => {
-    const vol: Record<string, number> = {};
-    workouts.forEach((w) => {
-      w.exercises.forEach((ex) => {
-        if (WARMUP_NAMES.has(ex.name.toLowerCase())) return;
-        const muscles = getExerciseMuscles(ex.name);
-        if (!muscles.length) return;
-        const sets = ex.sets.filter((s) => WORKING_SET_TYPES.has(s.type));
-        const v = sets.reduce((sum, s) => sum + (s.weight_kg ?? 0) * (s.reps ?? 0), 0);
-        const contrib = v > 0 ? v : sets.length * 50;
-        muscles.forEach((m) => { vol[m] = (vol[m] || 0) + contrib; });
-      });
-    });
+    const vol = calcMuscleVolumes(workouts);
     return Object.entries(vol)
       .map(([muscle, volume]) => ({
         muscle,
@@ -405,8 +393,7 @@ const WeeklyGoalWidget = ({ workouts, goal }: { workouts: WorkoutSession[]; goal
         <circle cx="24" cy="24" r={r} fill="none" stroke="var(--wt-chip-bg)" strokeWidth="3.5" />
         <circle cx="24" cy="24" r={r} fill="none" stroke={done ? 'var(--wc-l4)' : 'var(--wc-l3)'}
           strokeWidth="3.5" strokeDasharray={circ} strokeDashoffset={offset}
-          strokeLinecap="round" transform="rotate(-90 24 24)"
-          style={done ? {} : {}} />
+          strokeLinecap="round" transform="rotate(-90 24 24)" />
         <text x="24" y="24" textAnchor="middle" dominantBaseline="central" fontSize="12" fontWeight="bold" fill="currentColor">
           {count}/{goal}
         </text>
@@ -951,21 +938,7 @@ const PRTimeline = ({ workouts }: { workouts: WorkoutSession[] }) => {
 
 // Muscle body map
 const MuscleBodyMap = ({ workouts }: { workouts: WorkoutSession[] }) => {
-  const volumes = useMemo(() => {
-    const vol: Record<string, number> = {};
-    workouts.forEach((w) => {
-      w.exercises.forEach((ex) => {
-        if (WARMUP_NAMES.has(ex.name.toLowerCase())) return;
-        const muscles = getExerciseMuscles(ex.name);
-        if (muscles.length === 0) return;
-        const sets = ex.sets.filter((s) => WORKING_SET_TYPES.has(s.type));
-        const v = sets.reduce((sum, s) => sum + (s.weight_kg ?? 0) * (s.reps ?? 0), 0);
-        const contribution = v > 0 ? v : sets.length * 50;
-        muscles.forEach((m) => { vol[m] = (vol[m] || 0) + contribution; });
-      });
-    });
-    return vol;
-  }, [workouts]);
+  const volumes = useMemo(() => calcMuscleVolumes(workouts), [workouts]);
   const maxVol = useMemo(() => Math.max(1, ...Object.values(volumes)), [volumes]);
 
   const ratio = (muscle: string) => (volumes[muscle] || 0) / maxVol;
@@ -1250,20 +1223,12 @@ const TimeHeatmapChart = ({ workouts }: { workouts: WorkoutSession[] }) => {
 const HeroStat = ({ label, value, unit, accent, trend }: {
   label: string; value: string; unit?: string; accent?: boolean; trend?: number;
 }) => (
-  <div className="flex flex-col rounded-xl px-4 py-3 min-w-[88px]"
+  <div className="wo-card flex flex-col rounded-xl px-4 py-3 min-w-[88px]"
     style={{
       background: 'var(--wo-card-bg)',
       border: '1px solid var(--wo-card-border)',
       animation: 'countUp 0.4s ease both',
       transition: 'box-shadow 0.2s ease, border-color 0.2s ease',
-    }}
-    onMouseEnter={(e) => {
-      (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--wo-card-shadow-hover)';
-      (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--wc-l3)';
-    }}
-    onMouseLeave={(e) => {
-      (e.currentTarget as HTMLDivElement).style.boxShadow = '';
-      (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--wo-card-border)';
     }}
   >
     <span className="text-xs opacity-45 leading-tight mb-1">{label}</span>
@@ -1284,87 +1249,6 @@ const HeroStat = ({ label, value, unit, accent, trend }: {
     )}
   </div>
 );
-
-// =============================================================================
-// PR CELEBRATION OVERLAY
-// =============================================================================
-const PRCelebration = ({ prs, onClose }: { prs: Array<{ exercise: string; e1rm: number; weight: number; reps: number }>; onClose: () => void }) => {
-  // Confetti particles generated once
-  const particles = useMemo(() => Array.from({ length: 40 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 1.5}s`,
-    duration: `${1.2 + Math.random() * 1.2}s`,
-    color: ['var(--wt-pr-color)', 'var(--wo-positive)', 'var(--wo-series-2)', 'var(--wo-series-4)', 'var(--wo-series-6)', 'var(--wo-warning)'][i % 6],
-    size: `${6 + Math.random() * 8}px`,
-    shape: i % 3 === 0 ? 'circle' : i % 3 === 1 ? 'square' : 'triangle',
-  })), []);
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center"
-      style={{ background: 'var(--wo-modal-backdrop)', backdropFilter: 'blur(4px)' }}
-      onClick={onClose}
-    >
-      {/* Confetti */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {particles.map((p) => (
-          <div key={p.id} style={{
-            position: 'absolute', top: '-20px', left: p.left,
-            width: p.size, height: p.size,
-            background: p.shape !== 'triangle' ? p.color : 'transparent',
-            borderRadius: p.shape === 'circle' ? '50%' : p.shape === 'square' ? '2px' : '0',
-            borderLeft: p.shape === 'triangle' ? `${parseFloat(p.size)/2}px solid transparent` : undefined,
-            borderRight: p.shape === 'triangle' ? `${parseFloat(p.size)/2}px solid transparent` : undefined,
-            borderBottom: p.shape === 'triangle' ? `${parseFloat(p.size)}px solid ${p.color}` : undefined,
-            animation: `confettiFall ${p.duration} ${p.delay} ease-in forwards`,
-          }} />
-        ))}
-      </div>
-      <style>{`
-        @keyframes confettiFall {
-          0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-          100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-        }
-        @keyframes prPop {
-          0% { transform: scale(0.7); opacity: 0; }
-          60% { transform: scale(1.05); opacity: 1; }
-          100% { transform: scale(1); opacity: 1; }
-        }
-      `}</style>
-      <div
-        className="relative z-10 rounded-xl p-8 max-w-sm w-full mx-4 text-center"
-        style={{
-          background: 'var(--wo-card-bg)',
-          border: '1px solid var(--wo-accent-soft-border)',
-          boxShadow: 'var(--wo-modal-shadow)',
-          animation: 'prPop 0.4s ease-out forwards',
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="text-5xl mb-3">🏆</div>
-        <h2 className="text-2xl font-extrabold mb-1" style={{ color: 'var(--wt-pr-color)' }}>
-          {IS_CHINESE ? '新纪录！' : 'New PR!'}
-        </h2>
-        <p className="text-sm opacity-50 mb-5">{IS_CHINESE ? '今天的训练创造了个人新纪录' : "Today's training set a new personal record"}</p>
-        <div className="space-y-2 mb-6">
-          {prs.map((pr) => (
-            <div key={pr.exercise} className="flex items-center justify-between px-4 py-2 rounded-lg"
-              style={{ background: ACCENT_SOFT_BG, border: '1px solid var(--wo-accent-soft-border)' }}>
-              <span className="text-sm opacity-80 truncate mr-2">{translateExercise(pr.exercise)}</span>
-              <span className="text-sm font-bold tabular-nums shrink-0" style={{ color: 'var(--wt-pr-color)' }}>{pr.e1rm} kg e1RM</span>
-            </div>
-          ))}
-        </div>
-        <button onClick={onClose}
-          className="px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-150"
-          style={{ background: 'var(--wo-accent)', color: 'var(--wo-accent-contrast)' }}>
-          {IS_CHINESE ? '太棒了！' : 'Awesome!'}
-        </button>
-      </div>
-    </div>
-  );
-};
 
 // =============================================================================
 // MAIN PAGE
@@ -1389,7 +1273,6 @@ const WorkoutsPage = () => {
   }, [workouts, year]);
 
   const [groupVariants, setGroupVariants] = useState(false);
-  const [calendarView, setCalendarView] = useState<'grid' | 'spiral'>('grid');
   const [showWrapped, setShowWrapped] = useState(false);
 
   const stats = useMemo(() => {
@@ -1475,67 +1358,9 @@ const WorkoutsPage = () => {
     setCollapsed((prev) => ({ ...prev, [key]: !prev[key] }));
   }, []);
 
-  // PR celebration — detect if most recent training day has new PRs
-  const [showCelebration, setShowCelebration] = useState(false);
-  const todayPRs = useMemo(() => {
-    if (workouts.length === 0) return [];
-    const sorted = [...workouts].sort((a, b) => b.start_time.localeCompare(a.start_time));
-    const latestDate = sorted[0].start_time.slice(0, 10);
-    // Only show if latest session is within 1 day from today
-    const today = toLocalDate(new Date());
-    const daysDiff = Math.round((new Date(today).getTime() - new Date(latestDate).getTime()) / 86400000);
-    if (daysDiff > 1) return [];
-    const latestSessions = sorted.filter((w) => w.start_time.slice(0, 10) === latestDate);
-    const historicalSessions = workouts.filter((w) => w.start_time.slice(0, 10) < latestDate);
-    // Build all-time best before today (handles assisted exercises correctly)
-    const prevBest: Record<string, number> = {};
-    historicalSessions.forEach((w) => {
-      w.exercises.forEach((ex) => {
-        const assisted = isAssisted(ex.name);
-        ex.sets.forEach((s) => {
-          if (WORKING_SET_TYPES.has(s.type) && s.weight_kg && s.reps) {
-            const e1rm = calcE1RM(s.weight_kg, s.reps);
-            const better = assisted ? e1rm < (prevBest[ex.name] ?? Infinity) : e1rm > (prevBest[ex.name] ?? 0);
-            if (better) prevBest[ex.name] = e1rm;
-          }
-        });
-      });
-    });
-    const newPRs: Array<{ exercise: string; e1rm: number; weight: number; reps: number }> = [];
-    latestSessions.forEach((w) => {
-      w.exercises.forEach((ex) => {
-        const assisted = isAssisted(ex.name);
-        let bestE1rm = assisted ? Infinity : 0, bestWeight = 0, bestReps = 0;
-        ex.sets.forEach((s) => {
-          if (WORKING_SET_TYPES.has(s.type) && s.weight_kg && s.reps) {
-            const e1rm = calcE1RM(s.weight_kg, s.reps);
-            const better = assisted ? e1rm < bestE1rm : e1rm > bestE1rm;
-            if (better) { bestE1rm = e1rm; bestWeight = s.weight_kg; bestReps = s.reps; }
-          }
-        });
-        if (bestE1rm !== (assisted ? Infinity : 0)) {
-          const prevBestForEx = prevBest[ex.name] ?? (assisted ? Infinity : 0);
-          const isNewPR = assisted ? bestE1rm < prevBestForEx : bestE1rm > prevBestForEx;
-          if (isNewPR) newPRs.push({ exercise: ex.name, e1rm: bestE1rm, weight: bestWeight, reps: bestReps });
-        }
-      });
-    });
-    return newPRs;
-  }, [workouts]);
-
-  useEffect(() => {
-    if (todayPRs.length > 0) {
-      const timer = setTimeout(() => setShowCelebration(true), 800);
-      return () => clearTimeout(timer);
-    }
-  }, [todayPRs]);
-
   return (
     <Layout>
       <Helmet><html lang="en" data-theme={theme} /><title>Workouts</title></Helmet>
-
-      {/* PR Celebration */}
-      {showCelebration && <PRCelebration prs={todayPRs} onClose={() => setShowCelebration(false)} />}
 
       {/* Wrapped Modal */}
       {showWrapped && <WorkoutWrapped workouts={workouts} year={year === 'Total' ? String(new Date().getFullYear()) : year} onClose={() => setShowWrapped(false)} />}
@@ -1602,27 +1427,9 @@ const WorkoutsPage = () => {
         {/* ── CALENDAR ─────────────────────────────────────────────────── */}
         {year !== 'Total' && (
           <Card className="mb-6 overflow-x-auto">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex gap-1">
-                {(['grid', 'spiral'] as const).map((v) => (
-                  <button key={v} onClick={() => setCalendarView(v)}
-                    className="text-xs px-3 py-1 rounded-full transition-colors duration-150"
-                    style={{
-                      background: calendarView === v ? ACCENT_SOFT_BG_STRONG : 'var(--wo-card-hover)',
-                      color: calendarView === v ? 'var(--wc-l3)' : undefined,
-                      border: calendarView === v ? '1px solid var(--wo-accent-soft-border)' : '1px solid transparent',
-                    }}>
-                    {v === 'grid' ? (IS_CHINESE ? '方格' : 'Grid') : (IS_CHINESE ? '螺旋' : 'Spiral')}
-                  </button>
-                ))}
-              </div>
-            </div>
-            {calendarView === 'grid'
-              ? <WorkoutCalendar workouts={workouts} year={year}
-                  onDayClick={(date) => setHighlightDate((prev) => prev === date ? undefined : date)}
-                />
-              : <SpiralCalendar workouts={workouts} year={year} />
-            }
+            <WorkoutCalendar workouts={workouts} year={year}
+              onDayClick={(date) => setHighlightDate((prev) => prev === date ? undefined : date)}
+            />
           </Card>
         )}
 
@@ -1634,10 +1441,10 @@ const WorkoutsPage = () => {
             {/* Left sidebar */}
             <div className="w-full lg:w-64 xl:w-72 shrink-0 space-y-4">
               <NextSessionGuide workouts={filteredWorkouts} />
-              <ExpandableCard title={IS_CHINESE ? '今日训练建议' : 'Session Advisor'}><SessionAdvisor workouts={filteredWorkouts} /></ExpandableCard>
-              <ExpandableCard title={IS_CHINESE ? '里程碑' : 'Milestones'}><MilestoneCards workouts={filteredWorkouts} /></ExpandableCard>
-              <ExpandableCard title={IS_CHINESE ? '停滞预警' : 'Stagnation'}><StagnationPanel workouts={filteredWorkouts} history={exerciseHistory} /></ExpandableCard>
-              <ExpandableCard title={IS_CHINESE ? '恢复节律' : 'Recovery Rhythm'}><RecoveryRhythm workouts={workouts} /></ExpandableCard>
+              <Card><SessionAdvisor workouts={filteredWorkouts} /></Card>
+              <Card><MilestoneCards workouts={filteredWorkouts} /></Card>
+              <Card><StagnationPanel workouts={filteredWorkouts} history={exerciseHistory} /></Card>
+              <Card><RecoveryRhythm workouts={workouts} /></Card>
             </div>
 
             {/* Right: workout table — dominant element */}
@@ -1680,25 +1487,25 @@ const WorkoutsPage = () => {
 
         {!collapsed['analytics'] && (<>
           <div className="mb-4">
-            <ExpandableCard title={IS_CHINESE ? '训练心跳' : 'Training Heartbeat'}><TrainingHeartbeat workouts={filteredWorkouts} /></ExpandableCard>
+            <Card><TrainingHeartbeat workouts={filteredWorkouts} /></Card>
           </div>
 
           <div className="columns-1 md:columns-2" style={{ columnGap: 16, marginBottom: 16 }}>
             <div className="break-inside-avoid mb-4">
-              <ExpandableCard title={IS_CHINESE ? '组内疲劳曲线' : 'Intra-Session Fatigue'}><FatigueCurve workouts={filteredWorkouts} /></ExpandableCard>
+              <Card><FatigueCurve workouts={filteredWorkouts} /></Card>
             </div>
           </div>
 
           <div className="columns-1 md:columns-2 lg:columns-3" style={{ columnGap: 16 }}>
             {[
-              <ExpandableCard key="vol" title={IS_CHINESE ? '训练量趋势' : 'Volume & Sets'}><VolumeAndSetsChart workouts={filteredWorkouts} /></ExpandableCard>,
-              <ExpandableCard key="ses" title={IS_CHINESE ? '课程趋势' : 'Session Trends'}><SessionTrendsChart workouts={filteredWorkouts} /></ExpandableCard>,
-              <ExpandableCard key="time" title={IS_CHINESE ? '时间分布' : 'Time Distribution'}><TimeDistributionCharts workouts={filteredWorkouts} /></ExpandableCard>,
-              <ExpandableCard key="freq" title={IS_CHINESE ? '月频率' : 'Monthly Frequency'}><MonthlyFrequencyChart workouts={filteredWorkouts} /></ExpandableCard>,
-              <ExpandableCard key="rep" title={IS_CHINESE ? '次数区间' : 'Rep Range'}><RepRangePanel workouts={filteredWorkouts} /></ExpandableCard>,
-              <ExpandableCard key="type" title={IS_CHINESE ? '训练类型' : 'Workout Type'}><WorkoutTypeChart workouts={filteredWorkouts} /></ExpandableCard>,
-              <ExpandableCard key="top" title={IS_CHINESE ? '最佳课程' : 'Top Sessions'}><TopSessionsPanel workouts={filteredWorkouts} scoreMap={scoreMap} /></ExpandableCard>,
-              <ExpandableCard key="heat" title={IS_CHINESE ? '时间热力图' : 'Time Heatmap'}><TimeHeatmapChart workouts={filteredWorkouts} /></ExpandableCard>,
+              <Card key="vol"><VolumeAndSetsChart workouts={filteredWorkouts} /></Card>,
+              <Card key="ses"><SessionTrendsChart workouts={filteredWorkouts} /></Card>,
+              <Card key="time"><TimeDistributionCharts workouts={filteredWorkouts} /></Card>,
+              <Card key="freq"><MonthlyFrequencyChart workouts={filteredWorkouts} /></Card>,
+              <Card key="rep"><RepRangePanel workouts={filteredWorkouts} /></Card>,
+              <Card key="type"><WorkoutTypeChart workouts={filteredWorkouts} /></Card>,
+              <Card key="top"><TopSessionsPanel workouts={filteredWorkouts} scoreMap={scoreMap} /></Card>,
+              <Card key="heat"><TimeHeatmapChart workouts={filteredWorkouts} /></Card>,
             ].map((card) => (
               <div key={card.key} className="break-inside-avoid mb-4">{card}</div>
             ))}
@@ -1712,23 +1519,23 @@ const WorkoutsPage = () => {
           <div className="columns-1 lg:columns-2" style={{ columnGap: 20 }}>
 
             <div className="break-inside-avoid mb-5">
-              <ExpandableCard title={IS_CHINESE ? '最佳重量' : 'Best Lifts'}>
+              <Card>
                 <BestLiftsPanel workouts={filteredWorkouts} />
-              </ExpandableCard>
+              </Card>
             </div>
 
             <div className="break-inside-avoid mb-5">
-              <ExpandableCard title={IS_CHINESE ? '肌群分布' : 'Muscle Map'}>
+              <Card>
                 <MuscleBodyMap workouts={filteredWorkouts} />
                 <div className="mt-5 pt-4" style={{ borderTop: '1px solid var(--wo-section-line)' }}>
                   <MuscleVolumeChart workouts={filteredWorkouts} />
                 </div>
-              </ExpandableCard>
+              </Card>
             </div>
 
             {stats.topExercises.length > 0 && (
               <div className="break-inside-avoid mb-5">
-                <ExpandableCard title={IS_CHINESE ? '常练动作' : 'Top Exercises'}>
+                <Card>
                   <div className="flex items-center justify-between mb-2">
                     <PanelLabel>{IS_CHINESE ? '常练动作 (点击看进步)' : 'Top Exercises'}</PanelLabel>
                     <button
@@ -1784,33 +1591,33 @@ const WorkoutsPage = () => {
                       ))
                     }
                   </div>
-                </ExpandableCard>
+                </Card>
               </div>
             )}
 
             <div className="break-inside-avoid mb-5">
-              <ExpandableCard title={IS_CHINESE ? '肌群六角' : 'Muscle Hex'}><MuscleHexPanel workouts={filteredWorkouts} /></ExpandableCard>
+              <Card><MuscleHexPanel workouts={filteredWorkouts} /></Card>
             </div>
 
             <div className="break-inside-avoid mb-5">
-              <ExpandableCard title={IS_CHINESE ? 'PR 时间轴' : 'PR Timeline'}><PRTimeline workouts={workouts} /></ExpandableCard>
+              <Card><PRTimeline workouts={workouts} /></Card>
             </div>
 
             <div className="break-inside-avoid mb-5">
-              <ExpandableCard title={IS_CHINESE ? '渐进超负荷' : 'Progressive Overload'}><ProgressiveOverloadPanel workouts={filteredWorkouts} history={exerciseHistory} /></ExpandableCard>
+              <Card><ProgressiveOverloadPanel workouts={filteredWorkouts} history={exerciseHistory} /></Card>
             </div>
 
             <div className="break-inside-avoid mb-5">
-              <ExpandableCard title={IS_CHINESE ? '肌群分布' : 'Muscle Distribution'}><MuscleDistributionPanel workouts={filteredWorkouts} /></ExpandableCard>
+              <Card><MuscleDistributionPanel workouts={filteredWorkouts} /></Card>
             </div>
 
             <div className="break-inside-avoid mb-5">
-              <ExpandableCard title={IS_CHINESE ? '训练量临界点' : 'Volume Landmarks'}><VolumeLandmarks workouts={filteredWorkouts} /></ExpandableCard>
+              <Card><VolumeLandmarks workouts={filteredWorkouts} /></Card>
             </div>
 
 
             <div className="break-inside-avoid mb-5">
-              <ExpandableCard title={IS_CHINESE ? '动作共现矩阵' : 'Exercise Co-Matrix'}><ExerciseCoMatrix workouts={filteredWorkouts} /></ExpandableCard>
+              <Card><ExerciseCoMatrix workouts={filteredWorkouts} /></Card>
             </div>
 
           </div>
@@ -1820,14 +1627,14 @@ const WorkoutsPage = () => {
         <SectionHeader label={IS_CHINESE ? '恢复状态' : 'Recovery'} collapsed={collapsed['recovery']} onToggle={() => toggleSection('recovery')} />
         {!collapsed['recovery'] && (<>
           <div className="mb-4">
-            <ExpandableCard title={IS_CHINESE ? '综合准备度' : 'Readiness Score'}><ReadinessScore workouts={filteredWorkouts} /></ExpandableCard>
+            <Card><ReadinessScore workouts={filteredWorkouts} /></Card>
           </div>
           <div className="columns-1 md:columns-2" style={{ columnGap: 16 }}>
             <div className="break-inside-avoid mb-4">
-              <ExpandableCard title={IS_CHINESE ? '肌群恢复' : 'Muscle Recovery'}><MuscleRecovery workouts={filteredWorkouts} /></ExpandableCard>
+              <Card><MuscleRecovery workouts={filteredWorkouts} /></Card>
             </div>
             <div className="break-inside-avoid mb-4">
-              <ExpandableCard title={IS_CHINESE ? 'e1RM 对比' : 'e1RM Compare'}><E1RMCompare workouts={filteredWorkouts} /></ExpandableCard>
+              <Card><E1RMCompare workouts={filteredWorkouts} /></Card>
             </div>
           </div>
         </>)}
@@ -1836,17 +1643,17 @@ const WorkoutsPage = () => {
         <SectionHeader label={IS_CHINESE ? '训练负荷' : 'Training Load'} collapsed={collapsed['load']} onToggle={() => toggleSection('load')} />
         {!collapsed['load'] && (<>
           <div className="mb-4">
-            <ExpandableCard title={IS_CHINESE ? '训练负荷' : 'Training Load'}><TrainingLoad workouts={filteredWorkouts} /></ExpandableCard>
+            <Card><TrainingLoad workouts={filteredWorkouts} /></Card>
           </div>
           <div className="columns-1 md:columns-2" style={{ columnGap: 16 }}>
             <div className="break-inside-avoid mb-4">
-              <ExpandableCard title={IS_CHINESE ? '对比分析' : 'Comparison'}><ComparisonPanel workouts={filteredWorkouts} /></ExpandableCard>
+              <Card><ComparisonPanel workouts={filteredWorkouts} /></Card>
             </div>
             <div className="break-inside-avoid mb-4">
-              <ExpandableCard title={IS_CHINESE ? '高光时刻' : 'Highlight Reel'}><HighlightReel workouts={workouts} /></ExpandableCard>
+              <Card><HighlightReel workouts={workouts} /></Card>
             </div>
             <div className="break-inside-avoid mb-4">
-              <ExpandableCard title={IS_CHINESE ? '与过去的自己' : 'Vs Myself'}><VsMyselfPanel workouts={workouts} /></ExpandableCard>
+              <Card><VsMyselfPanel workouts={workouts} /></Card>
             </div>
 
           </div>

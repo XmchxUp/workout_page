@@ -36,23 +36,16 @@ export const SectionHeader = ({
   </div>
 );
 
-// Card wrapper — with subtle shimmer on hover
+// Card wrapper — hover affordance lives in CSS so every card behaves identically
+// without per-instance mouse handlers.
 export const Card = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-  <div className={`rounded-xl p-4 ${className}`}
+  <div className={`wo-card rounded-xl p-4 ${className}`}
     style={{
       background: 'var(--wo-card-bg)',
       border: '1px solid var(--wo-card-border)',
       position: 'relative',
       overflow: 'hidden',
       transition: 'box-shadow 0.2s ease, border-color 0.2s ease',
-    }}
-    onMouseEnter={(e) => {
-      (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--wo-card-shadow-hover)';
-      (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--wc-l2)';
-    }}
-    onMouseLeave={(e) => {
-      (e.currentTarget as HTMLDivElement).style.boxShadow = '';
-      (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--wo-card-border)';
     }}
   >
     {children}

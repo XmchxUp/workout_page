@@ -12,67 +12,16 @@ import {
   ReferenceLine,
 } from 'recharts';
 import { WorkoutSession } from '@/types/workout';
-import { toLocalDate } from '@/utils/workoutCalcs';
-import { IS_CHINESE } from './WorkoutUI';
-
-const TOOLTIP_STYLE: React.CSSProperties = {
-  background: 'var(--wo-card-bg)',
-  border: '1px solid var(--wo-card-border)',
-  borderRadius: 10,
-  fontSize: 11,
-};
+import { calcTrainingLoadSeries } from '@/utils/workoutCalcs';
+import { IS_CHINESE, TOOLTIP_STYLE } from './WorkoutUI';
 
 const TrainingLoad = ({ workouts }: { workouts: WorkoutSession[] }) => {
-  const data = useMemo(() => {
-    // Build daily volume map
-    const volMap: Record<string, number> = {};
-    workouts.forEach((w) => {
-      const d = w.start_time.slice(0, 10);
-      volMap[d] = (volMap[d] || 0) + w.total_volume_kg;
-    });
-
-    // Generate last 120 days (extra for warmup period) → show last 90
-    const days: string[] = [];
-    const now = new Date();
-    for (let i = 119; i >= 0; i--) {
-      const d = new Date(now);
-      d.setDate(d.getDate() - i);
-      days.push(toLocalDate(d));
-    }
-
-    // EWMA decay constants
-    const k7 = 1 - Math.exp(-1 / 7);
-    const k42 = 1 - Math.exp(-1 / 42);
-    let atl = 0,
-      ctl = 0;
-
-    type DataPoint = {
-      date: string;
-      atl: number;
-      ctl: number;
-      tsb: number;
-      vol: number;
-    };
-
-    const result = days
-      .map((date, idx) => {
-        const vol = volMap[date] || 0;
-        atl = atl * (1 - k7) + vol * k7;
-        ctl = ctl * (1 - k42) + vol * k42;
-        const tsb = Math.round(ctl - atl);
-        if (idx < 30) return null;
-        return {
-          date: date.slice(5).replace('-', '/'),
-          atl: Math.round(atl),
-          ctl: Math.round(ctl),
-          tsb,
-          vol: Math.round(vol),
-        };
-      })
-      .filter((x): x is DataPoint => x !== null);
-
-    return result;
-  }, [workouts]);
+  const data = useMemo(() =>
+    calcTrainingLoadSeries(workouts).map((d) => ({
+      ...d,
+      date: d.date.slice(5).replace('-', '/'),
+    })),
+  [workouts]);
 
   return (
     <div>

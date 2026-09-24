@@ -3,19 +3,12 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 import { WorkoutSession } from '@/types/workout';
 import { translateExercise } from '@/utils/exerciseTranslations';
 import { isAssisted, calcE1RM, WARMUP_NAMES, WORKING_SET_TYPES } from '@/utils/workoutCalcs';
-import { IS_CHINESE } from './WorkoutUI';
+import { IS_CHINESE, TOOLTIP_STYLE } from './WorkoutUI';
 
 const LINE_COLORS = [
   'var(--wo-series-1)', 'var(--wo-series-2)', 'var(--wo-series-3)', 'var(--wo-series-4)',
   'var(--wo-series-5)', 'var(--wo-series-6)', 'var(--wo-series-7)', 'var(--wo-series-8)',
 ];
-
-const TOOLTIP_STYLE: React.CSSProperties = {
-  background: 'var(--wo-card-bg)',
-  border: '1px solid var(--wo-card-border)',
-  borderRadius: 10,
-  fontSize: 12,
-};
 
 const E1RMCompare = ({ workouts }: { workouts: WorkoutSession[] }) => {
   // Find top exercises by appearance count

@@ -1,21 +1,11 @@
 import { useMemo } from 'react';
 import { WorkoutSession } from '@/types/workout';
 import { getExerciseMuscles, HEXA_AXES } from '@/utils/workoutMuscles';
-import { WORKING_SET_TYPES } from '@/utils/workoutCalcs';
-
-const IS_CHINESE = true;
+import { WORKING_SET_TYPES, recoveryHoursFromSets } from '@/utils/workoutCalcs';
+import { IS_CHINESE } from './WorkoutUI';
 
 const GROUP_ICONS: Record<string, string> = {
   chest: '💓', back: '🦅', shoulders: '🏔️', arms: '💪', legs: '🦵', core: '⚡',
-};
-
-// Recovery hours based on working set count — more reliable than raw volume
-// (volume varies 10× between exercises/individuals; sets are consistent)
-const recoveryHoursFromSets = (sets: number): number => {
-  if (sets >= 12) return 72;
-  if (sets >= 8)  return 60;
-  if (sets >= 4)  return 48;
-  return 36;
 };
 
 const MuscleRecovery = ({ workouts }: { workouts: WorkoutSession[] }) => {

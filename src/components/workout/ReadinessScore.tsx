@@ -1,75 +1,23 @@
 import { useMemo } from 'react';
 import type { WorkoutSession } from '@/types/workout';
-import { getExerciseMuscles, MUSCLE_PATTERNS } from '@/utils/workoutMuscles';
-import { WORKING_SET_TYPES, toLocalDate } from '@/utils/workoutCalcs';
+import { MUSCLE_PATTERNS } from '@/utils/workoutMuscles';
+import { calcTSB, getMuscleRecoveryPct, toLocalDate } from '@/utils/workoutCalcs';
 import { IS_CHINESE } from './WorkoutUI';
 
-// ── Reuse same recovery model as MuscleRecovery (sets + time decay) ─────────
 const UNIQUE_MUSCLES = MUSCLE_PATTERNS.map(({ muscle }) => muscle);
 const MUSCLE_WEIGHTS: Record<string, number> = {
   chest: 1.2, back: 1.3, shoulders: 1.0, biceps: 0.7, triceps: 0.7,
   abs: 0.6, quads: 1.3, hamstrings: 1.1, glutes: 1.0, calves: 0.6,
 };
 
-const recoveryHoursFromSets = (sets: number): number => {
-  if (sets >= 12) return 72;
-  if (sets >= 8)  return 60;
-  if (sets >= 4)  return 48;
-  return 36;
-};
-
 function calcMuscleRecovery(workouts: WorkoutSession[]): number {
-  const now = Date.now();
-  const sorted = [...workouts].sort((a, b) => b.start_time.localeCompare(a.start_time));
   let weightedSum = 0, totalWeight = 0;
-
   for (const muscle of UNIQUE_MUSCLES) {
-    const muscleWeight = MUSCLE_WEIGHTS[muscle] ?? 1;
-    const relevantSessions = sorted.filter((w) =>
-      w.exercises.some((ex) => getExerciseMuscles(ex.name).includes(muscle))
-    );
-    if (relevantSessions.length === 0) {
-      weightedSum += 100 * muscleWeight; totalWeight += muscleWeight; continue;
-    }
-    const hoursAgo = (now - new Date(relevantSessions[0].start_time).getTime()) / 3600000;
-    let effectiveSets = 0;
-    for (const w of relevantSessions) {
-      const sessionHoursAgo = (now - new Date(w.start_time).getTime()) / 3600000;
-      if (sessionHoursAgo > 96) break;
-      const decayFactor = Math.pow(0.5, sessionHoursAgo / 24);
-      let sessionSets = 0;
-      w.exercises.forEach((ex) => {
-        if (getExerciseMuscles(ex.name).includes(muscle))
-          sessionSets += ex.sets.filter((s) => WORKING_SET_TYPES.has(s.type)).length;
-      });
-      effectiveSets += sessionSets * decayFactor;
-    }
-    const recoveryH = recoveryHoursFromSets(Math.round(effectiveSets));
-    const pct = Math.min(100, Math.round((hoursAgo / recoveryH) * 100));
-    weightedSum += pct * muscleWeight;
-    totalWeight += muscleWeight;
+    const w = MUSCLE_WEIGHTS[muscle] ?? 1;
+    weightedSum += getMuscleRecoveryPct(workouts, muscle) * w;
+    totalWeight += w;
   }
   return totalWeight > 0 ? Math.round(weightedSum / totalWeight) : 100;
-}
-
-function calcTSB(workouts: WorkoutSession[]): number {
-  const volMap: Record<string, number> = {};
-  workouts.forEach((w) => {
-    const d = w.start_time.slice(0, 10);
-    volMap[d] = (volMap[d] ?? 0) + w.total_volume_kg;
-  });
-  const k7 = 1 - Math.exp(-1 / 7);
-  const k42 = 1 - Math.exp(-1 / 42);
-  let atl = 0, ctl = 0;
-  const now = new Date();
-  for (let i = 89; i >= 0; i--) {
-    const d = new Date(now); d.setDate(d.getDate() - i);
-    const key = toLocalDate(d);
-    const vol = volMap[key] ?? 0;
-    atl = atl * (1 - k7) + vol * k7;
-    ctl = ctl * (1 - k42) + vol * k42;
-  }
-  return Math.round(ctl - atl);
 }
 
 function tsbToScore(tsb: number): number {

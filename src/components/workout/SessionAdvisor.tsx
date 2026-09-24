@@ -1,57 +1,9 @@
 import { useMemo } from 'react';
 import type { WorkoutSession } from '@/types/workout';
-import { calcE1RM, WARMUP_NAMES, WORKING_SET_TYPES, toLocalDate } from '@/utils/workoutCalcs';
+import { calcE1RM, WARMUP_NAMES, WORKING_SET_TYPES, calcTSB, getMuscleRecoveryPct } from '@/utils/workoutCalcs';
 import { getExerciseMuscles, PUSH_MUSCLES, PULL_MUSCLES, LEGS_MUSCLES } from '@/utils/workoutMuscles';
 import { translateExercise } from '@/utils/exerciseTranslations';
 import { IS_CHINESE } from './WorkoutUI';
-
-// Reuse TSB calc
-function calcCurrentTSB(workouts: WorkoutSession[]): number {
-  const volMap: Record<string, number> = {};
-  workouts.forEach((w) => {
-    const d = w.start_time.slice(0, 10);
-    volMap[d] = (volMap[d] ?? 0) + w.total_volume_kg;
-  });
-  const k7 = 1 - Math.exp(-1 / 7);
-  const k42 = 1 - Math.exp(-1 / 42);
-  let atl = 0, ctl = 0;
-  const now = new Date();
-  for (let i = 89; i >= 0; i--) {
-    const d = new Date(now); d.setDate(d.getDate() - i);
-    const key = toLocalDate(d);
-    const vol = volMap[key] ?? 0;
-    atl = atl * (1 - k7) + vol * k7;
-    ctl = ctl * (1 - k42) + vol * k42;
-  }
-  return Math.round(ctl - atl);
-}
-
-// Muscle recovery: sets + exponential time decay (same model as MuscleRecovery.tsx)
-const _recoveryHoursFromSets = (sets: number): number =>
-  sets >= 12 ? 72 : sets >= 8 ? 60 : sets >= 4 ? 48 : 36;
-
-function getMuscleRecoveryPct(workouts: WorkoutSession[], muscle: string): number {
-  const now = Date.now();
-  const sorted = [...workouts]
-    .filter((w) => w.exercises.some((ex) => getExerciseMuscles(ex.name).includes(muscle)))
-    .sort((a, b) => b.start_time.localeCompare(a.start_time));
-  if (!sorted.length) return 100;
-  const hoursAgo = (now - new Date(sorted[0].start_time).getTime()) / 3600000;
-  let effectiveSets = 0;
-  for (const w of sorted) {
-    const sessionHoursAgo = (now - new Date(w.start_time).getTime()) / 3600000;
-    if (sessionHoursAgo > 96) break;
-    const decayFactor = Math.pow(0.5, sessionHoursAgo / 24);
-    let sessionSets = 0;
-    w.exercises.forEach((ex) => {
-      if (getExerciseMuscles(ex.name).includes(muscle))
-        sessionSets += ex.sets.filter((s) => WORKING_SET_TYPES.has(s.type)).length;
-    });
-    effectiveSets += sessionSets * decayFactor;
-  }
-  const rH = _recoveryHoursFromSets(Math.round(effectiveSets));
-  return Math.min(100, Math.round((hoursAgo / rH) * 100));
-}
 
 type SplitType = 'push' | 'pull' | 'legs' | 'full';
 
@@ -166,7 +118,7 @@ const SPLIT_LABELS = {
 
 export default function SessionAdvisor({ workouts }: { workouts: WorkoutSession[] }) {
   const { tsb, split, recs } = useMemo(() => {
-    const tsb = calcCurrentTSB(workouts);
+    const tsb = calcTSB(workouts);
     const recoveries: Record<string, number> = {};
     [...PUSH_MUSCLES, ...PULL_MUSCLES, ...LEGS_MUSCLES].forEach((m) => {
       recoveries[m] = getMuscleRecoveryPct(workouts, m);

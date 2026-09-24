@@ -2,17 +2,10 @@ import { useState, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { WorkoutSession } from '@/types/workout';
 import { formatDuration } from '@/hooks/useWorkouts';
-import { IS_CHINESE } from './WorkoutUI';
+import { IS_CHINESE, TOOLTIP_STYLE } from './WorkoutUI';
 import { toLocalDate } from '@/utils/workoutCalcs';
 
 type Period = 'month' | 'year' | 'quarter';
-
-const TOOLTIP_STYLE: React.CSSProperties = {
-  background: 'var(--wo-card-bg)',
-  border: '1px solid var(--wo-card-border)',
-  borderRadius: 10,
-  fontSize: 11,
-};
 
 const getPeriodDates = (
   period: Period,
