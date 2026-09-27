@@ -666,6 +666,172 @@
     "exercise_count": 1
   },
   {
+    "id": "531f7b09602f",
+    "title": "2  胸➕ 肩前中束",
+    "start_time": "Sep 27, 2026, 3:31 AM",
+    "end_time": "Sep 27, 2026, 5:09 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Bench Press (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Incline Chest Press (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 20
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 15
+          },
+          {
+            "index": 10,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 15
+          },
+          {
+            "index": 11,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 12,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 13,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 25
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 8940.0,
+    "total_sets": 23,
+    "exercise_count": 3
+  },
+  {
     "id": "6a5a7e5b5c87",
     "title": "1 背➕肩后束",
     "start_time": "Sep 26, 2026, 3:06 AM",
