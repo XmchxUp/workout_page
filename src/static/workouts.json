@@ -3592,6 +3592,127 @@
     "exercise_count": 2
   },
   {
+    "id": "ac97712e651b",
+    "title": "午间锻炼💪",
+    "start_time": "Oct 2, 2026, 7:12 AM",
+    "end_time": "Oct 2, 2026, 7:53 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 10,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 11,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 12,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 13,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 14,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 15,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 16,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "平板支撑",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 51
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "duration_seconds": 33
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 19,
+    "exercise_count": 2
+  },
+  {
     "id": "45897b65a3d1",
     "title": "午间锻炼💪",
     "start_time": "Oct 1, 2026, 7:14 AM",
