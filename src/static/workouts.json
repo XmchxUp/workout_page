@@ -3592,6 +3592,56 @@
     "exercise_count": 2
   },
   {
+    "id": "4408d0b7e49e",
+    "title": "午间锻炼💪",
+    "start_time": "Oct 3, 2026, 8:33 AM",
+    "end_time": "Oct 3, 2026, 9:18 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "爬楼",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 311
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "duration_seconds": 339
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "duration_seconds": 374
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "duration_seconds": 371
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "duration_seconds": 392
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "duration_seconds": 173
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 6,
+    "exercise_count": 1
+  },
+  {
     "id": "ac97712e651b",
     "title": "午间锻炼💪",
     "start_time": "Oct 2, 2026, 7:12 AM",
