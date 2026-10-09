@@ -3592,6 +3592,196 @@
     "exercise_count": 2
   },
   {
+    "id": "e9b0e9fce40c",
+    "title": "午间锻炼💪",
+    "start_time": "Oct 8, 2026, 8:18 AM",
+    "end_time": "Oct 8, 2026, 9:44 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "爬楼",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 421
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "duration_seconds": 387
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "duration_seconds": 378
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "duration_seconds": 374
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "duration_seconds": 360
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "duration_seconds": 366
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "duration_seconds": 379
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "duration_seconds": 393
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "duration_seconds": 376
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "duration_seconds": 389
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 10,
+    "exercise_count": 1
+  },
+  {
+    "id": "4f06610c7e9e",
+    "title": "午间锻炼💪",
+    "start_time": "Oct 8, 2026, 6:54 AM",
+    "end_time": "Oct 8, 2026, 7:31 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 10,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 11,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 12,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 13,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 14,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 15,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 16,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 17,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 18,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 19,
+            "type": "normal",
+            "reps": 30
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 20,
+    "exercise_count": 1
+  },
+  {
     "id": "14558cb02ba5",
     "title": "午间锻炼💪",
     "start_time": "Oct 5, 2026, 7:42 AM",
