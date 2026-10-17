@@ -429,7 +429,7 @@ const RepRangePanel = ({ workouts }: { workouts: WorkoutSession[] }) => {
   const ranges = [
     { label: IS_CHINESE ? '力量 (1–5)' : 'Strength (1–5)',       count: strength,    color: 'var(--wc-l4)' },
     { label: IS_CHINESE ? '增肌 (6–12)' : 'Hypertrophy (6–12)', count: hypertrophy, color: 'var(--wc-l3)' },
-    { label: IS_CHINESE ? '耐力 (13+)' : 'Endurance (13+)',      count: endurance,   color: 'var(--wc-l2)' },
+    { label: IS_CHINESE ? '耐力 (13+)' : 'Endurance (13+)',      count: endurance,   color: 'var(--wc-l3)' },
   ];
   return (
     <div>
@@ -868,7 +868,7 @@ const ExerciseProgress = ({ name, workouts, onClose }: { name: string; workouts:
           </ResponsiveContainer>
           <div className="mt-2 flex items-center gap-4 text-xs opacity-45 flex-wrap">
             <span><span style={{ color: 'var(--wt-pr-color)' }}>●</span> e1RM PR</span>
-            <span><span style={{ color: 'var(--wc-l2)' }}>– –</span> {IS_CHINESE ? '单次出力' : 'Session Vol'}</span>
+            <span><span style={{ color: 'var(--wc-l3)' }}>– –</span> {IS_CHINESE ? '单次出力' : 'Session Vol'}</span>
             {predictionLabel && <span><span style={{ color: ACCENT_LINE_STRONG }}>· ·</span> {IS_CHINESE ? '趋势预测' : 'Trend'}</span>}
             <span>{data.length} sessions</span>
           </div>
