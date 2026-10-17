@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { WorkoutSession } from '@/types/workout';
-import { formatDuration } from '@/hooks/useWorkouts';
+import { formatDuration } from '@/utils/workoutCalcs';
 import { IS_CHINESE, TOOLTIP_STYLE } from './WorkoutUI';
 import { toLocalDate } from '@/utils/workoutCalcs';
 

@@ -9,9 +9,9 @@ Requirements:
     playwright install chromium --with-deps
 
 Usage:
-    python3 run_page/hevy_web_export.py EMAIL PASSWORD
-    python3 run_page/hevy_web_export.py EMAIL PASSWORD --output src/static/workouts.json
-    python3 run_page/hevy_web_export.py EMAIL PASSWORD --csv-only --csv-path workouts.csv
+    python3 scripts/hevy_web_export.py EMAIL PASSWORD
+    python3 scripts/hevy_web_export.py EMAIL PASSWORD --output src/static/workouts.json
+    python3 scripts/hevy_web_export.py EMAIL PASSWORD --csv-only --csv-path workouts.csv
 
 GitHub Actions secrets needed:
     HEVY_EMAIL      — your Hevy account email

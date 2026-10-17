@@ -1,14 +1,12 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import {
   BarChart, Bar, LineChart, Line, ComposedChart,
   XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
 } from 'recharts';
 import Layout from '@/components/Layout';
-import useWorkouts, { formatDuration } from '@/hooks/useWorkouts';
+import useWorkouts from '@/hooks/useWorkouts';
 import WorkoutCalendar from '@/components/WorkoutCalendar';
 import WorkoutTable from '@/components/WorkoutTable';
-import { useTheme } from '@/hooks/useTheme';
 import type { WorkoutSession } from '@/types/workout';
 import { translateExercise } from '@/utils/exerciseTranslations';
 import {
@@ -17,6 +15,7 @@ import {
 } from '@/utils/workoutMuscles';
 import {
   calcE1RM,
+  formatDuration,
   calcMuscleVolumes,
   calcStreak,
   calcBestLifts,
@@ -1255,7 +1254,6 @@ const HeroStat = ({ label, value, unit, accent, trend }: {
 // =============================================================================
 const WorkoutsPage = () => {
   const { workouts, years, thisYear } = useWorkouts();
-  const { theme } = useTheme();
   const [year, setYear] = useState(thisYear);
   const weeklyGoal = 4;
   const [highlightDate, setHighlightDate] = useState<string | undefined>();
@@ -1360,7 +1358,6 @@ const WorkoutsPage = () => {
 
   return (
     <Layout>
-      <Helmet><html lang="en" data-theme={theme} /><title>Workouts</title></Helmet>
 
       {/* Wrapped Modal */}
       {showWrapped && <WorkoutWrapped workouts={workouts} year={year === 'Total' ? String(new Date().getFullYear()) : year} onClose={() => setShowWrapped(false)} />}

@@ -5,9 +5,9 @@ and outputs src/static/workouts.json in the same format as workout_sync.py.
 API key: obtain from https://hevy.com/settings (Developer section)
 
 Usage:
-    python3 run_page/hevy_api_sync.py YOUR_API_KEY
-    python3 run_page/hevy_api_sync.py YOUR_API_KEY --output src/static/workouts.json
-    python3 run_page/hevy_api_sync.py YOUR_API_KEY --incremental  # only fetch new workouts
+    python3 scripts/hevy_api_sync.py YOUR_API_KEY
+    python3 scripts/hevy_api_sync.py YOUR_API_KEY --output src/static/workouts.json
+    python3 scripts/hevy_api_sync.py YOUR_API_KEY --incremental  # only fetch new workouts
 """
 
 import argparse

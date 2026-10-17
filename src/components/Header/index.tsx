@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useTheme, Theme } from '@/hooks/useTheme';
-import useSiteMetadata from '@/hooks/useSiteMetadata';
+import siteMetadata from '@/static/site-metadata';
 import styles from './style.module.css';
 
 const Header = () => {
-  const { logo, siteTitle } = useSiteMetadata();
+  const { logo, siteTitle } = siteMetadata;
   const { setTheme } = useTheme();
   const [currentIconIndex, setCurrentIconIndex] = useState(0);
 

@@ -1,12 +1,9 @@
 import { useState, useMemo, useEffect } from 'react';
 import { WorkoutSession, WorkoutExercise } from '@/types/workout';
-import { formatDuration } from '@/hooks/useWorkouts';
+import { formatDuration } from '@/utils/workoutCalcs';
 import { translateExercise } from '@/utils/exerciseTranslations';
+import { isAssisted } from '@/utils/workoutCalcs';
 import styles from './style.module.css';
-
-// Exercises where lower weight = stronger (assisted resistance helps less = harder)
-const ASSISTED_PATTERN = /assisted/i;
-const isAssisted = (name: string): boolean => ASSISTED_PATTERN.test(name);
 
 interface WorkoutTableProps {
   workouts: WorkoutSession[];

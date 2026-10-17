@@ -1,14 +1,11 @@
 """
 Workout data parser and sync utility.
 
-Supports multiple fitness app export formats:
-- Hevy (CSV)
-- Strong (CSV) — stub for future
-- Generic (JSON)
+Supports Hevy and Strong CSV exports (auto-detected by header).
 
 Usage:
-    python3 run_page/workout_sync.py --input workouts.csv --source hevy
-    python3 run_page/workout_sync.py --input workouts.csv  # auto-detect
+    python3 scripts/workout_sync.py --input workouts.csv --source hevy
+    python3 scripts/workout_sync.py --input workouts.csv  # auto-detect
 """
 
 import argparse
@@ -204,7 +201,7 @@ class HevyParser(BaseWorkoutParser):
 
 
 # ---------------------------------------------------------------------------
-# Strong CSV parser (stub — extend as needed)
+# Strong CSV parser
 # ---------------------------------------------------------------------------
 
 class StrongParser(BaseWorkoutParser):

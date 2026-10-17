@@ -63,6 +63,13 @@ export const calcExerciseCoMatrix = (
 const ASSISTED_PATTERN = /assisted/i;
 export const isAssisted = (name: string): boolean => ASSISTED_PATTERN.test(name);
 
+export const formatDuration = (seconds: number): string => {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  if (h > 0) return `${h}h ${m}m`;
+  return `${m}m`;
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 // e1RM — Epley formula
 // ─────────────────────────────────────────────────────────────────────────────
