@@ -361,25 +361,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 55.12,
+            "weight_kg": 25.0,
             "reps": 13
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 55.12,
+            "weight_kg": 25.0,
             "reps": 12
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 55.12,
+            "weight_kg": 25.0,
             "reps": 12
           }
         ]
@@ -415,7 +415,7 @@
         ]
       }
     ],
-    "total_volume_kg": 13815.68,
+    "total_volume_kg": 12219.44,
     "total_sets": 25,
     "exercise_count": 7
   },
@@ -1718,31 +1718,31 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 15
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 15
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 15
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 15
           }
         ]
       }
     ],
-    "total_volume_kg": 13560.0,
+    "total_volume_kg": 12576.6,
     "total_sets": 25,
     "exercise_count": 6
   },
@@ -4078,6 +4078,236 @@
     "exercise_count": 1
   },
   {
+    "id": "4a13abe0d95f",
+    "title": "3 手臂 肱二头➕ 肱三头",
+    "start_time": "Oct 22, 2026, 4:10 AM",
+    "end_time": "Oct 22, 2026, 5:38 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 180
+          }
+        ]
+      },
+      {
+        "name": "Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Overhead Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Bicep Curl (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Triceps Rope Pushdown",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 13
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "EZ Bar Biceps Curl",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 13
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 25
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 11760.0,
+    "total_sets": 30,
+    "exercise_count": 7
+  },
+  {
     "id": "122225e298d4",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Oct 21, 2026, 4:12 AM",
@@ -4289,6 +4519,32 @@
     "total_volume_kg": 12010.0,
     "total_sets": 28,
     "exercise_count": 6
+  },
+  {
+    "id": "5a7f597e2722",
+    "title": "午间锻炼💪",
+    "start_time": "Oct 21, 2026, 10:23 AM",
+    "end_time": "Oct 21, 2026, 10:43 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Cycling",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 3.0,
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
   },
   {
     "id": "d503463c1360",
@@ -4980,49 +5236,49 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 40.0,
+            "weight_kg": 18.14,
             "reps": 10
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 40.0,
+            "weight_kg": 18.14,
             "reps": 12
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 15
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 15
           },
           {
             "index": 4,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 12
           },
           {
             "index": 5,
             "type": "normal",
-            "weight_kg": 25.0,
+            "weight_kg": 11.34,
             "reps": 12
           },
           {
             "index": 6,
             "type": "normal",
-            "weight_kg": 25.0,
+            "weight_kg": 11.34,
             "reps": 12
           },
           {
             "index": 7,
             "type": "normal",
-            "weight_kg": 25.0,
+            "weight_kg": 11.34,
             "reps": 12
           }
         ]
@@ -5059,7 +5315,7 @@
         ]
       }
     ],
-    "total_volume_kg": 12510.0,
+    "total_volume_kg": 10848.94,
     "total_sets": 30,
     "exercise_count": 6
   },
@@ -5618,55 +5874,55 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 20
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 35.0,
+            "weight_kg": 15.88,
             "reps": 16
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 35.0,
+            "weight_kg": 15.88,
             "reps": 15
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 35.0,
+            "weight_kg": 15.88,
             "reps": 15
           },
           {
             "index": 4,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 15
           },
           {
             "index": 5,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 15
           },
           {
             "index": 6,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 13
           },
           {
             "index": 7,
             "type": "normal",
-            "weight_kg": 30.0,
+            "weight_kg": 13.61,
             "reps": 13
           }
         ]
       }
     ],
-    "total_volume_kg": 12890.0,
+    "total_volume_kg": 10764.84,
     "total_sets": 26,
     "exercise_count": 6
   },
@@ -6456,25 +6712,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           }
         ]
@@ -6510,7 +6766,7 @@
         ]
       }
     ],
-    "total_volume_kg": 3450.17,
+    "total_volume_kg": 2486.57,
     "total_sets": 8,
     "exercise_count": 2
   },
@@ -6741,25 +6997,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 15
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 15
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 17
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           }
         ]
@@ -6825,7 +7081,7 @@
         ]
       }
     ],
-    "total_volume_kg": 5450.63,
+    "total_volume_kg": 3836.6,
     "total_sets": 13,
     "exercise_count": 4
   },
@@ -7176,25 +7432,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 16
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           }
         ]
@@ -7290,7 +7546,7 @@
         ]
       }
     ],
-    "total_volume_kg": 7570.26,
+    "total_volume_kg": 5739.42,
     "total_sets": 17,
     "exercise_count": 5
   },
@@ -7753,25 +8009,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 8
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 8
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 8
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 8
           }
         ]
@@ -7927,7 +8183,7 @@
         ]
       }
     ],
-    "total_volume_kg": 6933.21,
+    "total_volume_kg": 6162.33,
     "total_sets": 25,
     "exercise_count": 7
   },
@@ -8555,25 +8811,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           }
         ]
@@ -8729,7 +8985,7 @@
         ]
       }
     ],
-    "total_volume_kg": 8791.66,
+    "total_volume_kg": 7635.34,
     "total_sets": 25,
     "exercise_count": 7
   },
@@ -9357,25 +9613,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 9
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           }
         ]
@@ -9531,7 +9787,7 @@
         ]
       }
     ],
-    "total_volume_kg": 7637.37,
+    "total_volume_kg": 6697.86,
     "total_sets": 25,
     "exercise_count": 7
   },
@@ -10165,25 +10421,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 25
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           }
         ]
@@ -10279,7 +10535,7 @@
         ]
       }
     ],
-    "total_volume_kg": 9058.96,
+    "total_volume_kg": 7011.31,
     "total_sets": 17,
     "exercise_count": 5
   },
@@ -11233,25 +11489,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 16
           }
         ]
@@ -11347,7 +11603,7 @@
         ]
       }
     ],
-    "total_volume_kg": 8191.21,
+    "total_volume_kg": 6360.37,
     "total_sets": 17,
     "exercise_count": 5
   },
@@ -12285,25 +12541,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           }
         ]
@@ -12339,7 +12595,7 @@
         ]
       }
     ],
-    "total_volume_kg": 15645.17,
+    "total_volume_kg": 13717.97,
     "total_sets": 24,
     "exercise_count": 7
   },
@@ -13140,25 +13396,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 25
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           }
         ]
@@ -13194,7 +13450,7 @@
         ]
       }
     ],
-    "total_volume_kg": 17339.23,
+    "total_volume_kg": 15291.58,
     "total_sets": 25,
     "exercise_count": 7
   },
@@ -13506,31 +13762,31 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 13
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 16
           }
         ]
       }
     ],
-    "total_volume_kg": 7761.13,
+    "total_volume_kg": 6580.72,
     "total_sets": 19,
     "exercise_count": 6
   },
@@ -13561,31 +13817,31 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 12
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 12
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 12
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 12
           },
           {
             "index": 4,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 12
           }
         ]
@@ -13777,7 +14033,7 @@
         ]
       }
     ],
-    "total_volume_kg": 7596.59,
+    "total_volume_kg": 6512.39,
     "total_sets": 32,
     "exercise_count": 8
   },
@@ -14238,31 +14494,31 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 15
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 15
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 4,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           }
         ]
@@ -14444,7 +14700,7 @@
         ]
       }
     ],
-    "total_volume_kg": 9125.48,
+    "total_volume_kg": 7535.54,
     "total_sets": 30,
     "exercise_count": 8
   },
@@ -15649,25 +15905,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           }
         ]
@@ -15810,7 +16066,7 @@
         ]
       }
     ],
-    "total_volume_kg": 7578.01,
+    "total_volume_kg": 6614.41,
     "total_sets": 23,
     "exercise_count": 7
   },
@@ -16562,31 +16818,31 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 4,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           }
         ]
@@ -16755,7 +17011,7 @@
         ]
       }
     ],
-    "total_volume_kg": 9401.9,
+    "total_volume_kg": 8052.86,
     "total_sets": 29,
     "exercise_count": 7
   },
@@ -18340,31 +18596,31 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 10
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 10
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 10
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 10
           },
           {
             "index": 4,
             "type": "normal",
-            "weight_kg": 33.07,
+            "weight_kg": 15.0,
             "reps": 10
           }
         ]
@@ -18478,7 +18734,7 @@
         ]
       }
     ],
-    "total_volume_kg": 4531.38,
+    "total_volume_kg": 3627.88,
     "total_sets": 20,
     "exercise_count": 6
   },
@@ -18908,25 +19164,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 21
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           }
         ]
@@ -18962,7 +19218,7 @@
         ]
       }
     ],
-    "total_volume_kg": 15251.5,
+    "total_volume_kg": 13300.21,
     "total_sets": 26,
     "exercise_count": 7
   },
@@ -19791,25 +20047,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 55.12,
+            "weight_kg": 25.0,
             "reps": 15
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 55.12,
+            "weight_kg": 25.0,
             "reps": 15
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 55.12,
+            "weight_kg": 25.0,
             "reps": 15
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 55.12,
+            "weight_kg": 25.0,
             "reps": 15
           }
         ]
@@ -19845,7 +20101,7 @@
         ]
       }
     ],
-    "total_volume_kg": 15000.78,
+    "total_volume_kg": 13193.58,
     "total_sets": 25,
     "exercise_count": 6
   },
@@ -20532,49 +20788,49 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 25
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 50.71,
+            "weight_kg": 23.0,
             "reps": 25
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 50.71,
+            "weight_kg": 23.0,
             "reps": 20
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 50.71,
+            "weight_kg": 23.0,
             "reps": 20
           },
           {
             "index": 4,
             "type": "normal",
-            "weight_kg": 50.71,
+            "weight_kg": 23.0,
             "reps": 20
           },
           {
             "index": 5,
             "type": "normal",
-            "weight_kg": 50.71,
+            "weight_kg": 23.0,
             "reps": 20
           },
           {
             "index": 6,
             "type": "normal",
-            "weight_kg": 50.71,
+            "weight_kg": 23.0,
             "reps": 18
           },
           {
             "index": 7,
             "type": "normal",
-            "weight_kg": 50.71,
+            "weight_kg": 23.0,
             "reps": 20
           }
         ]
@@ -20610,7 +20866,7 @@
         ]
       }
     ],
-    "total_volume_kg": 17258.68,
+    "total_volume_kg": 12693.9,
     "total_sets": 25,
     "exercise_count": 6
   },
@@ -21226,25 +21482,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 25
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 25
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 20
           }
         ]
@@ -21280,7 +21536,7 @@
         ]
       }
     ],
-    "total_volume_kg": 14745.62,
+    "total_volume_kg": 12577.52,
     "total_sets": 26,
     "exercise_count": 7
   },
@@ -21721,55 +21977,55 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 30.31,
+            "weight_kg": 13.75,
             "reps": 12
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 30.31,
+            "weight_kg": 13.75,
             "reps": 8
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 30.31,
+            "weight_kg": 13.75,
             "reps": 8
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 30.31,
+            "weight_kg": 13.75,
             "reps": 7
           },
           {
             "index": 4,
             "type": "normal",
-            "weight_kg": 30.31,
+            "weight_kg": 13.75,
             "reps": 7
           },
           {
             "index": 5,
             "type": "normal",
-            "weight_kg": 19.29,
+            "weight_kg": 8.75,
             "reps": 12
           },
           {
             "index": 6,
             "type": "normal",
-            "weight_kg": 19.29,
+            "weight_kg": 8.75,
             "reps": 10
           },
           {
             "index": 7,
             "type": "normal",
-            "weight_kg": 19.29,
+            "weight_kg": 8.75,
             "reps": 8
           },
           {
             "index": 8,
             "type": "normal",
-            "weight_kg": 19.29,
+            "weight_kg": 8.75,
             "reps": 8
           }
         ]
@@ -21991,7 +22247,7 @@
         ]
       }
     ],
-    "total_volume_kg": 8295.09,
+    "total_volume_kg": 7199.05,
     "total_sets": 40,
     "exercise_count": 8
   },
@@ -22391,25 +22647,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 11
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 11
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           }
         ]
@@ -22565,7 +22821,7 @@
         ]
       }
     ],
-    "total_volume_kg": 9323.16,
+    "total_volume_kg": 8263.2,
     "total_sets": 25,
     "exercise_count": 7
   },
@@ -23414,25 +23670,25 @@
           {
             "index": 0,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 1,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           },
           {
             "index": 2,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 10
           },
           {
             "index": 3,
             "type": "normal",
-            "weight_kg": 44.09,
+            "weight_kg": 20.0,
             "reps": 12
           }
         ]
@@ -23588,7 +23844,7 @@
         ]
       }
     ],
-    "total_volume_kg": 8333.24,
+    "total_volume_kg": 7225.1,
     "total_sets": 25,
     "exercise_count": 7
   },
