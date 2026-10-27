@@ -4078,6 +4078,220 @@
     "exercise_count": 1
   },
   {
+    "id": "67dc810482e3",
+    "title": "4 腿➕腹部",
+    "start_time": "Oct 27, 2026, 4:13 AM",
+    "end_time": "Oct 27, 2026, 5:41 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Squat (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 11
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Bulgarian Split Squat (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 8
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 8
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 8
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 8
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Hip Abduction (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 90.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 90.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 90.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 90.0,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 90.0,
+            "reps": 18
+          }
+        ]
+      },
+      {
+        "name": "Hip Adduction (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 100.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 90.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 17050.0,
+    "total_sets": 30,
+    "exercise_count": 5
+  },
+  {
     "id": "ebdce79f1793",
     "title": "1 背➕肩后束",
     "start_time": "Oct 26, 2026, 4:12 AM",
