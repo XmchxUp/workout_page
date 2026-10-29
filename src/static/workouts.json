@@ -4078,6 +4078,252 @@
     "exercise_count": 1
   },
   {
+    "id": "103bd1860bac",
+    "title": "3 手臂 肱二头➕ 肱三头",
+    "start_time": "Oct 29, 2026, 4:01 AM",
+    "end_time": "Oct 29, 2026, 5:39 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 10
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Overhead Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 13
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Bicep Curl (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "name": "Triceps Rope Pushdown",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 13
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 13
+          }
+        ]
+      },
+      {
+        "name": "EZ Bar Biceps Curl",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 13
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 15
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 13155.0,
+    "total_sets": 34,
+    "exercise_count": 6
+  },
+  {
     "id": "474cbb9d5190",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Oct 28, 2026, 4:02 AM",
