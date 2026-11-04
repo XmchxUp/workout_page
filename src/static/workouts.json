@@ -7823,6 +7823,208 @@
     "exercise_count": 1
   },
   {
+    "id": "977a5391d342",
+    "title": "1 背➕肩后束",
+    "start_time": "Nov 4, 2026, 4:12 AM",
+    "end_time": "Nov 4, 2026, 5:12 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 214
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 31.75,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 31.75,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 31.75,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 31.75,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 27.22,
+            "reps": 12
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "weight_kg": 27.22,
+            "reps": 12
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "weight_kg": 27.22,
+            "reps": 12
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "weight_kg": 27.22,
+            "reps": 13
+          }
+        ]
+      },
+      {
+        "name": "Seated Row (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 58.97,
+            "reps": 16
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 77.11,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 58.97,
+            "reps": 13
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 58.97,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 58.97,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Rear Delt Reverse Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 11
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown - Close Grip (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 27.22,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 27.22,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 16
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 9906.8,
+    "total_sets": 26,
+    "exercise_count": 6
+  },
+  {
     "id": "0f0a976e2fc7",
     "title": "4 腿➕腹部",
     "start_time": "Nov 3, 2026, 4:15 AM",
