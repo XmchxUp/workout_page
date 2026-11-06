@@ -7823,6 +7823,232 @@
     "exercise_count": 1
   },
   {
+    "id": "10f67fd2c8c2",
+    "title": "午间锻炼💪",
+    "start_time": "Nov 6, 2026, 5:28 AM",
+    "end_time": "Nov 6, 2026, 5:50 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "爬坡",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 3.0,
+            "duration_seconds": 1320
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
+    "id": "17c016671216",
+    "title": "午间锻炼💪",
+    "start_time": "Nov 6, 2026, 4:10 AM",
+    "end_time": "Nov 6, 2026, 5:23 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 255
+          }
+        ]
+      },
+      {
+        "name": "Shoulder Press (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "warmup",
+            "weight_kg": 27.22,
+            "reps": 10
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 27.22,
+            "reps": 10
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 27.22,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Rear Delt Reverse Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Lateral Raise (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Front Raise (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 30
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 5169.49,
+    "total_sets": 25,
+    "exercise_count": 6
+  },
+  {
     "id": "b0c75be27015",
     "title": "3 手臂 肱二头➕ 肱三头",
     "start_time": "Nov 5, 2026, 4:10 AM",
