@@ -7993,6 +7993,32 @@
     "exercise_count": 5
   },
   {
+    "id": "43ce622fc11e",
+    "title": "午间锻炼💪",
+    "start_time": "Nov 9, 2026, 10:15 AM",
+    "end_time": "Nov 9, 2026, 10:45 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Cycling",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 3.0,
+            "duration_seconds": 1800
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 1,
+    "exercise_count": 1
+  },
+  {
     "id": "10f67fd2c8c2",
     "title": "午间锻炼💪",
     "start_time": "Nov 6, 2026, 5:28 AM",
@@ -9013,6 +9039,201 @@
     "total_volume_kg": 0.0,
     "total_sets": 2,
     "exercise_count": 2
+  },
+  {
+    "id": "529f45a8d9f5",
+    "title": "4 腿➕腹部",
+    "start_time": "Nov 10, 2026, 4:03 AM",
+    "end_time": "Nov 10, 2026, 5:24 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 287
+          }
+        ]
+      },
+      {
+        "name": "Squat (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 8
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 70.0,
+            "reps": 4
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 11
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 8
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Hip Abduction (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.82,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 40.82,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 40.82,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 40.82,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 40.82,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Hip Adduction (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 8982.5,
+    "total_sets": 27,
+    "exercise_count": 5
   },
   {
     "id": "bed159a9a74e",
