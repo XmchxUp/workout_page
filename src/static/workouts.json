@@ -9041,6 +9041,158 @@
     "exercise_count": 2
   },
   {
+    "id": "e379986ba7d6",
+    "title": "2  胸➕ 肩前中束",
+    "start_time": "Nov 11, 2026, 4:44 AM",
+    "end_time": "Nov 11, 2026, 5:30 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Chest Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "name": "Bench Press (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 5
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 45.0,
+            "reps": 8
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Incline Bench Press (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 35.0,
+            "reps": 6
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 35.0,
+            "reps": 7
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 25.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 35.0,
+            "reps": 7
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 35.0,
+            "reps": 7
+          }
+        ]
+      },
+      {
+        "name": "Incline Chest Press (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 6814.84,
+    "total_sets": 19,
+    "exercise_count": 4
+  },
+  {
     "id": "529f45a8d9f5",
     "title": "4 腿➕腹部",
     "start_time": "Nov 10, 2026, 4:03 AM",
