@@ -9041,6 +9041,86 @@
     "exercise_count": 2
   },
   {
+    "id": "14a47f61838e",
+    "title": "3 手臂 肱二头➕ 肱三头",
+    "start_time": "Nov 12, 2026, 4:27 AM",
+    "end_time": "Nov 12, 2026, 4:49 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Triceps Extension (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Triceps Rope Pushdown",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 14
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 1764.48,
+    "total_sets": 9,
+    "exercise_count": 2
+  },
+  {
     "id": "e379986ba7d6",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Nov 11, 2026, 4:44 AM",
