@@ -9041,6 +9041,72 @@
     "exercise_count": 2
   },
   {
+    "id": "92dd41ef5801",
+    "title": "午间锻炼💪",
+    "start_time": "Nov 14, 2026, 6:07 AM",
+    "end_time": "Nov 14, 2026, 6:32 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Ab Wheel",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "俯卧撑",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 8,
+    "exercise_count": 2
+  },
+  {
     "id": "14a47f61838e",
     "title": "3 手臂 肱二头➕ 肱三头",
     "start_time": "Nov 12, 2026, 4:27 AM",
