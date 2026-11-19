@@ -9041,6 +9041,169 @@
     "exercise_count": 2
   },
   {
+    "id": "fab294650785",
+    "title": "午间锻炼💪",
+    "start_time": "Nov 19, 2026, 4:09 AM",
+    "end_time": "Nov 19, 2026, 5:23 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 8,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 9,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 10,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 11,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 12,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 13,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 14,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 15,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 16,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 17,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 18,
+            "type": "normal",
+            "reps": 30
+          },
+          {
+            "index": 19,
+            "type": "normal",
+            "reps": 30
+          }
+        ]
+      },
+      {
+        "name": "Treadmill",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "distance_km": 2.0,
+            "duration_seconds": 1080
+          }
+        ]
+      },
+      {
+        "name": "平板支撑",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 60
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "duration_seconds": 61
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "duration_seconds": 60
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "duration_seconds": 45
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "duration_seconds": 50
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 0.0,
+    "total_sets": 26,
+    "exercise_count": 3
+  },
+  {
     "id": "605553ad4267",
     "title": "4 腿➕腹部",
     "start_time": "Nov 18, 2026, 4:05 AM",
