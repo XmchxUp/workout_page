@@ -8809,6 +8809,211 @@
     "exercise_count": 5
   },
   {
+    "id": "81a8922ed79e",
+    "title": "2  胸➕ 肩前中束",
+    "start_time": "Nov 20, 2026, 4:02 AM",
+    "end_time": "Nov 20, 2026, 5:07 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 186
+          }
+        ]
+      },
+      {
+        "name": "Chest Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 7
+          }
+        ]
+      },
+      {
+        "name": "Bench Press (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 55.0,
+            "reps": 5
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 10
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 6
+          }
+        ]
+      },
+      {
+        "name": "Incline Bench Press (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 20.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 8
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 8
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 7
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 30.0,
+            "reps": 6
+          }
+        ]
+      },
+      {
+        "name": "Lateral Raise (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 13
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 9
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Incline Chest Press (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 8
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 9
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 45.36,
+            "reps": 7
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 7076.13,
+    "total_sets": 26,
+    "exercise_count": 6
+  },
+  {
     "id": "af81095d2282",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Nov 2, 2026, 4:00 AM",
