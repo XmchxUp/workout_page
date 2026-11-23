@@ -8809,6 +8809,157 @@
     "exercise_count": 5
   },
   {
+    "id": "85b7747d4ddc",
+    "title": "1 背➕肩后束",
+    "start_time": "Nov 23, 2026, 4:14 AM",
+    "end_time": "Nov 23, 2026, 4:58 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Warm Up",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "duration_seconds": 217
+          }
+        ]
+      },
+      {
+        "name": "Lat Pulldown (Cable)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 31.75,
+            "reps": 8
+          },
+          {
+            "index": 5,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 20
+          },
+          {
+            "index": 6,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 20
+          },
+          {
+            "index": 7,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 17
+          }
+        ]
+      },
+      {
+        "name": "Seated Row (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 77.11,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 77.11,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 77.11,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 77.11,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 77.11,
+            "reps": 11
+          }
+        ]
+      },
+      {
+        "name": "Rear Delt Reverse Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 10
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 11
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 8758.55,
+    "total_sets": 19,
+    "exercise_count": 4
+  },
+  {
     "id": "81a8922ed79e",
     "title": "2  胸➕ 肩前中束",
     "start_time": "Nov 20, 2026, 4:02 AM",
