@@ -12,15 +12,10 @@ concurrency:
 
 jobs:
   sync:
-    name: Sync Hevy data and deploy
+    name: Sync Hevy data and build
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -104,14 +99,27 @@ jobs:
           REPO_NAME: ${{ github.event.repository.name }}
         run: PATH_PREFIX=/$REPO_NAME pnpm build
 
+      # The artifact index is eventually consistent. Deploying in this job can
+      # query it before the upload is visible and fail with "Found 0 artifact(s)".
+      # Deploy from a separate job so the lookup happens later.
+      # https://github.com/actions/deploy-pages/issues/451
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          name: pages-artifact
           path: ./dist
 
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: sync
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: pages-artifact
+        uses: actions/deploy-pages@v5
