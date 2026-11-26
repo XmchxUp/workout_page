@@ -8809,6 +8809,92 @@
     "exercise_count": 5
   },
   {
+    "id": "02936714b804",
+    "title": "4 腿➕腹部",
+    "start_time": "Nov 26, 2026, 4:20 AM",
+    "end_time": "Nov 26, 2026, 5:12 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Squat (Barbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 40.0,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 50.0,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 60.0,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Bulgarian Split Squat (Dumbbell)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 15
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 12
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 3961.41,
+    "total_sets": 10,
+    "exercise_count": 2
+  },
+  {
     "id": "bae229536695",
     "title": "晨间锻炼 ☀️",
     "start_time": "Nov 25, 2026, 4:10 AM",
