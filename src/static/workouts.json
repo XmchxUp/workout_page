@@ -8809,6 +8809,159 @@
     "exercise_count": 5
   },
   {
+    "id": "3f0b29a343e0",
+    "title": "4 腿➕腹部",
+    "start_time": "Nov 27, 2026, 4:12 AM",
+    "end_time": "Nov 27, 2026, 5:05 AM",
+    "duration_seconds": 0,
+    "description": "",
+    "source": "hevy",
+    "exercises": [
+      {
+        "name": "Hip Abduction (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 14
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "name": "Hip Adduction (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "name": "Crunch",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "reps": 25
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "reps": 20
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "name": "Rear Delt Reverse Fly (Machine)",
+        "notes": "",
+        "sets": [
+          {
+            "index": 0,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 20
+          },
+          {
+            "index": 1,
+            "type": "normal",
+            "weight_kg": 9.07,
+            "reps": 25
+          },
+          {
+            "index": 2,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 15
+          },
+          {
+            "index": 3,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 12
+          },
+          {
+            "index": 4,
+            "type": "normal",
+            "weight_kg": 13.61,
+            "reps": 12
+          }
+        ]
+      }
+    ],
+    "total_volume_kg": 5801.8,
+    "total_sets": 20,
+    "exercise_count": 4
+  },
+  {
     "id": "02936714b804",
     "title": "4 腿➕腹部",
     "start_time": "Nov 26, 2026, 4:20 AM",
